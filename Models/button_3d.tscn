@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://8wdrffpnxjts"]
+
+[ext_resource type="Script" path="res://Models/button_3d.gd" id="1_anbk5"]
+[ext_resource type="FontFile" uid="uid://d4ntttk4cofkx" path="res://ThemeEditor/DMMono-Medium.ttf" id="2_5vink"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4bvh"]
+albedo_color = Color(0.86345, 0.417358, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ky1mg"]
+material = SubResource("StandardMaterial3D_b4bvh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmg6g"]
+size = Vector3(0.863815, 0.686783, 1.28409)
+
+[node name="Button3D" type="StaticBody3D"]
+script = ExtResource("1_anbk5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_ky1mg")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 4, 0.134354, 0.0102081, -0.0108032)
+shape = SubResource("BoxShape3D_kmg6g")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 0.756993, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+font = ExtResource("2_5vink")
+font_size = 40
+outline_size = 7

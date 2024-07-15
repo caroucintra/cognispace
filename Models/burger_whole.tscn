@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bed6byd1025vd"]
+
+[ext_resource type="PackedScene" uid="uid://sw1qosstxeud" path="res://Assets/restaurant_gltf/food_burger.gltf" id="1_nqavx"]
+
+[node name="food_burger2" instance=ExtResource("1_nqavx")]
+
+[node name="food_burger" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

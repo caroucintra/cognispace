@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=3 uid="uid://b3or06io3upbg"]
+
+[ext_resource type="Script" path="res://Scenes/ContandoTrocos/Level1/Scene1.gd" id="1_o0k3e"]
+[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_125pm"]
+[ext_resource type="PackedScene" uid="uid://v3ankl06dpwe" path="res://Models/kitchencounter_straight_a_backsplash.tscn" id="3_4vyyx"]
+[ext_resource type="PackedScene" uid="uid://qsx6ti0x7lj3" path="res://Models/kitchencounter_innercorner_backsplash.tscn" id="4_1odiw"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="5_psk6t"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="6_ugkml"]
+[ext_resource type="ButtonGroup" uid="uid://buj4lhr8kttyg" path="res://ThemeEditor/BG1.tres" id="7_pl0ie"]
+[ext_resource type="PackedScene" uid="uid://dhskccofohm6r" path="res://Models/bill_20_euro.tscn" id="8_pdqys"]
+[ext_resource type="PackedScene" uid="uid://dlmrvwy7u0a7r" path="res://Models/bill_10_euro.tscn" id="9_t6one"]
+[ext_resource type="PackedScene" uid="uid://4r3ylva07f66" path="res://Models/wall.tscn" id="10_ths0o"]
+[ext_resource type="PackedScene" uid="uid://cewv8iqxjvft3" path="res://Models/wall_window.tscn" id="11_ak5m6"]
+[ext_resource type="PackedScene" uid="uid://b7vclw7gmvpu7" path="res://Models/wall_half.tscn" id="12_n6fkm"]
+[ext_resource type="PackedScene" uid="uid://rjx223xqip67" path="res://Models/coin_2_euro.tscn" id="13_ox7an"]
+[ext_resource type="PackedScene" uid="uid://b7rmcatykqepf" path="res://Models/coin_20_cents.tscn" id="14_652cq"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="15_qnbm3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("2_125pm")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(90, 2, 90)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_o0k3e")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.390804, -0.906769, -0.158252, 0.728786, -0.409831, 0.548553, -0.562267, 0.0990449, 0.821003, -26.0655, 34.8897, 25.4685)
+shadow_enabled = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.718475, 0.428824, -0.547635, 0.0692798, 0.739301, 0.669802, 0.692094, -0.519175, 0.50146, 3.51851, -1.3798, 0.903079)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(0.998752, -0.0303086, 0.0396993, 0.0237348, 0.987363, 0.156691, -0.0439458, -0.155553, 0.986849, -3.96903, 1.0883, 17.4474)
+projection = 1
+size = 28.159
+
+[node name="Counter" type="Node3D" parent="."]
+transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
+
+[node name="kitchencounter_straight_A_backsplash2" parent="Counter" instance=ExtResource("3_4vyyx")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, -1.522, 0, -9.846)
+
+[node name="kitchencounter_innercorner_backsplash2" parent="Counter" instance=ExtResource("4_1odiw")]
+transform = Transform3D(3.13833, 0, 3.89242, 0, 5, 0, -3.89242, 0, 3.13833, -8.598, 0, -15.575)
+
+[node name="kitchencounter_straight_A_backsplash3" parent="Counter" instance=ExtResource("3_4vyyx")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, 6.21978, 0, -3.66817)
+
+[node name="kitchencounter_innercorner_backsplash3" parent="Counter" instance=ExtResource("4_1odiw")]
+transform = Transform3D(3.90216, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90216, 14.021, 0, 2.51741)
+
+[node name="bill_20_euro" parent="." instance=ExtResource("8_pdqys")]
+transform = Transform3D(1.59746, 0, 0, 0, 1.59746, 0, 0, 0, 1.59746, 0, 7.11469, 0)
+
+[node name="bill_10_euro" parent="." instance=ExtResource("9_t6one")]
+transform = Transform3D(1.61598, 0, -0.651423, 0, 1.74234, 0, 0.651423, 0, 1.61598, 2.11126, 7.09687, 3.33661)
+
+[node name="wall2" parent="." instance=ExtResource("10_ths0o")]
+transform = Transform3D(5.96961, 0, -4.90001, 0, 7.7231, 0, 4.90001, 0, 5.96961, -11.0187, -0.343378, -21.3725)
+
+[node name="wall_window_closed2" parent="." instance=ExtResource("11_ak5m6")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 11.702, -0.343, -2.82479)
+
+[node name="wall_half2" parent="." instance=ExtResource("12_n6fkm")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 22.486, -0.343, 5.92857)
+
+[node name="coin_2_euro" parent="." instance=ExtResource("13_ox7an")]
+transform = Transform3D(9.17873, 0, 0, 0, 9.17873, 0, 0, 0, 9.17873, -4.95286, 6.86058, -6.72028)
+
+[node name="coin_20_cents" parent="." instance=ExtResource("14_652cq")]
+transform = Transform3D(7.88044, 0, 0, 0, 7.88044, 0, 0, 0, 7.88044, -7.89213, 6.94537, -2.96579)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -367.5
+offset_top = -122.0
+offset_right = 367.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quanto dinheiro há em cima da mesa?"
+label_settings = ExtResource("5_psk6t")
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="A1Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A3Button")
+focus_neighbor_right = NodePath("../A2Button")
+theme = ExtResource("6_ugkml")
+toggle_mode = true
+button_group = ExtResource("7_pl0ie")
+text = "€21.70"
+
+[node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A1Button")
+focus_neighbor_right = NodePath("../A3Button")
+theme = ExtResource("6_ugkml")
+toggle_mode = true
+button_group = ExtResource("7_pl0ie")
+text = "€32.20"
+
+[node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A2Button")
+focus_neighbor_right = NodePath("../A1Button")
+theme = ExtResource("6_ugkml")
+toggle_mode = true
+button_group = ExtResource("7_pl0ie")
+text = "€30.20"
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("6_ugkml")
+text = " Voltar"
+icon = ExtResource("15_qnbm3")
+
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A3Button" to="." method="_on_a3_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]

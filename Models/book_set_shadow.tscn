@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cong4g7rdkbeq"]
+
+[ext_resource type="PackedScene" uid="uid://co5jdksy6p2ds" path="res://Assets/furniture_gltf/book_set.gltf" id="1_netdx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a2p2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="book_set2_shadow" instance=ExtResource("1_netdx")]
+
+[node name="book_set" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4a2p2")

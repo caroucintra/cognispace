@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn4e6hh6u0nlh"]
+
+[ext_resource type="PackedScene" uid="uid://de4xhrlq6tbb5" path="res://Assets/dungeon_gltf/keyring.gltf" id="1_jveeq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7rl3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="keyring2_shadow" instance=ExtResource("1_jveeq")]
+
+[node name="keyring" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v7rl3")

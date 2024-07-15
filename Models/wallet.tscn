@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://digcmdilhm0ji"]
+
+[ext_resource type="PackedScene" uid="uid://crr5hmebs4hta" path="res://Models/pillow.tscn" id="1_vofj4"]
+[ext_resource type="Texture2D" uid="uid://dyjkrkg2w1pdc" path="res://Assets/5_euro.jpg" id="2_x7a0u"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qgagd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38rlt"]
+albedo_texture = ExtResource("2_x7a0u")
+
+[node name="wallet" type="Node3D"]
+
+[node name="pillow_A4" parent="." instance=ExtResource("1_vofj4")]
+transform = Transform3D(1, 0, 0, 0, 0.574, 0, 0, 0, 1, 0.125, 0.024, -0.085)
+
+[node name="pillow_A5" parent="." instance=ExtResource("1_vofj4")]
+transform = Transform3D(0.980615, -0.112473, 0, 0.195946, 0.562873, 0, 0, 0, 1, 0.122, 0.079, -0.085)
+
+[node name="bill" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.250171, 0, 0, 0, 0.22404, 0, 0, 0, 0.141231, 0.389, 0.0794105, -0.0867186)
+mesh = SubResource("PlaneMesh_qgagd")
+surface_material_override/0 = SubResource("StandardMaterial3D_38rlt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.967088, -0.0560964, 0.24818, -0.089504, 0.838053, 0.538197, -0.238179, -0.542698, 0.80545, 4.57821, 5.53511, 0.505236)
+fov = 109.688

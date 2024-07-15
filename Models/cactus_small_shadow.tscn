@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3nxy0qc8sv25"]
+
+[ext_resource type="PackedScene" uid="uid://hgaaor7dri3q" path="res://Assets/furniture_gltf/cactus_small_A.gltf" id="1_55pq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr74j"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="cactus_small_A2_shadow" instance=ExtResource("1_55pq6")]
+
+[node name="cactus_small_A" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wr74j")

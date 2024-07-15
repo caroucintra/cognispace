@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyelxx86jlc5x"]
+
+[ext_resource type="PackedScene" uid="uid://b1j4wxq53n6n" path="res://Assets/restaurant_gltf/kitchentable_B_large.gltf" id="1_3pkfc"]
+
+[node name="kitchentable_B_large2" instance=ExtResource("1_3pkfc")]
+
+[node name="kitchentable_B_large" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

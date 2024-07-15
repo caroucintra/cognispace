@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://k0bb7mgjgvbf"]
+
+[ext_resource type="Texture2D" uid="uid://cc04jte2bbdbk" path="res://Assets/grass-texture.jpg" id="1_2fbxh"]
+[ext_resource type="Script" path="res://Scenes/ParPerfeito/Level1/Scene2.gd" id="1_y2j30"]
+[ext_resource type="PackedScene" uid="uid://bed6byd1025vd" path="res://Models/burger_whole.tscn" id="2_dj00a"]
+[ext_resource type="PackedScene" uid="uid://dyelxx86jlc5x" path="res://Models/kitchen_table_blue.tscn" id="3_hij1s"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="5_27b1s"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="5_nthkf"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="7_j6na0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("1_2fbxh")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(80, 2, 80)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_y2j30")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.3916, -0.906461, -0.158047, 0.728167, -0.410301, 0.549023, -0.562514, 0.0999123, 0.820728, -26.066, 34.89, 25.469)
+shadow_enabled = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.564073, 0.706056, -0.440008, 0.554867, 0, 0.490025, 2.9982)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, -2.98023e-08, 3.57628e-07, -5.96046e-08, 1, -1.04308e-07, -2.68221e-07, -2.98023e-08, 1, -4.27146, 0.352955, 30.1049)
+projection = 1
+size = 28.159
+
+[node name="food_burger2" parent="." instance=ExtResource("2_dj00a")]
+transform = Transform3D(0.784957, -0.0485094, -0.617648, 0.0322804, 0.998778, -0.037418, 0.618709, 0.00943379, 0.785564, -2.89263, 5.52071, -1.96117)
+
+[node name="kitchentable_B_large2" parent="." instance=ExtResource("3_hij1s")]
+transform = Transform3D(0.932853, 0, -0.360257, 0, 1, 0, 0.360257, 0, 0.932853, -0.931406, 0.288669, -1.92693)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -367.5
+offset_top = -122.0
+offset_right = 367.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Onde está o hambúrger?"
+label_settings = ExtResource("5_nthkf")
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="A1Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A3Button")
+focus_neighbor_right = NodePath("../A2Button")
+theme = ExtResource("5_27b1s")
+text = "O hambúrger 
+está em cima 
+da mesa"
+
+[node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A1Button")
+focus_neighbor_right = NodePath("../A3Button")
+theme = ExtResource("5_27b1s")
+text = "O hambúrger 
+está embaixo
+da mesa"
+
+[node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A2Button")
+focus_neighbor_right = NodePath("../A1Button")
+theme = ExtResource("5_27b1s")
+text = "O hambúrger 
+está ao lado
+da mesa"
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("5_27b1s")
+text = " Voltar"
+icon = ExtResource("7_j6na0")
+
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A3Button" to="." method="_on_a3_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]

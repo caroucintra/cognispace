@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt8en70kwhkbm"]
+
+[ext_resource type="PackedScene" uid="uid://dwaw6t1a4mdik" path="res://Assets/restaurant_gltf/kitchencounter_straight_A.gltf" id="1_lafxj"]
+
+[node name="kitchencounter_straight_A2" instance=ExtResource("1_lafxj")]

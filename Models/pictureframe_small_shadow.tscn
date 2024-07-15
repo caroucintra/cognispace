@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://7l7u01msuo5v"]
+
+[ext_resource type="PackedScene" uid="uid://cf7vjqvxr0if8" path="res://Assets/furniture_gltf/pictureframe_small_A.gltf" id="1_d2gi4"]
+[ext_resource type="Script" path="res://Models/pictureframe_small_shadow.gd" id="2_6hn7u"]
+[ext_resource type="PackedScene" uid="uid://egxtsc1xhmct" path="res://Models/Interactable.tscn" id="4_ylpho"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0uij"]
+albedo_color = Color(0, 0, 0, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.56
+grow_amount = -0.278
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_008ql"]
+
+[node name="pictureframe_small_shadow" instance=ExtResource("1_d2gi4")]
+script = ExtResource("2_6hn7u")
+
+[node name="pictureframe_small_A" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i0uij")
+
+[node name="Interactable" parent="." index="1" instance=ExtResource("4_ylpho")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(0.62052, 0, 0, 0, 0.62052, 0, 0, 0, 0.62052, 0, 0, 0)
+shape = SubResource("BoxShape3D_008ql")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="mouse_entered" from="Interactable" to="." method="_on_interactable_mouse_entered"]
+[connection signal="mouse_exited" from="Interactable" to="." method="_on_interactable_mouse_exited"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]

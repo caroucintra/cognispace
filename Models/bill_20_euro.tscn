@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhskccofohm6r"]
+
+[ext_resource type="Texture2D" uid="uid://dnhjyy0mrsc5u" path="res://Assets/20_euro.jpg" id="1_18lt2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r5vkc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aik0b"]
+albedo_texture = ExtResource("1_18lt2")
+
+[node name="bill_20_euro" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.97569, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_r5vkc")
+surface_material_override/0 = SubResource("StandardMaterial3D_aik0b")

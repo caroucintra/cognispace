@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://rjx223xqip67"]
+
+[ext_resource type="Texture2D" uid="uid://dpyhfdqn351ps" path="res://Assets/2_euro_coin.png" id="1_1ie61"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tc7r"]
+albedo_color = Color(0.890196, 0.894118, 0.898039, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xyc67"]
+material = SubResource("StandardMaterial3D_4tc7r")
+
+[node name="coin_2_euro" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.106711, 0, 0, 0, -4.66448e-09, 0.106711, 0, -0.106711, -4.66448e-09, 0, 0.0109893, 0)
+texture = ExtResource("1_1ie61")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.296549, 0, 0, 0, 0.0108268, 0, 0, 0, 0.296549, 0, 0, -0.00479025)
+mesh = SubResource("CylinderMesh_xyc67")

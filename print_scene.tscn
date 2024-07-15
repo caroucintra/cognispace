@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cukhsn114ajtp"]
+
+[ext_resource type="PackedScene" uid="uid://cjpdjct5cu50h" path="res://Assets/restaurant_gltf/pan_A.gltf" id="1_mp5m0"]
+[ext_resource type="PackedScene" uid="uid://c5vgutu4rxxw0" path="res://Assets/restaurant_gltf/food_ingredient_onion_rings.gltf" id="2_bh0v7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_usbg6"]
+size = Vector2(50, 50)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_usbg6")
+
+[node name="CameraPivot2" type="Node3D" parent="."]
+transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.564073, 0.706056, -0.440008, 0.554867, 0, 0.490025, 2.9982)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot2"]
+transform = Transform3D(0.975229, 0.208363, -0.0742576, -0.198657, 0.972663, 0.120264, 0.0972861, -0.102533, 0.989961, -3.93889, 4.29182, 32.8052)
+projection = 1
+size = 28.159
+
+[node name="pan_A2" parent="." instance=ExtResource("1_mp5m0")]
+transform = Transform3D(25.6274, 0, 0, 0, 25.6274, 0, 0, 0, 25.6274, 0, -0.883318, 0)
+
+[node name="food_ingredient_onion_rings2" parent="." instance=ExtResource("2_bh0v7")]
+transform = Transform3D(19.3465, 0, 0, 0, 19.3465, 0, 0, 0, 19.3465, 0.793196, 0, -1.80043)
+
+[node name="food_ingredient_onion_rings3" parent="." instance=ExtResource("2_bh0v7")]
+transform = Transform3D(-2.45022, 0, -19.1907, 0, 19.3465, 0, 19.1907, 0, -2.45022, -1.78436, 0.467449, -1.80043)
+
+[node name="food_ingredient_onion_rings4" parent="." instance=ExtResource("2_bh0v7")]
+transform = Transform3D(17.1431, 0, 8.96675, 0, 19.3465, 0, -8.96675, 0, 17.1431, -0.997725, 0, 1.47038)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.390804, -0.906768, -0.158252, 0.728786, -0.409831, 0.548553, -0.562267, 0.099045, 0.821003, -26.0655, 34.8897, 25.4685)
