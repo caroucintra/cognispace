@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj1xhbc2wi82j"]
 
-[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_m27sv"]
-[ext_resource type="Script" path="res://Menus/menu.gd" id="2_cy46a"]
-[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_ntpvb"]
-[ext_resource type="Texture2D" uid="uid://cjpkg2uf080me" path="res://Assets/Logo_CogniSpace.png" id="4_tmdab"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_h31ax"]
+[ext_resource type="Script" path="res://Menus/Menu.gd" id="2_8b7hd"]
+[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_nlmmj"]
+[ext_resource type="Texture2D" uid="uid://cjpkg2uf080me" path="res://Assets/Logo_CogniSpace.png" id="4_bnyp4"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,8 +16,8 @@ offset_right = 1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_m27sv")
-script = ExtResource("2_cy46a")
+theme = ExtResource("1_h31ax")
+script = ExtResource("2_8b7hd")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,7 +29,7 @@ offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.72948, 1.3717)
-texture = ExtResource("3_ntpvb")
+texture = ExtResource("3_nlmmj")
 expand_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -71,7 +71,7 @@ text = "Sair"
 [node name="Logo" type="Sprite2D" parent="HBoxContainer"]
 position = Vector2(723, 254)
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("4_tmdab")
+texture = ExtResource("4_bnyp4")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

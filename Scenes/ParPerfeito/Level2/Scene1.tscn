@@ -1,0 +1,424 @@
+[gd_scene load_steps=25 format=3 uid="uid://6ak3dnjocmq2"]
+
+[ext_resource type="Script" path="res://Scenes/ParPerfeito/Level2/Scene1.gd" id="1_2d8dm"]
+[ext_resource type="Texture2D" uid="uid://cc04jte2bbdbk" path="res://Assets/grass-texture.jpg" id="2_5mr3r"]
+[ext_resource type="PackedScene" uid="uid://bed6byd1025vd" path="res://Models/burger_whole.tscn" id="3_3xm8s"]
+[ext_resource type="PackedScene" uid="uid://dyelxx86jlc5x" path="res://Models/kitchen_table_blue.tscn" id="4_i2tee"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="5_40kwl"]
+[ext_resource type="PackedScene" uid="uid://ccofvk4ih5mrf" path="res://Models/chair_blue.tscn" id="5_qapma"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="5_ylkdc"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="6_aak5y"]
+[ext_resource type="PackedScene" uid="uid://bci5tpxisojaq" path="res://Assets/city_gltf/bush.gltf" id="6_s7rea"]
+[ext_resource type="PackedScene" uid="uid://cgodg3luw65nd" path="res://Assets/minigame_gltf/ball.gltf.glb" id="7_ceo7i"]
+[ext_resource type="PackedScene" uid="uid://lrrjvcnwlbi3" path="res://Models/plate_dirty.tscn" id="8_r208m"]
+[ext_resource type="PackedScene" uid="uid://bdu6505qqe08q" path="res://Assets/restaurant_gltf/mustard.gltf" id="9_00o2q"]
+[ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="9_6jsbp"]
+[ext_resource type="PackedScene" uid="uid://bfv6gi8dnthfi" path="res://Assets/restaurant_gltf/jar_A_small.gltf" id="10_ctc5q"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="10_v1evu"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="11_dc7av"]
+[ext_resource type="PackedScene" uid="uid://bwm7glibhioya" path="res://Assets/restaurant_gltf/ketchup.gltf" id="11_rwynm"]
+[ext_resource type="PackedScene" uid="uid://b6vp5qkfn0xpc" path="res://Models/chair_yellow.tscn" id="12_nbaup"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("2_5mr3r")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(80, 2, 80)
+
+[sub_resource type="Animation" id="Animation_kx2mp"]
+resource_name = "play_feedback"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+_data = {
+"play_feedback": SubResource("Animation_kx2mp")
+}
+
+[sub_resource type="Curve" id="Curve_0siab"]
+_data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_2d8dm")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.3916, -0.906461, -0.158047, 0.728167, -0.410301, 0.549023, -0.562514, 0.0999123, 0.820728, -26.066, 34.89, 25.469)
+shadow_enabled = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.564073, 0.706056, -0.440008, 0.554867, 0, 0.490025, 2.9982)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, -2.98023e-08, 3.57628e-07, -5.96046e-08, 1, -1.04308e-07, -2.68221e-07, -2.98023e-08, 1, -4.27146, 0.352955, 30.1049)
+projection = 1
+size = 28.159
+
+[node name="food_burger2" parent="." instance=ExtResource("3_3xm8s")]
+transform = Transform3D(0.784957, -0.0485094, -0.617648, 0.0322804, 0.998778, -0.037418, 0.618709, 0.00943379, 0.785564, -10.8226, 2.31469, -4.57065)
+
+[node name="kitchentable_B_large2" parent="." instance=ExtResource("4_i2tee")]
+transform = Transform3D(0.932853, 0, -0.360257, 0, 1, 0, 0.360257, 0, 0.932853, -0.6691, 0.49386, -1.95419)
+
+[node name="chair_blue" parent="." instance=ExtResource("5_qapma")]
+transform = Transform3D(5.47514, 0, 2.50025, 0, 6.019, 0, -2.50025, 0, 5.47514, -11.4453, -0.634586, -6.23671)
+
+[node name="bush2" parent="." instance=ExtResource("6_s7rea")]
+transform = Transform3D(17.4778, 0, 0, 0, 17.4778, 0, 0, 0, 17.4778, -2.71236, -0.0699596, -18.2645)
+
+[node name="ball_gltf" parent="." instance=ExtResource("7_ceo7i")]
+transform = Transform3D(3.60334, 0, 0, 0, 2.9924, -2.0074, 0, 2.0074, 2.9924, 11.9057, 2.89985, 7.52299)
+
+[node name="plate_dirty2" parent="." instance=ExtResource("8_r208m")]
+transform = Transform3D(4.37873, 0, 0, 0, 5.26175, 0, 0, 0, 4.37873, 0, 5.9546, 0)
+
+[node name="mustard2" parent="." instance=ExtResource("9_00o2q")]
+transform = Transform3D(3.79772, 0, 0, 0, 3.79772, 0, 0, 0, 3.79772, -4.1726, 5.52565, -4.24972)
+
+[node name="jar_A_small2" parent="." instance=ExtResource("10_ctc5q")]
+transform = Transform3D(3.79772, 0, 0, 0, 3.79772, 0, 0, 0, 3.79772, -2.2201, 5.52565, -4.56666)
+
+[node name="ketchup2" parent="." instance=ExtResource("11_rwynm")]
+transform = Transform3D(3.79772, 0, 0, 0, 3.79772, 0, 0, 0, 3.79772, -4.05053, 5.52565, -5.78955)
+
+[node name="chair_yellow" parent="." instance=ExtResource("12_nbaup")]
+transform = Transform3D(3.49756, 0, -4.89851, 0, 6.019, 0, 4.89851, 0, 3.49756, 10.0325, -0.32032, -1.33512)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -367.5
+offset_top = -122.0
+offset_right = 367.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Onde está o hambúrger?"
+label_settings = ExtResource("5_40kwl")
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="A1Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A3Button")
+focus_neighbor_right = NodePath("../A2Button")
+theme = ExtResource("5_ylkdc")
+text = "O hambúrger 
+está em cima 
+da mesa"
+
+[node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A1Button")
+focus_neighbor_right = NodePath("../A3Button")
+theme = ExtResource("5_ylkdc")
+text = "O hambúrger 
+está na cadeira
+amarela"
+
+[node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A2Button")
+focus_neighbor_right = NodePath("../A1Button")
+theme = ExtResource("5_ylkdc")
+text = "O hambúrger 
+está na cadeira
+azul"
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("5_ylkdc")
+text = " Voltar"
+icon = ExtResource("6_aak5y")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("5_ylkdc")
+max_value = 5.0
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6jsbp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confetti" type="Node2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Green" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="Green2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_0siab")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("5_ylkdc")
+text = " Ajuda"
+icon = ExtResource("10_v1evu")
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("11_dc7av")
+
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A3Button" to="." method="_on_a3_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

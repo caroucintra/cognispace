@@ -6,6 +6,6 @@
 font = ExtResource("1_fchj3")
 font_size = 45
 font_color = Color(0, 0, 0, 1)
-outline_size = 7
+outline_size = 35
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.839216)

@@ -1,0 +1,440 @@
+[gd_scene load_steps=26 format=3 uid="uid://d018jbxbvqr7p"]
+
+[ext_resource type="Script" path="res://Scenes/ContandoTrocos/Level3/Scene3.gd" id="1_4ic1i"]
+[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_cjby8"]
+[ext_resource type="PackedScene" uid="uid://v3ankl06dpwe" path="res://Models/kitchencounter_straight_a_backsplash.tscn" id="3_b8bw8"]
+[ext_resource type="PackedScene" uid="uid://qsx6ti0x7lj3" path="res://Models/kitchencounter_innercorner_backsplash.tscn" id="4_0posa"]
+[ext_resource type="PackedScene" uid="uid://cn857louttf4x" path="res://Models/bill_50_euro.tscn" id="5_ecuxc"]
+[ext_resource type="PackedScene" uid="uid://dlmrvwy7u0a7r" path="res://Models/bill_10_euro.tscn" id="6_6i36a"]
+[ext_resource type="PackedScene" uid="uid://4r3ylva07f66" path="res://Models/wall.tscn" id="7_ygfdh"]
+[ext_resource type="PackedScene" uid="uid://cewv8iqxjvft3" path="res://Models/wall_window.tscn" id="8_0oxof"]
+[ext_resource type="PackedScene" uid="uid://b7vclw7gmvpu7" path="res://Models/wall_half.tscn" id="9_kt6yw"]
+[ext_resource type="PackedScene" uid="uid://rjx223xqip67" path="res://Models/coin_2_euro.tscn" id="10_xmh0u"]
+[ext_resource type="PackedScene" uid="uid://b7rmcatykqepf" path="res://Models/coin_20_cents.tscn" id="11_2ta0p"]
+[ext_resource type="PackedScene" uid="uid://ce6olbrax7lef" path="res://Models/coin_10_cents.tscn" id="11_dab43"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="12_cvphb"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="13_bvp2b"]
+[ext_resource type="ButtonGroup" uid="uid://buj4lhr8kttyg" path="res://ThemeEditor/BG1.tres" id="14_71gmn"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="15_nnr0k"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="16_x2ayj"]
+[ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="17_84mg5"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="18_pi6wy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("2_cjby8")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(90, 2, 90)
+
+[sub_resource type="Animation" id="Animation_kx2mp"]
+resource_name = "play_feedback"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+_data = {
+"play_feedback": SubResource("Animation_kx2mp")
+}
+
+[sub_resource type="Curve" id="Curve_amvv7"]
+_data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_4ic1i")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.390804, -0.906769, -0.158252, 0.728786, -0.409831, 0.548553, -0.562267, 0.0990449, 0.821003, -26.0655, 34.8897, 25.4685)
+shadow_enabled = true
+
+[node name="Counter" type="Node3D" parent="."]
+transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
+
+[node name="kitchencounter_straight_A_backsplash2" parent="Counter" instance=ExtResource("3_b8bw8")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, -1.522, 0, -9.846)
+
+[node name="kitchencounter_innercorner_backsplash2" parent="Counter" instance=ExtResource("4_0posa")]
+transform = Transform3D(3.13833, 0, 3.89242, 0, 5, 0, -3.89242, 0, 3.13833, -8.598, 0, -15.575)
+
+[node name="kitchencounter_straight_A_backsplash3" parent="Counter" instance=ExtResource("3_b8bw8")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, 6.21978, 0, -3.66817)
+
+[node name="kitchencounter_innercorner_backsplash3" parent="Counter" instance=ExtResource("4_0posa")]
+transform = Transform3D(3.90216, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90216, 14.021, 0, 2.51741)
+
+[node name="bill_50_euro" parent="." instance=ExtResource("5_ecuxc")]
+transform = Transform3D(1.63748, 0, 0, 0, 1.63748, 0, 0, 0, 1.63748, 0, 7.13754, 0)
+
+[node name="bill_10_euro" parent="." instance=ExtResource("6_6i36a")]
+transform = Transform3D(1.61598, 0, -0.651423, 0, 1.74234, 0, 0.651423, 0, 1.61598, 2.11126, 7.09687, 3.33661)
+
+[node name="wall2" parent="." instance=ExtResource("7_ygfdh")]
+transform = Transform3D(5.96961, 0, -4.90001, 0, 7.7231, 0, 4.90001, 0, 5.96961, -11.0187, -0.343378, -21.3725)
+
+[node name="wall_window_closed2" parent="." instance=ExtResource("8_0oxof")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 11.702, -0.343, -2.82479)
+
+[node name="wall_half2" parent="." instance=ExtResource("9_kt6yw")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 22.486, -0.343, 5.92857)
+
+[node name="coin_2_euro2" parent="." instance=ExtResource("10_xmh0u")]
+transform = Transform3D(0.161489, 0, -9.62722, 0, 9.62858, 0, 9.62722, 0, 0.161489, -0.833492, 6.95784, -5.40457)
+
+[node name="coin_10_cents" parent="." instance=ExtResource("11_dab43")]
+transform = Transform3D(5.93369, 0, 6.69432, 0, 8.94554, 0, -6.69432, 0, 5.93369, -4.42516, 6.89027, -3.21626)
+
+[node name="coin_2_euro" parent="." instance=ExtResource("10_xmh0u")]
+transform = Transform3D(9.17873, 0, 0, 0, 9.17873, 0, 0, 0, 9.17873, -4.95286, 6.86058, -6.72028)
+
+[node name="coin_20_cents" parent="." instance=ExtResource("11_2ta0p")]
+transform = Transform3D(8.31707, 0, 0, 0, 8.31707, 0, 0, 0, 8.31707, -7.89213, 6.94537, -2.96579)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -367.5
+offset_top = -122.0
+offset_right = 367.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quanto dinheiro há em cima da mesa?"
+label_settings = ExtResource("12_cvphb")
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="A1Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A3Button")
+focus_neighbor_right = NodePath("../A2Button")
+theme = ExtResource("13_bvp2b")
+toggle_mode = true
+button_group = ExtResource("14_71gmn")
+text = "€63.50"
+
+[node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A1Button")
+focus_neighbor_right = NodePath("../A3Button")
+theme = ExtResource("13_bvp2b")
+toggle_mode = true
+button_group = ExtResource("14_71gmn")
+text = "€54.20"
+
+[node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+focus_neighbor_left = NodePath("../A2Button")
+focus_neighbor_right = NodePath("../A1Button")
+theme = ExtResource("13_bvp2b")
+toggle_mode = true
+button_group = ExtResource("14_71gmn")
+text = "€64.30"
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("13_bvp2b")
+text = " Voltar"
+icon = ExtResource("15_nnr0k")
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_bvp2b")
+text = " Ajuda"
+icon = ExtResource("16_x2ayj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("13_bvp2b")
+max_value = 5.0
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_84mg5")
+volume_db = -9.177
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confetti" type="Node2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Green" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="Green2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_amvv7")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("18_pi6wy")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.718475, 0.428824, -0.547635, 0.0692798, 0.739301, 0.669802, 0.692094, -0.519175, 0.50146, -13.5405, 6.72192, -2.33047)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(0.998752, -0.0303093, 0.0396996, 0.0237353, 0.987363, 0.156691, -0.0439462, -0.155553, 0.986849, 10.3182, 1.52309, 2.77308)
+projection = 1
+size = 19.9262
+
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoxContainer/A3Button" to="." method="_on_a3_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

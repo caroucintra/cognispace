@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8mfswle342q7"]
+
+[ext_resource type="PackedScene" uid="uid://d0int5toncvl3" path="res://Assets/restaurant_gltf/plate.gltf" id="1_twc2r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5cu5"]
+albedo_color = Color(0.834826, 0.454037, 0.877084, 1)
+
+[node name="plate_pink" instance=ExtResource("1_twc2r")]
+
+[node name="plate" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h5cu5")

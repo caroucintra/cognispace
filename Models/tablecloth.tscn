@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b04ehpgaq8e0k"]
+
+[ext_resource type="PackedScene" uid="uid://bsn1v8qyh4jl5" path="res://Assets/restaurant_gltf/food_ingredient_cheese_slice.gltf" id="1_5fc6h"]
+[ext_resource type="Texture2D" uid="uid://bysp41feu8dsk" path="res://Assets/tablecloth.jpg" id="2_nvw35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abp6b"]
+albedo_texture = ExtResource("2_nvw35")
+uv1_scale = Vector3(8, 8, 8)
+
+[node name="food_ingredient_cheese_slice2" instance=ExtResource("1_5fc6h")]
+
+[node name="food_ingredient_cheese_slice" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_abp6b")

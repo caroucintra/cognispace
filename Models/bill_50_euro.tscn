@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cn857louttf4x"]
 
-[ext_resource type="Texture2D" uid="uid://bvavkvw3hw0b7" path="res://Assets/50_euro.jpg" id="1_lx3e6"]
+[ext_resource type="Texture2D" uid="uid://bcqadomurft6w" path="res://Assets/50_euro.jpg" id="1_lx3e6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5vkc"]
 

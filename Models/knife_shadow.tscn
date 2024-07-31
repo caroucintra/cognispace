@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://h6rp24fdmnbh"]
+
+[ext_resource type="PackedScene" uid="uid://du2agx53isorv" path="res://Assets/restaurant_gltf/knife.gltf" id="1_7wirb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cmx5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="knife2" instance=ExtResource("1_7wirb")]
+
+[node name="knife" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2cmx5")

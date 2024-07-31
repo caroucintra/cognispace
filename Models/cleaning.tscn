@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjg5vwiykx8i5"]
+
+[ext_resource type="PackedScene" uid="uid://bwm7glibhioya" path="res://Assets/restaurant_gltf/ketchup.gltf" id="1_kr0wh"]
+[ext_resource type="PackedScene" uid="uid://slvc6bytddu0" path="res://Models/sponge.tscn" id="2_k1n1j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ndkt"]
+albedo_color = Color(0.236188, 1, 0.258993, 1)
+
+[node name="ketchup2" instance=ExtResource("1_kr0wh")]
+
+[node name="ketchup" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ndkt")
+
+[node name="sponge" parent="." index="1" instance=ExtResource("2_k1n1j")]
+transform = Transform3D(0.664774, 0, 0.747044, 0, 1, 0, -0.747044, 0, 0.664774, 0.361445, 0.066642, 0.173156)

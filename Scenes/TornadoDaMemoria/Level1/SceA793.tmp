@@ -1,0 +1,405 @@
+[gd_scene load_steps=39 format=3 uid="uid://cpvrx3nai6i3v"]
+
+[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Level1/Scene1.gd" id="1_hjgpf"]
+[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="1_qdcr2"]
+[ext_resource type="PackedScene" uid="uid://cab8vsxfvdlyp" path="res://Models/wall_2.tscn" id="2_tsdi8"]
+[ext_resource type="PackedScene" uid="uid://f2m020rkfxxk" path="res://Models/wall_half_2.tscn" id="3_aqelg"]
+[ext_resource type="PackedScene" uid="uid://dkauphqq7n2sr" path="res://Assets/furniture_gltf/bed_double_A.gltf" id="4_5o6ud"]
+[ext_resource type="PackedScene" uid="uid://vnqv3ab1h7r0" path="res://Assets/furniture_gltf/lamp_standing.gltf" id="5_35ury"]
+[ext_resource type="PackedScene" uid="uid://c43sxdnt6qicp" path="res://Assets/furniture_gltf/cabinet_small.gltf" id="6_xj16m"]
+[ext_resource type="PackedScene" uid="uid://digcmdilhm0ji" path="res://Models/wallet.tscn" id="7_kpabo"]
+[ext_resource type="PackedScene" uid="uid://chfeieccev0x" path="res://Assets/furniture_gltf/shelf_B_large.gltf" id="8_lhhn8"]
+[ext_resource type="PackedScene" uid="uid://bag7gv3bvhyh2" path="res://Assets/furniture_gltf/rug_rectangle_stripes_A.gltf" id="9_dqx6m"]
+[ext_resource type="PackedScene" uid="uid://hgaaor7dri3q" path="res://Assets/furniture_gltf/cactus_small_A.gltf" id="11_owni8"]
+[ext_resource type="PackedScene" uid="uid://co5jdksy6p2ds" path="res://Assets/furniture_gltf/book_set.gltf" id="12_c186p"]
+[ext_resource type="PackedScene" uid="uid://cf7vjqvxr0if8" path="res://Assets/furniture_gltf/pictureframe_small_A.gltf" id="13_3o7cw"]
+[ext_resource type="PackedScene" uid="uid://c3nxy0qc8sv25" path="res://Models/cactus_small_shadow.tscn" id="14_jg76m"]
+[ext_resource type="PackedScene" uid="uid://cong4g7rdkbeq" path="res://Models/book_set_shadow.tscn" id="15_83ike"]
+[ext_resource type="PackedScene" uid="uid://7l7u01msuo5v" path="res://Models/pictureframe_small_shadow.tscn" id="16_gcl2y"]
+[ext_resource type="PackedScene" uid="uid://dn4e6hh6u0nlh" path="res://Models/keyring_shadow.tscn" id="17_yj7rp"]
+[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Level1/ObjectsAnimation.gd" id="18_iwowf"]
+[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/TornadoAnimation.gd" id="19_w6gom"]
+[ext_resource type="Texture2D" uid="uid://b44cm735rk4s2" path="res://Assets/glow_circle3.png" id="20_3nltm"]
+[ext_resource type="Texture2D" uid="uid://ec716c3waxhg" path="res://Assets/blur_white_dot40.png" id="21_7f6w5"]
+[ext_resource type="AudioStream" uid="uid://b7fq447cj33d4" path="res://Assets/wind-blowing-trimmed2.mp3" id="22_keh2w"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="24_cg1pq"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="25_k66xd"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="26_yaqmv"]
+[ext_resource type="PackedScene" uid="uid://dqcuogswphjri" path="res://Models/keyring_highlighted.tscn" id="27_di2us"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="27_mhjig"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("1_qdcr2")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(80, 2, 80)
+
+[sub_resource type="Animation" id="Animation_elh4p"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_jgm4a"]
+resource_name = "objects_moving"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cactus_small_A2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.60766, 7.01746, -10.9529), Vector3(3.00595, 8.49529, 2.1543), Vector3(10.276, 4.49645, 15.644), Vector3(-1.4604, 4.5926, 7.12693), Vector3(-13.1968, 0.225191, -1.39015)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cactus_small_A2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.606083, 0), Vector3(-0.300587, -0.913993, -0.463671), Vector3(0.178957, -1.28318, -0.108998), Vector3(0.455316, -1.94038, -0.0187912), Vector3(0.0807434, -2.91912, 0.268015)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Keys/keyring2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.386802, 0.360714, -0.179149), Vector3(0.0406234, -1.93803, -0.27509), Vector3(-0.339612, -2.51192, -0.12327), Vector3(-0.0642602, -0.611251, -0.0200005)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("book_set2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(4.80145, 13.5674, -4.73364), Vector3(8.11902, 13.5674, 7.85489), Vector3(-7.9587, 10.5623, 7.85489), Vector3(-9.98062, 10.5623, -5.96088), Vector3(-9.00865, 1.39709, -4.17448)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("book_set2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.754611, 0), Vector3(-0.743587, -1.31512, -0.175137), Vector3(-1.05763, -2.28132, 1.18657), Vector3(-0.653482, -1.1277, -0.0191697), Vector3(-1.18054, -0.961547, -0.0944753)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pictureframe_small_A2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(12.0108, 13.6601, -0.0217915), Vector3(7.2864, 5.87968, 8.36684), Vector3(-0.386838, 5.87968, 10.3431), Vector3(-11.2342, 3.71832, 2.10851), Vector3(-0.175885, 3.62726, 3.72412)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("pictureframe_small_A2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.428077, -0.682843, 0), Vector3(-0.462671, -0.179532, 0.945831), Vector3(-1.16987, -0.896095, 2.05148), Vector3(-0.694729, 0.404497, -0.244274), Vector3(-0.936586, -1.19769, 0.576774)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Keys:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-7.0944, 7.43472, -7.41816), Vector3(-12.7167, 3.65978, 0.577936), Vector3(-2.41785, 3.65978, 0.577936), Vector3(4.22329, 4.61036, 10.0538), Vector3(-4.86022, 3.38369, 8.50882)]
+}
+
+[sub_resource type="Animation" id="Animation_r4wsl"]
+resource_name = "tornado_passing"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tornado/WindAudio:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(3.605),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tornado:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 947), Vector2(2410, 947)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tornado:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ws4m"]
+_data = {
+"RESET": SubResource("Animation_elh4p"),
+"objects_moving": SubResource("Animation_jgm4a"),
+"tornado_passing": SubResource("Animation_r4wsl")
+}
+
+[sub_resource type="Curve" id="Curve_omj66"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 12.8571), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ixsyn"]
+max_value = 2.05
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.506494, 0.946154), 1.45833, 1.45833, 0, 0, Vector2(1, 2.05), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_5jusw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00892866), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e22x5"]
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08352, 0)
+script = ExtResource("1_hjgpf")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.390804, -0.906769, -0.158252, 0.728786, -0.409831, 0.548553, -0.562267, 0.0990449, 0.821003, -26.0655, 34.8897, 25.4685)
+shadow_enabled = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.564073, 0.706056, -0.440008, 0.554867, 0, 0.490025, 2.9982)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(0.998831, 0.0215947, 0.0432516, -0.0288492, 0.984173, 0.174847, -0.0387913, -0.175891, 0.983645, -1.17631, 9.25302, 20.3844)
+size = 28.159
+
+[node name="Counter" type="Node3D" parent="."]
+transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
+
+[node name="SceneBG" type="Node3D" parent="."]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, -11.019, -0.343, -21.372)
+
+[node name="wall3" parent="SceneBG" instance=ExtResource("2_tsdi8")]
+
+[node name="wall4" parent="SceneBG" instance=ExtResource("2_tsdi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7977, 0, -0.0116293)
+
+[node name="wall_half3" parent="SceneBG" instance=ExtResource("3_aqelg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59617, 0, -0.0220425)
+
+[node name="bed_double_A2" parent="SceneBG" instance=ExtResource("4_5o6ud")]
+transform = Transform3D(0.789649, 0, -0.0190912, 0, 0.78988, 0, 0.0190912, 0, 0.789649, 3.77821, 0.0834811, 1.53902)
+
+[node name="lamp_standing2" parent="SceneBG" instance=ExtResource("5_35ury")]
+transform = Transform3D(0.610367, 0, 0.501361, 0, 0.78988, 0, -0.501361, 0, 0.610367, 0.655562, 0.0727052, 1.08759)
+
+[node name="cabinet_small2" parent="SceneBG" instance=ExtResource("6_xj16m")]
+transform = Transform3D(0.90518, 0, 0.0284778, 0, 0.905627, 0, -0.0284778, 0, 0.90518, 1.71035, 0.0568028, 0.730578)
+
+[node name="wallet" parent="SceneBG" instance=ExtResource("7_kpabo")]
+transform = Transform3D(0.3867, -0.00330328, -0.595393, 0.00517182, 0.709939, -0.000579748, 0.595379, -0.00402148, 0.386714, 1.82062, 0.957555, 0.808755)
+
+[node name="shelf_B_large2" parent="SceneBG" instance=ExtResource("8_lhhn8")]
+transform = Transform3D(1.35288, 0, 0.00165303, 0, 1.15954, 0, -0.00514686, 0, 0.434408, 3.48472, 1.61472, 0.219748)
+
+[node name="rug_rectangle_stripes_A2" parent="SceneBG" instance=ExtResource("9_dqx6m")]
+transform = Transform3D(-0.00389862, 0, 0.629342, 0, 0.629354, 0, -0.629342, 0, -0.00389862, 1.86842, -0.0120109, 2.04647)
+
+[node name="cactus_small_A2" parent="." instance=ExtResource("11_owni8")]
+transform = Transform3D(-5.82665, 1.48637, -1.35564, 1.62706, 5.92472, -0.497175, 1.1831, -0.827781, -5.99266, -13.1968, 0.225191, -1.39015)
+
+[node name="book_set2" parent="." instance=ExtResource("12_c186p")]
+transform = Transform3D(1.86823, 3.03407, -1.17001, -0.134589, 1.42035, 3.46833, 3.24906, -1.68578, 0.816438, -9.00865, 1.39709, -4.17448)
+
+[node name="pictureframe_small_A2" parent="." instance=ExtResource("13_3o7cw")]
+transform = Transform3D(3.05931, 1.84087, -2.36224, 1.38336, 2.12639, 3.44865, 2.65618, -3.2277, 0.924677, -0.175885, 3.62726, 3.72412)
+
+[node name="Shadows" type="Node3D" parent="."]
+transform = Transform3D(5.06624, 0, -3.51143, 0, 6.16416, 0, 3.51143, 0, 5.06624, -4.60766, 7.01746, -10.9529)
+visible = false
+
+[node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("14_jg76m")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
+
+[node name="book_set2_shadow" parent="Shadows" instance=ExtResource("15_83ike")]
+transform = Transform3D(0.601706, 0, -0.0900332, 0, 0.608406, 0, 0.0900332, 0, 0.601706, 1.82929, 1.06258, -0.0402979)
+
+[node name="pictureframe_small_shadow" parent="Shadows" instance=ExtResource("16_gcl2y")]
+transform = Transform3D(0.69248, 0.0221092, -0.0484536, 0, 0.631856, 0.288313, 0.0532594, -0.287464, 0.629995, 3.22597, 1.07762, -0.0782955)
+
+[node name="keyring2_shadow" parent="Shadows" instance=ExtResource("17_yj7rp")]
+transform = Transform3D(0.403999, 0, 0.280013, 0, 0.491551, 0, -0.280013, 0, 0.403999, -0.00483811, 0.0677369, 0.70109)
+
+[node name="ObjectsAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ws4m")
+}
+script = ExtResource("18_iwowf")
+
+[node name="Tornado" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.546421)
+position = Vector2(50, 947)
+
+[node name="TornadoAnimation" type="AnimationPlayer" parent="Tornado"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7ws4m")
+}
+script = ExtResource("19_w6gom")
+
+[node name="tornado" type="CPUParticles2D" parent="Tornado"]
+scale = Vector2(1, 0.5)
+amount = 15
+lifetime = 0.5
+texture = ExtResource("20_3nltm")
+gravity = Vector2(0, -5000)
+angular_velocity_min = -720.0
+angular_velocity_max = -503.3
+angular_velocity_curve = SubResource("Curve_omj66")
+scale_amount_curve = SubResource("Curve_ixsyn")
+
+[node name="dots" type="CPUParticles2D" parent="Tornado"]
+amount = 30
+texture = ExtResource("21_7f6w5")
+emission_shape = 1
+emission_sphere_radius = 20.0
+spread = 180.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.1
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+scale_amount_curve = SubResource("Curve_5jusw")
+
+[node name="WindAudio" type="AudioStreamPlayer2D" parent="Tornado"]
+stream = ExtResource("22_keh2w")
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("24_cg1pq")
+text = " Voltar"
+icon = ExtResource("25_k66xd")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("24_cg1pq")
+max_value = 180.0
+show_percentage = false
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("24_cg1pq")
+text = " Ajuda"
+icon = ExtResource("26_yaqmv")
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("27_mhjig")
+
+[node name="Keys" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86022, 3.38369, 8.50882)
+
+[node name="keyring2" parent="Keys" instance=ExtResource("27_di2us")]
+transform = Transform3D(3.1, 0, 0, 0, 3.1, 0, 0, 0, 3.1, 4.86022, 2.61631, -8.50882)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Keys"]
+transform = Transform3D(3.60251, 0, 0, 0, 3.60251, 0, 0, 0, 3.60251, 0, 0, 0)
+shape = SubResource("SphereShape3D_e22x5")
+
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]
+[connection signal="input_event" from="Keys" to="." method="_on_keys_input_event"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5bfswiuocaco"]
+
+[ext_resource type="PackedScene" uid="uid://baan3shmfujsj" path="res://Assets/restaurant_gltf/pan_006.gltf" id="1_n6cbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmlen"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="pan_0062" instance=ExtResource("1_n6cbl")]
+
+[node name="pan_006" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xmlen")

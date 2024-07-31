@@ -1,0 +1,589 @@
+[gd_scene load_steps=34 format=3 uid="uid://csk7yo5xyk51f"]
+
+[ext_resource type="Script" path="res://Scenes/TudoPronto/Level2/Scene3.gd" id="1_xwmu0"]
+[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_i1505"]
+[ext_resource type="Theme" uid="uid://dd6pq4u1bplm7" path="res://ThemeEditor/tudopronto.tres" id="3_famtn"]
+[ext_resource type="ButtonGroup" uid="uid://dpi5umlb8ints" path="res://ThemeEditor/BG2.tres" id="4_qhmo6"]
+[ext_resource type="Texture2D" uid="uid://c367p0vi7k0al" path="res://Assets/burger_plate.png" id="5_smbpb"]
+[ext_resource type="Texture2D" uid="uid://ct72sbunx3l3c" path="res://Assets/burger_ingredients.png" id="6_40ivr"]
+[ext_resource type="Texture2D" uid="uid://ds5tgd2fxw5es" path="res://Assets/burger.png" id="7_rwqk1"]
+[ext_resource type="Texture2D" uid="uid://cimpfu442ov32" path="res://Assets/burger_ingredients_chopped.png" id="8_aitvr"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="9_1b7d8"]
+[ext_resource type="ButtonGroup" uid="uid://dt1kacio8q381" path="res://ThemeEditor/BG3.tres" id="10_h7lrd"]
+[ext_resource type="Texture2D" uid="uid://b77twprdyol63" path="res://Assets/buns.png" id="11_pe838"]
+[ext_resource type="Texture2D" uid="uid://bchp22l64yia" path="res://Assets/plate2.png" id="12_6rxs5"]
+[ext_resource type="Texture2D" uid="uid://t5shyy5m1c6l" path="res://Assets/round_table2.png" id="13_vy20a"]
+[ext_resource type="Texture2D" uid="uid://bq30op65d1fj6" path="res://Assets/knife2.png" id="14_cihfn"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="15_h7xdf"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="16_ps3f4"]
+[ext_resource type="PackedScene" uid="uid://v3ankl06dpwe" path="res://Models/kitchencounter_straight_a_backsplash.tscn" id="17_ltxus"]
+[ext_resource type="PackedScene" uid="uid://qsx6ti0x7lj3" path="res://Models/kitchencounter_innercorner_backsplash.tscn" id="18_2q1mr"]
+[ext_resource type="PackedScene" uid="uid://4r3ylva07f66" path="res://Models/wall.tscn" id="19_rsgx7"]
+[ext_resource type="PackedScene" uid="uid://cewv8iqxjvft3" path="res://Models/wall_window.tscn" id="20_s2p65"]
+[ext_resource type="PackedScene" uid="uid://b7vclw7gmvpu7" path="res://Models/wall_half.tscn" id="21_vvsln"]
+[ext_resource type="PackedScene" uid="uid://cgmjci3l4sd3y" path="res://Assets/restaurant_gltf/cuttingboard.gltf" id="22_6gwwl"]
+[ext_resource type="PackedScene" uid="uid://du2agx53isorv" path="res://Assets/restaurant_gltf/knife.gltf" id="23_kbys6"]
+[ext_resource type="PackedScene" uid="uid://lrrjvcnwlbi3" path="res://Models/plate_dirty.tscn" id="24_ndch8"]
+[ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="25_7rruo"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="26_0i3te"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="27_lui4o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
+albedo_texture = ExtResource("2_i1505")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
+material = SubResource("StandardMaterial3D_iqnrd")
+size = Vector3(80, 2, 80)
+
+[sub_resource type="Animation" id="Animation_kx2mp"]
+resource_name = "play_feedback"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+_data = {
+"play_feedback": SubResource("Animation_kx2mp")
+}
+
+[sub_resource type="Curve" id="Curve_ypt87"]
+_data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_xwmu0")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00996, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_b4xlg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_bjeso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.390804, -0.906769, -0.158252, 0.728786, -0.409831, 0.548553, -0.562267, 0.0990449, 0.821003, -26.0655, 34.8897, 25.4685)
+shadow_enabled = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.564073, 0.706056, -0.440008, 0.554867, 0, 0.490025, 2.9982)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, -1.78814e-07, 3.8743e-07, -2.98023e-08, 1, -4.32134e-07, -3.27826e-07, -4.47035e-08, 1, -4.27146, 0.352954, 30.1049)
+projection = 1
+size = 28.159
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.357
+anchor_top = 0.253
+anchor_right = 0.357
+anchor_bottom = 0.938
+offset_left = -393.264
+offset_top = -535.944
+offset_right = 17.736
+offset_bottom = 301.176
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="P1HBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -482.5
+offset_right = 205.5
+offset_bottom = 481.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.04)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_famtn")
+alignment = 1
+
+[node name="P1A1Button" type="Button" parent="Control/P1HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../P1A4Button")
+focus_neighbor_bottom = NodePath("../P1A2Button")
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 8
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_mask = 0
+button_group = ExtResource("4_qhmo6")
+icon = ExtResource("5_smbpb")
+icon_alignment = 1
+
+[node name="P1A2Button" type="Button" parent="Control/P1HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../P1A1Button")
+focus_neighbor_bottom = NodePath("../P1A3Button")
+mouse_default_cursor_shape = 8
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("4_qhmo6")
+icon = ExtResource("6_40ivr")
+icon_alignment = 1
+
+[node name="P1A3Button" type="Button" parent="Control/P1HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../P1A2Button")
+focus_neighbor_bottom = NodePath("../P1A4Button")
+mouse_default_cursor_shape = 8
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("4_qhmo6")
+icon = ExtResource("7_rwqk1")
+icon_alignment = 1
+
+[node name="P1A4Button" type="Button" parent="Control/P1HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../P1A3Button")
+focus_neighbor_bottom = NodePath("../P1A1Button")
+mouse_default_cursor_shape = 8
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("4_qhmo6")
+icon = ExtResource("8_aitvr")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.465
+anchor_bottom = 1.463
+offset_left = 92.0
+offset_top = 678.665
+offset_right = 411.0
+offset_bottom = -713.103
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -47.5
+offset_right = 63.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Montar um
+hambúrger"
+label_settings = ExtResource("9_1b7d8")
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.606
+anchor_top = 0.24
+anchor_right = 0.606
+anchor_bottom = 0.938
+offset_left = 23.888
+offset_top = -478.52
+offset_right = 418.888
+offset_bottom = 301.176
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="P2HBoxContainer" type="VBoxContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -507.0
+offset_right = 152.5
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+alignment = 1
+
+[node name="P2A1Button" type="Button" parent="Control2/P2HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("10_h7lrd")
+icon = ExtResource("11_pe838")
+icon_alignment = 1
+
+[node name="P2A2Button" type="Button" parent="Control2/P2HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("10_h7lrd")
+icon = ExtResource("12_6rxs5")
+icon_alignment = 1
+
+[node name="P2A3Button" type="Button" parent="Control2/P2HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("10_h7lrd")
+icon = ExtResource("13_vy20a")
+icon_alignment = 1
+
+[node name="P2A4Button" type="Button" parent="Control2/P2HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_famtn")
+toggle_mode = true
+button_group = ExtResource("10_h7lrd")
+icon = ExtResource("14_cihfn")
+icon_alignment = 1
+
+[node name="VoltarButton" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("15_h7xdf")
+text = " Voltar"
+icon = ExtResource("16_ps3f4")
+
+[node name="Counter" type="Node3D" parent="."]
+transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
+
+[node name="kitchencounter_straight_A_backsplash2" parent="Counter" instance=ExtResource("17_ltxus")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, -1.522, 0, -9.846)
+
+[node name="kitchencounter_innercorner_backsplash2" parent="Counter" instance=ExtResource("18_2q1mr")]
+transform = Transform3D(3.13833, 0, 3.89242, 0, 5, 0, -3.89242, 0, 3.13833, -8.598, 0, -15.575)
+
+[node name="kitchencounter_straight_A_backsplash3" parent="Counter" instance=ExtResource("17_ltxus")]
+transform = Transform3D(3.90215, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90215, 6.21978, 0, -3.66817)
+
+[node name="kitchencounter_innercorner_backsplash3" parent="Counter" instance=ExtResource("18_2q1mr")]
+transform = Transform3D(3.90216, 0, -3.12621, 0, 5, 0, 3.12621, 0, 3.90216, 14.021, 0, 2.51741)
+
+[node name="wall2" parent="." instance=ExtResource("19_rsgx7")]
+transform = Transform3D(5.96961, 0, -4.90001, 0, 7.7231, 0, 4.90001, 0, 5.96961, -11.0187, -0.343378, -21.3725)
+
+[node name="wall_window_closed2" parent="." instance=ExtResource("20_s2p65")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 11.702, -0.343, -2.82479)
+
+[node name="wall_half2" parent="." instance=ExtResource("21_vvsln")]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, 22.486, -0.343, 5.92857)
+
+[node name="cuttingboard2" parent="." instance=ExtResource("22_6gwwl")]
+transform = Transform3D(3.83152, 0, 0, 0, 3.83152, 0, 0, 0, 3.83152, 0, 7.4252, 0)
+
+[node name="knife2" parent="." instance=ExtResource("23_kbys6")]
+transform = Transform3D(2.09383, 1.58137, 6.9124e-08, 0, -1.14695e-07, 2.6239, 1.58137, -2.09383, -9.15244e-08, 0.933859, 8.12135, 0.407116)
+
+[node name="plate_dirty2" parent="." instance=ExtResource("24_ndch8")]
+transform = Transform3D(5.0072, 0, 0, 0, 5.0072, 0, 0, 0, 5.0072, 1.95087, 7.63433, 6.3027)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("15_h7xdf")
+max_value = 3.0
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_7rruo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confetti" type="Node2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Green" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="Green2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ypt87")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("15_h7xdf")
+text = " Ajuda"
+icon = ExtResource("26_0i3te")
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("27_lui4o")
+
+[connection signal="focus_entered" from="Control/P1HBoxContainer/P1A1Button" to="." method="_on_p1_a1_button_focus_entered"]
+[connection signal="toggled" from="Control/P1HBoxContainer/P1A1Button" to="." method="_on_p1_a1_button_toggled"]
+[connection signal="focus_entered" from="Control/P1HBoxContainer/P1A2Button" to="." method="_on_p1_a2_button_focus_entered"]
+[connection signal="toggled" from="Control/P1HBoxContainer/P1A2Button" to="." method="_on_p1_a2_button_toggled"]
+[connection signal="focus_entered" from="Control/P1HBoxContainer/P1A3Button" to="." method="_on_p1_a3_button_focus_entered"]
+[connection signal="toggled" from="Control/P1HBoxContainer/P1A3Button" to="." method="_on_p1_a3_button_toggled"]
+[connection signal="focus_entered" from="Control/P1HBoxContainer/P1A4Button" to="." method="_on_p1_a4_button_focus_entered"]
+[connection signal="toggled" from="Control/P1HBoxContainer/P1A4Button" to="." method="_on_p1_a4_button_toggled"]
+[connection signal="mouse_entered" from="Control/HBoxContainer" to="." method="_on_p1_hbox_container_mouse_entered"]
+[connection signal="mouse_exited" from="Control/HBoxContainer" to="." method="_on_p1_hbox_container_mouse_exited"]
+[connection signal="mouse_entered" from="Control2/P2HBoxContainer/P2A1Button" to="." method="_on_p2_a1_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/P2HBoxContainer/P2A1Button" to="." method="_on_p2_a1_button_mouse_exited"]
+[connection signal="toggled" from="Control2/P2HBoxContainer/P2A1Button" to="." method="_on_p2_a1_button_toggled"]
+[connection signal="mouse_entered" from="Control2/P2HBoxContainer/P2A2Button" to="." method="_on_p2_a2_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/P2HBoxContainer/P2A2Button" to="." method="_on_p2_a2_button_mouse_exited"]
+[connection signal="toggled" from="Control2/P2HBoxContainer/P2A2Button" to="." method="_on_p2_a2_button_toggled"]
+[connection signal="mouse_entered" from="Control2/P2HBoxContainer/P2A3Button" to="." method="_on_p2_a3_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/P2HBoxContainer/P2A3Button" to="." method="_on_p2_a3_button_mouse_exited"]
+[connection signal="toggled" from="Control2/P2HBoxContainer/P2A3Button" to="." method="_on_p2_a3_button_toggled"]
+[connection signal="mouse_entered" from="Control2/P2HBoxContainer/P2A4Button" to="." method="_on_p2_a4_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/P2HBoxContainer/P2A4Button" to="." method="_on_p2_a4_button_mouse_exited"]
+[connection signal="toggled" from="Control2/P2HBoxContainer/P2A4Button" to="." method="_on_p2_a4_button_toggled"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

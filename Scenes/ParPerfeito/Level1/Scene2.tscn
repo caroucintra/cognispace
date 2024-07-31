@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://k0bb7mgjgvbf"]
+[gd_scene load_steps=18 format=3 uid="uid://k0bb7mgjgvbf"]
 
 [ext_resource type="Texture2D" uid="uid://cc04jte2bbdbk" path="res://Assets/grass-texture.jpg" id="1_2fbxh"]
 [ext_resource type="Script" path="res://Scenes/ParPerfeito/Level1/Scene2.gd" id="1_y2j30"]
@@ -7,6 +7,10 @@
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="5_27b1s"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="5_nthkf"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="7_j6na0"]
+[ext_resource type="PackedScene" uid="uid://2rmrqbcioclr" path="res://Assets/restaurant_gltf/chair_B.gltf" id="8_47y6p"]
+[ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="9_e7oh4"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="10_y4fi4"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="11_2jlc3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -18,6 +22,43 @@ uv1_scale = Vector3(10, 10, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
 material = SubResource("StandardMaterial3D_iqnrd")
 size = Vector3(80, 2, 80)
+
+[sub_resource type="Animation" id="Animation_kx2mp"]
+resource_name = "play_feedback"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+_data = {
+"play_feedback": SubResource("Animation_kx2mp")
+}
+
+[sub_resource type="Curve" id="Curve_8fmki"]
+_data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y2j30")
@@ -48,6 +89,12 @@ transform = Transform3D(0.784957, -0.0485094, -0.617648, 0.0322804, 0.998778, -0
 
 [node name="kitchentable_B_large2" parent="." instance=ExtResource("3_hij1s")]
 transform = Transform3D(0.932853, 0, -0.360257, 0, 1, 0, 0.360257, 0, 0.932853, -0.931406, 0.288669, -1.92693)
+
+[node name="chair_B2" parent="." instance=ExtResource("8_47y6p")]
+transform = Transform3D(2.17973, 0, 5.6101, 0, 6.01868, 0, -5.6101, 0, 2.17973, -8.4275, 0, -5.20049)
+
+[node name="chair_B3" parent="." instance=ExtResource("8_47y6p")]
+transform = Transform3D(-1.97269, 0, -5.68621, 0, 6.01868, 0, 5.68621, 0, -1.97269, 7.1992, 0, 0.0133221)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -110,7 +157,243 @@ theme = ExtResource("5_27b1s")
 text = " Voltar"
 icon = ExtResource("7_j6na0")
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("5_27b1s")
+max_value = 5.0
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_e7oh4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confetti" type="Node2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Green" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -180)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="Green2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 180)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_8fmki")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("5_27b1s")
+text = " Ajuda"
+icon = ExtResource("10_y4fi4")
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("11_2jlc3")
+
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A3Button" to="." method="_on_a3_button_pressed"]
 [connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

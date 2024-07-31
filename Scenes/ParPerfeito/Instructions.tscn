@@ -1,0 +1,205 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq5h1togw6tdb"]
+
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_6cs6r"]
+[ext_resource type="Script" path="res://Scenes/ParPerfeito/Instructions.gd" id="2_hdj2f"]
+[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_ubo71"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_m14tm"]
+[ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_2rud8"]
+[ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="6_00qwr"]
+
+[sub_resource type="Animation" id="Animation_cnyae"]
+resource_name = "text_player"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 19.3, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.2, 0.1, 0.1001, 17.1, 19.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Label2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 19.3, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w7hye"]
+resource_name = "text_player_no_sound"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 19.3, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Label2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 19.3, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jep8e"]
+_data = {
+"text_player": SubResource("Animation_cnyae"),
+"text_player_no_sound": SubResource("Animation_w7hye")
+}
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6cs6r")
+script = ExtResource("2_hdj2f")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -486.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.72948, 1.3717)
+texture = ExtResource("3_ubo71")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -167.0
+offset_right = 500.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+text = "Este jogo é para um jogador. O jogador deve interpretar as imagens e escolher a opção correta.
+Está pronto/a para o desafio?"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Não"
+icon = ExtResource("4_m14tm")
+
+[node name="OkButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sim"
+icon = ExtResource("5_2rud8")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Pressione a tecla 'Espaço' para avançar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_00qwr")
+
+[node name="VoltarButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("1_6cs6r")
+text = " Voltar"
+icon = ExtResource("4_m14tm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jep8e")
+}
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mrdc4dobd0u5"]
+
+[ext_resource type="PackedScene" uid="uid://2rmrqbcioclr" path="res://Assets/restaurant_gltf/chair_B.gltf" id="1_7r7w4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5et8"]
+albedo_color = Color(0.357416, 0.629173, 0.318132, 1)
+
+[node name="chair_green" instance=ExtResource("1_7r7w4")]
+
+[node name="chair_B" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l5et8")

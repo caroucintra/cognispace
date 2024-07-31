@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="CogniSpace"
-run/main_scene="res://Menus/menu.tscn"
+run/main_scene="res://Menus/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/windows_native_icon="res://Assets/Logo_CogniSpace.ico"
+
+[audio]
+
+general/text_to_speech=true
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 

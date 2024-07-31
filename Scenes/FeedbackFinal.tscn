@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhmpjur3xtyoe"]
+
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_ufv4b"]
+[ext_resource type="Script" path="res://Scenes/FeedbackFinal.gd" id="2_y2t1i"]
+[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_dp44f"]
+[ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="4_11cdo"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="5_g74au"]
+
+[sub_resource type="Animation" id="Animation_cnyae"]
+resource_name = "text_player"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.2, 0, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Label2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 9.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bck2t"]
+resource_name = "text_player_no_sound"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jep8e"]
+_data = {
+"text_player": SubResource("Animation_cnyae"),
+"text_player_no_sound": SubResource("Animation_bck2t")
+}
+
+[node name="Feedback" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ufv4b")
+script = ExtResource("2_y2t1i")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -486.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.72948, 1.3717)
+texture = ExtResource("3_dp44f")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -191.0
+offset_right = 500.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Pressione a tecla 'Espaço' para avançar"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jep8e")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_11cdo")
+
+[node name="VoltarButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("1_ufv4b")
+text = " Voltar"
+icon = ExtResource("5_g74au")
+
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]

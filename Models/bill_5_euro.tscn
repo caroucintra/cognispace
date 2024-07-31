@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7l0jd2hmwyis"]
 
-[ext_resource type="Texture2D" uid="uid://dyjkrkg2w1pdc" path="res://Assets/5_euro.jpg" id="1_k12jo"]
+[ext_resource type="Texture2D" uid="uid://bc415ullqkfhj" path="res://Assets/5_euro.jpg" id="1_k12jo"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qgagd"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_uwktn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38rlt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmn8t"]
 albedo_texture = ExtResource("1_k12jo")
 
-[node name="bill_5_euro" type="MeshInstance3D"]
-transform = Transform3D(0.201614, 0, 0, 0, 0.22404, 0, 0, 0, 0.141231, 0.389, 0.0794105, -0.0867186)
-mesh = SubResource("PlaneMesh_qgagd")
-surface_material_override/0 = SubResource("StandardMaterial3D_38rlt")
+[node name="bill_5_euro" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.97569, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_uwktn")
+surface_material_override/0 = SubResource("StandardMaterial3D_gmn8t")

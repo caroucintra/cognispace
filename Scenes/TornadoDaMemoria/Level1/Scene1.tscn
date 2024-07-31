@@ -1,36 +1,38 @@
-[gd_scene load_steps=36 format=3 uid="uid://cpvrx3nai6i3v"]
+[gd_scene load_steps=44 format=3 uid="uid://5v767qfo2i7f"]
 
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Level1/Scene1.gd" id="1_hjgpf"]
-[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="1_qdcr2"]
-[ext_resource type="PackedScene" uid="uid://cab8vsxfvdlyp" path="res://Models/wall_2.tscn" id="2_tsdi8"]
-[ext_resource type="PackedScene" uid="uid://f2m020rkfxxk" path="res://Models/wall_half_2.tscn" id="3_aqelg"]
-[ext_resource type="PackedScene" uid="uid://dkauphqq7n2sr" path="res://Assets/furniture_gltf/bed_double_A.gltf" id="4_5o6ud"]
-[ext_resource type="PackedScene" uid="uid://vnqv3ab1h7r0" path="res://Assets/furniture_gltf/lamp_standing.gltf" id="5_35ury"]
-[ext_resource type="PackedScene" uid="uid://c43sxdnt6qicp" path="res://Assets/furniture_gltf/cabinet_small.gltf" id="6_xj16m"]
-[ext_resource type="PackedScene" uid="uid://digcmdilhm0ji" path="res://Models/wallet.tscn" id="7_kpabo"]
-[ext_resource type="PackedScene" uid="uid://chfeieccev0x" path="res://Assets/furniture_gltf/shelf_B_large.gltf" id="8_lhhn8"]
-[ext_resource type="PackedScene" uid="uid://bag7gv3bvhyh2" path="res://Assets/furniture_gltf/rug_rectangle_stripes_A.gltf" id="9_dqx6m"]
-[ext_resource type="PackedScene" uid="uid://vjmyr3kq7agm" path="res://Models/keyring.tscn" id="10_hfu73"]
-[ext_resource type="PackedScene" uid="uid://hgaaor7dri3q" path="res://Assets/furniture_gltf/cactus_small_A.gltf" id="11_owni8"]
-[ext_resource type="PackedScene" uid="uid://co5jdksy6p2ds" path="res://Assets/furniture_gltf/book_set.gltf" id="12_c186p"]
-[ext_resource type="PackedScene" uid="uid://cf7vjqvxr0if8" path="res://Assets/furniture_gltf/pictureframe_small_A.gltf" id="13_3o7cw"]
-[ext_resource type="PackedScene" uid="uid://c3nxy0qc8sv25" path="res://Models/cactus_small_shadow.tscn" id="14_jg76m"]
-[ext_resource type="PackedScene" uid="uid://cong4g7rdkbeq" path="res://Models/book_set_shadow.tscn" id="15_83ike"]
-[ext_resource type="PackedScene" uid="uid://7l7u01msuo5v" path="res://Models/pictureframe_small_shadow.tscn" id="16_gcl2y"]
-[ext_resource type="PackedScene" uid="uid://dn4e6hh6u0nlh" path="res://Models/keyring_shadow.tscn" id="17_yj7rp"]
-[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Level1/ObjectsAnimation.gd" id="18_iwowf"]
-[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/TornadoAnimation.gd" id="19_w6gom"]
-[ext_resource type="Texture2D" uid="uid://b44cm735rk4s2" path="res://Assets/glow_circle3.png" id="20_3nltm"]
-[ext_resource type="Texture2D" uid="uid://ec716c3waxhg" path="res://Assets/blur_white_dot40.png" id="21_7f6w5"]
-[ext_resource type="AudioStream" uid="uid://b7fq447cj33d4" path="res://Assets/wind-blowing-trimmed2.mp3" id="22_keh2w"]
-[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="24_cg1pq"]
-[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="25_k66xd"]
+[ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_xrq81"]
+[ext_resource type="PackedScene" uid="uid://cab8vsxfvdlyp" path="res://Models/wall_2.tscn" id="3_unrte"]
+[ext_resource type="PackedScene" uid="uid://f2m020rkfxxk" path="res://Models/wall_half_2.tscn" id="4_63v6r"]
+[ext_resource type="PackedScene" uid="uid://dkauphqq7n2sr" path="res://Assets/furniture_gltf/bed_double_A.gltf" id="5_w6olv"]
+[ext_resource type="PackedScene" uid="uid://vnqv3ab1h7r0" path="res://Assets/furniture_gltf/lamp_standing.gltf" id="6_f0rhu"]
+[ext_resource type="PackedScene" uid="uid://digcmdilhm0ji" path="res://Models/wallet.tscn" id="7_4boxb"]
+[ext_resource type="PackedScene" uid="uid://bag7gv3bvhyh2" path="res://Assets/furniture_gltf/rug_rectangle_stripes_A.gltf" id="8_bqj11"]
+[ext_resource type="PackedScene" uid="uid://c3nxy0qc8sv25" path="res://Models/cactus_small_shadow.tscn" id="9_jn6yr"]
+[ext_resource type="PackedScene" uid="uid://cong4g7rdkbeq" path="res://Models/book_set_shadow.tscn" id="10_ir3r7"]
+[ext_resource type="AnimationLibrary" uid="uid://6wfnd4e8os6" path="res://ThemeEditor/Tornado.res" id="12_63j7e"]
+[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/ObjectsAnimation.gd" id="13_6dk4l"]
+[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/TornadoAnimation.gd" id="14_pofig"]
+[ext_resource type="Texture2D" uid="uid://b44cm735rk4s2" path="res://Assets/glow_circle3.png" id="15_mp3y3"]
+[ext_resource type="Texture2D" uid="uid://ec716c3waxhg" path="res://Assets/blur_white_dot40.png" id="16_fdvji"]
+[ext_resource type="AudioStream" uid="uid://b7fq447cj33d4" path="res://Assets/wind-blowing-trimmed2.mp3" id="17_omabi"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="18_pivei"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="19_qmhpy"]
+[ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="20_68a1e"]
+[ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="21_w8obw"]
+[ext_resource type="PackedScene" uid="uid://chfeieccev0x" path="res://Assets/furniture_gltf/shelf_B_large.gltf" id="22_jkni6"]
+[ext_resource type="PackedScene" uid="uid://c43sxdnt6qicp" path="res://Assets/furniture_gltf/cabinet_small.gltf" id="23_6tp5i"]
+[ext_resource type="PackedScene" uid="uid://dqcuogswphjri" path="res://Models/keyring_highlighted.tscn" id="24_45xtm"]
+[ext_resource type="PackedScene" uid="uid://cxf0n4d88c5lp" path="res://Models/book_set_highlighted.tscn" id="25_xhwjm"]
+[ext_resource type="PackedScene" uid="uid://7dkjblh3ype7" path="res://Models/pictureframe_small_highlighted.tscn" id="26_08xbc"]
+[ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="27_1w7kk"]
+[ext_resource type="PackedScene" uid="uid://dxk2xnnaqsm1r" path="res://Models/cactus_small_highlighted.tscn" id="27_33gby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqnrd"]
-albedo_texture = ExtResource("1_qdcr2")
+albedo_texture = ExtResource("2_xrq81")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bjeso"]
@@ -46,193 +48,56 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cactus_small_A2:position")
+tracks/0/path = NodePath("Cactus/cactus_small_A2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-4.60766, 7.01746, -10.9529), Vector3(3.00595, 8.49529, 2.1543), Vector3(10.276, 4.49645, 15.644), Vector3(-1.4604, 4.5926, 7.12693), Vector3(-13.1968, 0.225191, -1.39015)]
+"values": [Vector3(0, 0, 0), Vector3(-0.300587, -0.913993, -0.463671), Vector3(0.178957, -1.28318, -0.108998), Vector3(0.455316, -1.94038, -0.0187912), Vector3(0.0807434, -2.91912, 0.268015)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cactus_small_A2:rotation")
+tracks/1/path = NodePath("Books/book_set2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.606083, 0), Vector3(-0.300587, -0.913993, -0.463671), Vector3(0.178957, -1.28318, -0.108998), Vector3(0.455316, -1.94038, -0.0187912), Vector3(0.0807434, -2.91912, 0.268015)]
+"values": [Vector3(0, 0, 0), Vector3(-0.743587, -1.31512, -0.175137), Vector3(-1.05763, -2.28132, 1.18657), Vector3(-0.653482, -1.1277, -0.0191697), Vector3(-1.18054, -0.961547, -0.0944753)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("keyring2:position")
+tracks/2/path = NodePath("Books:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-7.0944, 7.43472, -7.41816), Vector3(-12.7167, 3.65978, 0.577936), Vector3(-2.41785, 3.65978, 0.577936), Vector3(4.22329, 4.61036, 10.0538), Vector3(-4.86022, 3.38369, 8.50882)]
+"values": [Vector3(5.01036, 14.0329, -4.82969), Vector3(8.11902, 13.5674, 7.85489), Vector3(-7.9587, 10.5623, 7.85489), Vector3(-9.98062, 10.5623, -5.96088), Vector3(-9.00865, 1.39709, -4.17448)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("keyring2:rotation")
+tracks/3/path = NodePath("Cactus:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.0001, 1.8, 2.6, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.386802, 0.360714, -0.179149), Vector3(0.0406234, -1.93803, -0.27509), Vector3(-0.339612, -2.51192, -0.12327), Vector3(-0.0642602, -0.611251, -0.0200005)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("book_set2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(4.80145, 13.5674, -4.73364), Vector3(8.11902, 13.5674, 7.85489), Vector3(-7.9587, 10.5623, 7.85489), Vector3(-9.98062, 10.5623, -5.96088), Vector3(-9.00865, 1.39709, -4.17448)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("book_set2:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.754611, 0), Vector3(-0.743587, -1.31512, -0.175137), Vector3(-1.05763, -2.28132, 1.18657), Vector3(-0.653482, -1.1277, -0.0191697), Vector3(-1.18054, -0.961547, -0.0944753)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("pictureframe_small_A2:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(12.0108, 13.6601, -0.0217915), Vector3(7.2864, 5.87968, 8.36684), Vector3(-0.386838, 5.87968, 10.3431), Vector3(-11.2342, 3.71832, 2.10851), Vector3(-0.175885, 3.62726, 3.72412)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("pictureframe_small_A2:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.428077, -0.682843, 0), Vector3(-0.462671, -0.179532, 0.945831), Vector3(-1.16987, -0.896095, 2.05148), Vector3(-0.694729, 0.404497, -0.244274), Vector3(-0.936586, -1.19769, 0.576774)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Shadows/keyring2_shadow:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Shadows/book_set2_shadow:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Shadows/pictureframe_small_shadow:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Shadows/cactus_small_A2_shadow:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_r4wsl"]
-resource_name = "tornado_passing"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tornado/WindAudio:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(3.605),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Tornado:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(50, 947), Vector2(2410, 947)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tornado:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector3(-4.60766, 7.00438, -10.9529), Vector3(-4.60766, 7.00438, -10.9529), Vector3(3.00595, 8.49529, 2.1543), Vector3(10.276, 4.49645, 15.644), Vector3(-1.4604, 4.5926, 7.12693), Vector3(-13.1968, 0.225191, -1.39015)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ws4m"]
 _data = {
 "RESET": SubResource("Animation_elh4p"),
-"objects_moving": SubResource("Animation_jgm4a"),
-"tornado_passing": SubResource("Animation_r4wsl")
+"objects_moving": SubResource("Animation_jgm4a")
 }
 
 [sub_resource type="Curve" id="Curve_omj66"]
@@ -248,6 +113,52 @@ point_count = 3
 
 [sub_resource type="Curve" id="Curve_5jusw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00892866), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e0hjs"]
+radius = 0.223747
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kort7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c2ste"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_de528"]
+
+[sub_resource type="Animation" id="Animation_kx2mp"]
+resource_name = "play_feedback"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+_data = {
+"play_feedback": SubResource("Animation_kx2mp")
+}
+
+[sub_resource type="Curve" id="Curve_ribjf"]
+_data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Main" type="Node3D"]
@@ -274,92 +185,63 @@ transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.5640
 transform = Transform3D(0.998831, 0.0215947, 0.0432516, -0.0288492, 0.984173, 0.174847, -0.0387913, -0.175891, 0.983645, -1.17631, 9.25302, 20.3844)
 size = 28.159
 
-[node name="Counter" type="Node3D" parent="."]
-transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
-
 [node name="SceneBG" type="Node3D" parent="."]
 transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, -11.019, -0.343, -21.372)
 
-[node name="wall3" parent="SceneBG" instance=ExtResource("2_tsdi8")]
+[node name="wall3" parent="SceneBG" instance=ExtResource("3_unrte")]
 
-[node name="wall4" parent="SceneBG" instance=ExtResource("2_tsdi8")]
+[node name="wall4" parent="SceneBG" instance=ExtResource("3_unrte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7977, 0, -0.0116293)
 
-[node name="wall_half3" parent="SceneBG" instance=ExtResource("3_aqelg")]
+[node name="wall_half3" parent="SceneBG" instance=ExtResource("4_63v6r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59617, 0, -0.0220425)
 
-[node name="bed_double_A2" parent="SceneBG" instance=ExtResource("4_5o6ud")]
+[node name="bed_double_A2" parent="SceneBG" instance=ExtResource("5_w6olv")]
 transform = Transform3D(0.789649, 0, -0.0190912, 0, 0.78988, 0, 0.0190912, 0, 0.789649, 3.77821, 0.0834811, 1.53902)
 
-[node name="lamp_standing2" parent="SceneBG" instance=ExtResource("5_35ury")]
+[node name="lamp_standing2" parent="SceneBG" instance=ExtResource("6_f0rhu")]
 transform = Transform3D(0.610367, 0, 0.501361, 0, 0.78988, 0, -0.501361, 0, 0.610367, 0.655562, 0.0727052, 1.08759)
 
-[node name="cabinet_small2" parent="SceneBG" instance=ExtResource("6_xj16m")]
-transform = Transform3D(0.90518, 0, 0.0284778, 0, 0.905627, 0, -0.0284778, 0, 0.90518, 1.71035, 0.0568028, 0.730578)
-
-[node name="wallet" parent="SceneBG" instance=ExtResource("7_kpabo")]
+[node name="wallet" parent="SceneBG" instance=ExtResource("7_4boxb")]
 transform = Transform3D(0.3867, -0.00330328, -0.595393, 0.00517182, 0.709939, -0.000579748, 0.595379, -0.00402148, 0.386714, 1.82062, 0.957555, 0.808755)
 
-[node name="shelf_B_large2" parent="SceneBG" instance=ExtResource("8_lhhn8")]
-transform = Transform3D(1.35288, 0, 0.00165303, 0, 1.15954, 0, -0.00514686, 0, 0.434408, 3.48472, 1.61472, 0.219748)
-
-[node name="rug_rectangle_stripes_A2" parent="SceneBG" instance=ExtResource("9_dqx6m")]
+[node name="rug_rectangle_stripes_A2" parent="SceneBG" instance=ExtResource("8_bqj11")]
 transform = Transform3D(-0.00389862, 0, 0.629342, 0, 0.629354, 0, -0.629342, 0, -0.00389862, 1.86842, -0.0120109, 2.04647)
-
-[node name="keyring2" parent="." instance=ExtResource("10_hfu73")]
-transform = Transform3D(3.03032, 0, 0, 0, 3.03032, 0, 0, 0, 3.03032, -7.0944, 7.43472, -7.41816)
-
-[node name="cactus_small_A2" parent="." instance=ExtResource("11_owni8")]
-transform = Transform3D(5.06624, 0, -3.51143, 0, 6.16416, 0, 3.51143, 0, 5.06624, -4.60766, 7.01746, -10.9529)
-
-[node name="book_set2" parent="." instance=ExtResource("12_c186p")]
-transform = Transform3D(2.73224, 0, -2.56898, 0, 3.75031, 0, 2.56898, 0, 2.73224, 4.80145, 13.5674, -4.73364)
-
-[node name="pictureframe_small_A2" parent="." instance=ExtResource("13_3o7cw")]
-transform = Transform3D(3.32125, 1.12142, -2.45766, 0, 3.89486, 1.7772, 2.70142, -1.37872, 3.02156, 12.0108, 13.6601, -0.0217915)
 
 [node name="Shadows" type="Node3D" parent="."]
 transform = Transform3D(5.06624, 0, -3.51143, 0, 6.16416, 0, 3.51143, 0, 5.06624, -4.60766, 7.01746, -10.9529)
-
-[node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("14_jg76m")]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 visible = false
 
-[node name="book_set2_shadow" parent="Shadows" instance=ExtResource("15_83ike")]
+[node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("9_jn6yr")]
+transform = Transform3D(0.690415, 0, 2.98023e-08, 0, 0.690415, 0, -2.98023e-08, 0, 0.690415, 0, 0, 0)
+
+[node name="book_set2_shadow" parent="Shadows" instance=ExtResource("10_ir3r7")]
 transform = Transform3D(0.601706, 0, -0.0900332, 0, 0.608406, 0, 0.0900332, 0, 0.601706, 1.82929, 1.06258, -0.0402979)
-visible = false
-
-[node name="pictureframe_small_shadow" parent="Shadows" instance=ExtResource("16_gcl2y")]
-transform = Transform3D(0.69248, 0.0221092, -0.0484536, 0, 0.631856, 0.288313, 0.0532594, -0.287464, 0.629995, 3.22597, 1.07762, -0.0782955)
-visible = false
-
-[node name="keyring2_shadow" parent="Shadows" instance=ExtResource("17_yj7rp")]
-transform = Transform3D(0.403999, 0, 0.280013, 0, 0.491551, 0, -0.280013, 0, 0.403999, -0.00483811, 0.0677369, 0.70109)
-visible = false
 
 [node name="ObjectsAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7ws4m")
 }
-script = ExtResource("18_iwowf")
+script = ExtResource("13_6dk4l")
 
 [node name="Tornado" type="Area2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.546421)
-position = Vector2(50, 947)
+position = Vector2(2410, 947)
 
 [node name="TornadoAnimation" type="AnimationPlayer" parent="Tornado"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_7ws4m")
+"": SubResource("AnimationLibrary_7ws4m"),
+"Tornado": ExtResource("12_63j7e")
 }
-script = ExtResource("19_w6gom")
+script = ExtResource("14_pofig")
 
 [node name="tornado" type="CPUParticles2D" parent="Tornado"]
 scale = Vector2(1, 0.5)
 amount = 15
 lifetime = 0.5
-texture = ExtResource("20_3nltm")
+texture = ExtResource("15_mp3y3")
 gravity = Vector2(0, -5000)
 angular_velocity_min = -720.0
 angular_velocity_max = -503.3
@@ -368,7 +250,7 @@ scale_amount_curve = SubResource("Curve_ixsyn")
 
 [node name="dots" type="CPUParticles2D" parent="Tornado"]
 amount = 30
-texture = ExtResource("21_7f6w5")
+texture = ExtResource("16_fdvji")
 emission_shape = 1
 emission_sphere_radius = 20.0
 spread = 180.0
@@ -382,15 +264,313 @@ linear_accel_max = 100.0
 scale_amount_curve = SubResource("Curve_5jusw")
 
 [node name="WindAudio" type="AudioStreamPlayer2D" parent="Tornado"]
-stream = ExtResource("22_keh2w")
+stream = ExtResource("17_omabi")
 
 [node name="VoltarButton" type="Button" parent="."]
 offset_left = 29.0
 offset_top = 27.0
 offset_right = 316.0
 offset_bottom = 164.0
-theme = ExtResource("24_cg1pq")
+theme = ExtResource("18_pivei")
 text = " Voltar"
-icon = ExtResource("25_k66xd")
+icon = ExtResource("19_qmhpy")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme = ExtResource("18_pivei")
+max_value = 3.0
+show_percentage = false
+
+[node name="AjudaButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -172.0
+offset_right = -55.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("18_pivei")
+text = " Ajuda"
+icon = ExtResource("20_68a1e")
+
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Doctor" type="Sprite2D" parent="BoxContainer2"]
+visible = false
+position = Vector2(-347, -347)
+texture = ExtResource("21_w8obw")
+
+[node name="Shelf" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.775143, 0, -0.631786, 0, 1, 0, 0.631786, 0, 0.775143, 8.69997, 12.1275, -2.97842)
+
+[node name="shelf_B_large2" parent="Shelf" instance=ExtResource("22_jkni6")]
+transform = Transform3D(10.4484, 0, 0, 0, 8.95513, 0, 0, 0, 3.35496, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf"]
+transform = Transform3D(0.191002, 10.9425, -4.76837e-07, -10.9425, 0.191002, -5.75593e-09, 7.45058e-09, 9.53674e-07, 10.9442, 0.270458, 0.459572, 1.56543)
+visible = false
+shape = SubResource("CylinderShape3D_e0hjs")
+
+[node name="Cabinet" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.792311, 0, -0.610118, 0, 1, 0, 0.610118, 0, 0.792311, -4.39325, 0.0956881, -8.62787)
+
+[node name="cabinet_small2" parent="Cabinet" instance=ExtResource("23_6tp5i")]
+transform = Transform3D(6.99416, 0, 0, 0, 6.99416, 0, 0, 0, 6.99416, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(9.96174, 0, 1.43051e-06, 0, 9.96174, 0, -1.43051e-06, 0, 9.96174, 0, 3.39694, 0)
+visible = false
+shape = SubResource("SphereShape3D_kort7")
+
+[node name="Keys" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0944, 7.43472, -7.41816)
+
+[node name="keyring2" parent="Keys" instance=ExtResource("24_45xtm")]
+transform = Transform3D(3.1, 0, 0, 0, 3.1, 0, 0, 0, 3.1, 0, 0, 0)
+script = null
+
+[node name="Books" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.728538, 0, -0.685005, 0, 1, 0, 0.685005, 0, 0.728538, 5.01036, 14.0329, -4.82969)
+
+[node name="book_set2" parent="Books" instance=ExtResource("25_xhwjm")]
+transform = Transform3D(3.70634, 0, 0, 0, 3.70634, 0, 0, 0, 3.70634, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Books"]
+transform = Transform3D(3.32376, 0, 1.19209e-07, 0, 3.32376, 0, -1.19209e-07, 0, 3.32376, 0, 0, 0)
+visible = false
+shape = SubResource("SphereShape3D_c2ste")
+
+[node name="Picture" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.775782, 0.261943, -0.574063, 0, 0.909766, 0.415122, 0.631001, -0.322044, 0.70578, 12.0108, 13.6601, -0.0217915)
+
+[node name="pictureframe_small_A2" parent="Picture" instance=ExtResource("26_08xbc")]
+transform = Transform3D(3.66735, 0, 0, 0, 3.71737, 0, 0, 0, 3.69017, 0, 0, 0)
+script = null
+
+[node name="Cactus" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.821886, 0, -0.569652, 0, 1, 0, 0.569652, 0, 0.821886, -4.60766, 7.00438, -10.9529)
+
+[node name="cactus_small_A2" parent="Cactus" instance=ExtResource("27_33gby")]
+transform = Transform3D(4.259, 0, 0, 0, 4.259, 0, 0, 0, 4.259, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cactus"]
+transform = Transform3D(3.75224, 0, 1.19209e-07, 0, 3.75224, 0, -1.19209e-07, 0, 3.75224, 0, 1.6295, 0)
+visible = false
+shape = SubResource("SphereShape3D_de528")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_1w7kk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confetti" type="Node2D" parent="BoxContainer"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Green" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, -140)
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="Green2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.34167, 0.527007, 0, 1)
+
+[node name="Red2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.813426, 0.207508, 0.137518, 1)
+
+[node name="Blue2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.19781, 0.466802, 0.776808, 1)
+
+[node name="Yellow2" type="CPUParticles2D" parent="BoxContainer/Confetti"]
+position = Vector2(0, 181)
+rotation = 3.14159
+amount = 30
+explosiveness = 0.6
+randomness = 0.86
+local_coords = true
+direction = Vector2(0, -1)
+spread = 59.4
+gravity = Vector2(0, 100)
+initial_velocity_min = 81.0
+initial_velocity_max = 470.0
+angular_velocity_min = 210.88
+angular_velocity_max = 280.0
+linear_accel_min = 35.2
+linear_accel_max = 67.2
+scale_amount_min = 10.0
+scale_amount_max = 33.0
+scale_amount_curve = SubResource("Curve_ribjf")
+color = Color(0.794791, 0.780768, 0.238602, 1)
 
 [connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]
+[connection signal="input_event" from="Shelf" to="." method="_on_shelf_input_event"]
+[connection signal="input_event" from="Cabinet" to="." method="_on_cabinet_input_event"]
+[connection signal="input_event" from="Books" to="." method="_on_books_input_event"]
+[connection signal="input_event" from="Cactus" to="." method="_on_cactus_input_event"]

@@ -1,3 +1,4 @@
 [gd_resource type="ButtonGroup" format=3 uid="uid://dpi5umlb8ints"]
 
 [resource]
+allow_unpress = true

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvs7ia6s74a76"]
+
+[ext_resource type="PackedScene" uid="uid://bu7hjnbovqnmt" path="res://Assets/restaurant_gltf/jar_A_medium.gltf" id="1_t63oo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmkvc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="jar_A_medium_shadow" instance=ExtResource("1_t63oo")]
+
+[node name="jar_A_medium" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pmkvc")

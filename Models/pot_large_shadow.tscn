@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyxyw2b11h703"]
+
+[ext_resource type="PackedScene" uid="uid://bcoq2dwwviqqv" path="res://Assets/restaurant_gltf/pot_large.gltf" id="1_5bsm2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr8lo"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="pot_large2" instance=ExtResource("1_5bsm2")]
+
+[node name="pot_large" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kr8lo")

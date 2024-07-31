@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://btreb8xfqo1yu"]
+
+[ext_resource type="PackedScene" uid="uid://cjw16mxsltawl" path="res://Assets/restaurant_gltf/plate_dirty.gltf" id="1_ett4g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgcly"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="plate_dirty_shadow" instance=ExtResource("1_ett4g")]
+
+[node name="plate_dirty" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tgcly")
