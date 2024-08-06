@@ -5,9 +5,6 @@ var voice_id = voices[0]
 func _ready():
 	if (Global.tts):
 		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)
-		$AnimationPlayer.play("text_player_no_sound")
-	else:
-		$AnimationPlayer.play("text_player")
 
 
 func _on_back_button_pressed():
@@ -26,10 +23,6 @@ func _on_ok_button_pressed():
 
 
 func _on_voltar_button_pressed():
+	DisplayServer.tts_stop()
 	get_tree().change_scene_to_file("res://Menus/MiniGamesMenu.tscn")
 
-
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_SPACE:
-			$AnimationPlayer.seek(20, true)

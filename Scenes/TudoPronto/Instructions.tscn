@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c27u0x6wmdu3"]
+[gd_scene load_steps=7 format=3 uid="uid://c27u0x6wmdu3"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_o8eov"]
 [ext_resource type="Script" path="res://Scenes/TudoPronto/Instructions.gd" id="2_y8s36"]
@@ -6,105 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_12ki2"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_k6qkf"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_3iska"]
-[ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="6_c2l2w"]
-
-[sub_resource type="Animation" id="Animation_cnyae"]
-resource_name = "text_player"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 19.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/HBoxContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 19.3, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(-0.2, 0.1, 0.1001, 17.1, 19.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/Label2:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 19.3, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_p0pym"]
-resource_name = "text_player_no_sound"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 19.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/HBoxContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 19.3, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Label2:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 19.3, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jep8e"]
-_data = {
-"text_player": SubResource("Animation_cnyae"),
-"text_player_no_sound": SubResource("Animation_p0pym")
-}
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
@@ -160,11 +61,8 @@ Estão prontos para o desafio?"
 label_settings = ExtResource("4_k6qkf")
 horizontal_alignment = 1
 autowrap_mode = 3
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -178,20 +76,6 @@ icon = ExtResource("4_12ki2")
 layout_mode = 2
 text = "Sim"
 icon = ExtResource("5_3iska")
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "Pressione a tecla 'Espaço' para avançar"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_jep8e")
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_c2l2w")
 
 [node name="VoltarButton" type="Button" parent="."]
 layout_mode = 0
