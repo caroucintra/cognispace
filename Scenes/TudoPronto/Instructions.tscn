@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c27u0x6wmdu3"]
+[gd_scene load_steps=11 format=3 uid="uid://c27u0x6wmdu3"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_o8eov"]
 [ext_resource type="Script" path="res://Scenes/TudoPronto/Instructions.gd" id="2_y8s36"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_a1r6x"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_12ki2"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_k6qkf"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_3iska"]
 [ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="6_c2l2w"]
 
@@ -156,6 +157,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
 text = "Este jogo é para dois jogadores. Os jogadores devem criar associações entre os botões da direita e da esquerda, na ordem, de maneira a concretizar a ação do centro da tela. O jogador 1 deve controlar os botões da esquerda com as setas ←↑↓→ e o jogador 2 os botões da direita com o rato.
 Estão prontos para o desafio?"
+label_settings = ExtResource("4_k6qkf")
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters = 0

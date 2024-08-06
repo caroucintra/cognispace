@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq5h1togw6tdb"]
+[gd_scene load_steps=11 format=3 uid="uid://cq5h1togw6tdb"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_6cs6r"]
 [ext_resource type="Script" path="res://Scenes/ParPerfeito/Instructions.gd" id="2_hdj2f"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_ubo71"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_ljxxy"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_m14tm"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_2rud8"]
 [ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="6_00qwr"]
@@ -155,6 +156,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
 text = "Este jogo é para um jogador. O jogador deve interpretar as imagens e escolher a opção correta.
 Está pronto/a para o desafio?"
+label_settings = ExtResource("4_ljxxy")
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters = 0

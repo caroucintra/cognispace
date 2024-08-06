@@ -95,34 +95,29 @@ func unselect_object(obj):
 #Interaction with locations
 func _on_counter1_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		if turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
 		match (selected_object):
 			"Jar":
 				$Jar.position = jar_initial_position
 				$Jar/jar_A_medium2.rotation = Vector3(0,0,0)
 				$Shadows/jar_A_medium_shadow.visible = false
-				objs_won += ["Jar"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Jar")
+				_points_won()
+				unselect_object(selected_object)
 			"Knife":
 				$Knife.position = knife_initial_position
 				$Knife/knife2.rotation = Vector3(0,0,0)
 				$Shadows/knife2_shadow.visible = false
-				objs_won += ["Knife"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Knife")
+				_points_won()
+				unselect_object(selected_object)
 			"Pan1":
 				$Pan1.position = pan1_initial_position
 				$Pan1/pan_0062.rotation = Vector3(0,0,0)
 				$Shadows/pan_0062_shadow.visible = false
-				objs_won += ["Pan1"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Pan1")
+				_points_won()
+				unselect_object(selected_object)
 			"":
 				pass
 			_:
@@ -130,36 +125,30 @@ func _on_counter1_input_event(camera, event, position, normal, shape_idx):
 
 func _on_counter2_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		if not turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
 		match (selected_object):
 			"Pan2":
 				$Pan2.position = pan2_initial_position
 				$Pan2/pan_B2.rotation = Vector3(0,0,0)
 				$Shadows/pan_B2_shadow.visible = false
-				objs_won += ["Pan2"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Pan2")
+				_points_won()
+				unselect_object(selected_object)
 			"Pot":
 				$Pot.position = pot_initial_position
 				$Pot/pot_stew/pot_large2.rotation = Vector3(0,0,0)
-				objs_won += ["Pot"]
 				$Shadows/pot_large2_shadow.visible = false
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Pot")
+				_points_won()
+				unselect_object(selected_object)
 			"Lid":
 				$Lid.position = lid_initial_position
 				$Lid/lid_B2.rotation = Vector3(0,0,0)
-				objs_won += ["Lid"]
 				$Shadows/lid_B2_shadow.visible = false
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Lid")
+				_points_won()
+				unselect_object(selected_object)
 			"":
 				pass
 			_:
 				_try_again()
-

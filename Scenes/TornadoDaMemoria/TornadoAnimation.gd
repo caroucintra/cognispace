@@ -11,3 +11,4 @@ func _ready():
 			memorization_time = 20
 	await get_tree().create_timer(memorization_time).timeout
 	play("Tornado/tornado_passing")
+	Global.tdm_started = true

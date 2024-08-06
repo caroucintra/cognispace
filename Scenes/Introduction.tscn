@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://compfmpg1pm68"]
+[gd_scene load_steps=12 format=3 uid="uid://woqoeoqexsvj"]
 
-[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_0v4ed"]
-[ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Instructions.gd" id="2_yvca5"]
-[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_ewnph"]
-[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_d6idv"]
-[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_jgn27"]
-[ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_m34cj"]
-[ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="6_ume10"]
+[ext_resource type="Script" path="res://Scenes/Introduction.gd" id="1_skmpt"]
+[ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="2_ljgsq"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="3_aene2"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="3_bgmgn"]
+[ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="4_26q7x"]
+[ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="5_jlyev"]
+[ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="6_85m6n"]
+[ext_resource type="LabelSettings" uid="uid://cf6u4bferp8nl" path="res://ThemeEditor/no_outline.tres" id="7_lx4nf"]
 
 [sub_resource type="Animation" id="Animation_cnyae"]
 resource_name = "text_player"
@@ -60,7 +61,7 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_swbcm"]
+[sub_resource type="Animation" id="Animation_p0pym"]
 resource_name = "text_player_no_sound"
 length = 20.0
 tracks/0/type = "value"
@@ -103,22 +104,17 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jep8e"]
 _data = {
 "text_player": SubResource("Animation_cnyae"),
-"text_player_no_sound": SubResource("Animation_swbcm")
+"text_player_no_sound": SubResource("Animation_p0pym")
 }
 
-[node name="Instructions" type="Control"]
+[node name="Introduction" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_0v4ed")
-script = ExtResource("2_yvca5")
+script = ExtResource("1_skmpt")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -130,7 +126,7 @@ offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.72948, 1.3717)
-texture = ExtResource("3_ewnph")
+texture = ExtResource("2_ljgsq")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -141,9 +137,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -500.0
-offset_top = -266.0
+offset_top = -191.0
 offset_right = 500.0
-offset_bottom = 296.0
+offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -154,13 +150,13 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
-text = "Este jogo é para dois jogadores. Os jogadores terão alguns segundos para memorizar as posições dos objetos na cena, antes do tornado trocar tudo de sítio. Depois, os jogadores devem organizar a cena a vez sendo o jogador 1 o primeiro. Em todas as cenas poderão observar um espaço a esquerda e outro a direita. O jogador 1 deve organizar os objetos que estavam localizados inicialmente a esquerda, e o jogador 2, os objetos da direita.
-Estão prontos para o desafio?"
-label_settings = ExtResource("4_d6idv")
+text = "Bem vindo a CogniSpace, a plataforma que te auxilia no treino cognitivo. Aqui poderá treinar a memória, a linguagem, a matemática e o planeamento de tarefas. 
+Antes de iniciar deverá responder a uma pergunta! Está pronto?"
+label_settings = ExtResource("3_bgmgn")
 horizontal_alignment = 1
 autowrap_mode = 3
-visible_characters = 62
-visible_ratio = 0.134715
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -170,22 +166,25 @@ size_flags_vertical = 10
 
 [node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("6_85m6n")
 text = "Não"
-icon = ExtResource("4_jgn27")
+icon = ExtResource("3_aene2")
 
 [node name="OkButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("6_85m6n")
 text = "Sim"
-icon = ExtResource("5_m34cj")
+icon = ExtResource("4_26q7x")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Pressione a tecla 'Espaço' para avançar"
+label_settings = ExtResource("7_lx4nf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ume10")
+stream = ExtResource("5_jlyev")
 
 [node name="VoltarButton" type="Button" parent="."]
 layout_mode = 0
@@ -193,9 +192,9 @@ offset_left = 29.0
 offset_top = 27.0
 offset_right = 316.0
 offset_bottom = 164.0
-theme = ExtResource("1_0v4ed")
+theme = ExtResource("6_85m6n")
 text = " Voltar"
-icon = ExtResource("4_jgn27")
+icon = ExtResource("3_aene2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

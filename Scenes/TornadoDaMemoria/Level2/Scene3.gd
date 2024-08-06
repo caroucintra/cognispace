@@ -67,53 +67,50 @@ func unselect_object(obj):
 			$Jar/jar_A_medium2.remove_highlight()
 
 #Interaction with locations
-func _on_counter_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		match (selected_object):
-			"Jar":
-				$Jar.position = jar_initial_position
-				$Jar/jar_A_medium2.rotation = Vector3(0,0,0)
-				$Shadows/jar_A_medium_shadow.visible = false
-				objs_won += ["Jar"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Jar")
-			"Plate":
-				$Plate.position = plate_initial_position
-				$Plate/plate_dirty2.rotation = Vector3(0,0,0)
-				$Shadows/plate_dirty_shadow.visible = false
-				objs_won += ["Plate"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Plate")
-			"":
-				pass
-			_:
-				_try_again()
-
 func _on_shelf_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		if turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
 		match (selected_object):
 			"Cactus":
 				$Cactus.position = cactus_initial_position
 				$Cactus/cactus_small_A2.rotation = Vector3(0,0,0)
 				$Shadows/cactus_small_A2_shadow.visible = false
-				objs_won += ["Cactus"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Cactus")
+				_points_won()
+				unselect_object(selected_object)
 			"Picture":
 				$Picture.position = picture_initial_position
 				$Picture/pictureframe_standing_B2.rotation = Vector3(0,0,0)
-				objs_won += ["Picture"]
 				$Shadows/pictureframe_standing_shadow.visible = false
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Picture")
+				_points_won()
+				unselect_object(selected_object)
+			"":
+				pass
+			_:
+				_try_again()
+
+
+func _on_counter_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		if not turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
+		match (selected_object):
+			"Jar":
+				$Jar.position = jar_initial_position
+				$Jar/jar_A_medium2.rotation = Vector3(0,0,0)
+				$Shadows/jar_A_medium_shadow.visible = false
+				_points_won()
+				unselect_object(selected_object)
+			"Plate":
+				$Plate.position = plate_initial_position
+				$Plate/plate_dirty2.rotation = Vector3(0,0,0)
+				$Shadows/plate_dirty_shadow.visible = false
+				_points_won()
+				unselect_object(selected_object)
 			"":
 				pass
 			_:

@@ -12,6 +12,7 @@ var game_over: bool
 var level: int
 var game_name: String
 var num_of_scenes: int = 3
+var tdm_started: bool = false
 
 func _process(delta):
 	if start:

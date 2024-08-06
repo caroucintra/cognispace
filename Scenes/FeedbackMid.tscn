@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvkdt4nlu3gbh"]
+[gd_scene load_steps=11 format=3 uid="uid://dvkdt4nlu3gbh"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_sr1f3"]
 [ext_resource type="Script" path="res://Scenes/FeedbackMid.gd" id="2_6uc6k"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_carx6"]
 [ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="4_xyly7"]
+[ext_resource type="Texture2D" uid="uid://bmponms86b2vj" path="res://Assets/star.png" id="4_yxra4"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="5_i6n3u"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="6_7nhra"]
 
@@ -110,6 +111,25 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="star1" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+visible = false
+position = Vector2(128, -1)
+texture = ExtResource("4_yxra4")
+
+[node name="star2" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+visible = false
+position = Vector2(500, -1)
+texture = ExtResource("4_yxra4")
+
+[node name="star3" type="Sprite2D" parent="VBoxContainer/HBoxContainer"]
+visible = false
+position = Vector2(872, -1)
+texture = ExtResource("4_yxra4")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)

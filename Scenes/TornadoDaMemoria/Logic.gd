@@ -6,29 +6,47 @@ var selected_place = ""
 var num_of_objs
 var objs_won = []
 var game_over = false
+var turn: bool = false
 
 func _positive_feedback():
-	await call_dialog(1)
+	call_dialog(1)
 
 func _try_again():
 	call_dialog(0)
 
+func _not_turn():
+	call_dialog(2)
+
 func call_dialog(a):
 	var dialog = AcceptDialog.new()
 	dialog.theme = load("res://ThemeEditor/menus_theme.tres")
-	if (a):
-		dialog.dialog_text = "Parabéns, vocês acertaram! \nMas ainda falta organizar alguma coisa..."
-	else:
-		dialog.dialog_text = "Tente novamente!"
+	match a:
+		2:
+			dialog.dialog_text = "Calma... \nAgora é a vez do outro jogador"
+		1:
+			dialog.dialog_text = "Parabéns, vocês acertaram! \nMas ainda falta organizar alguma coisa..."
+		0:
+			dialog.dialog_text = "Tente novamente!"
 	dialog.title = ""
 	var scene_tree = Engine.get_main_loop()
 	scene_tree.current_scene.add_child(dialog)
 	dialog.popup_centered()
 	await dialog.confirmed
 
+func _change_turn():
+	turn = !turn
+
+func _points_won():
+	objs_won += [selected_object]
+	_check_end_of_game()
+	if (not game_over):
+		_positive_feedback()
+	_change_turn()
+
 func _check_end_of_game():
 	if (objs_won.size() == num_of_objs):
 		game_over = true
+		Global.tdm_started = false
 		if (help): 
 			Global.points+= 1
 		else:
@@ -46,7 +64,8 @@ func _check_end_of_game():
 		dialog.popup_centered()
 
 func ajudar():
-	$BoxContainer2/Doctor.hide()
-	if (help):
-		help = false
-		$Shadows.show()
+	if (Global.tdm_started):
+		$BoxContainer2/Doctor.hide()
+		if (help):
+			help = false
+			$Shadows.show()

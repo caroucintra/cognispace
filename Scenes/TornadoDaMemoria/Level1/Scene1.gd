@@ -6,7 +6,7 @@ const books_initial_position = Vector3(4.80, 13.5, -4.7)
 func _ready():
 	scene_num = 1
 	num_of_objs = 2
-	
+
 #Interaction with objects
 func _on_cactus_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -43,16 +43,17 @@ func unselect_object(obj):
 #Interaction with locations
 func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		if turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
 		match (selected_object):
 			"Cactus":
 				$Cactus.position = cactus_initial_position
 				$Cactus/cactus_small_A2.rotation = Vector3(0,0,0)
 				$Shadows/cactus_small_A2_shadow.visible = false
-				objs_won += ["Cactus"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
-				unselect_object("Cactus")
+				_points_won()
+				unselect_object(selected_object)
 			"":
 				pass
 			_:
@@ -60,16 +61,17 @@ func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
 
 func _on_shelf_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		if not turn:
+			_not_turn()
+			unselect_object(selected_object)
+			return
 		match (selected_object):
 			"Books":
 				$Books.position = books_initial_position
 				$Books/book_set2.rotation = Vector3(0,0,0)
-				objs_won += ["Books"]
-				_check_end_of_game()
-				if (not game_over):
-					_positive_feedback()
+				_points_won()
 				$Shadows/book_set2_shadow.visible = false
-				unselect_object("Books")
+				unselect_object(selected_object)
 			"":
 				pass
 			_:

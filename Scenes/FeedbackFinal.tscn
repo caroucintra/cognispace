@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhmpjur3xtyoe"]
+[gd_scene load_steps=11 format=3 uid="uid://bhmpjur3xtyoe"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_ufv4b"]
 [ext_resource type="Script" path="res://Scenes/FeedbackFinal.gd" id="2_y2t1i"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_dp44f"]
 [ext_resource type="AudioStream" uid="uid://dwdvbn68btq37" path="res://Assets/type-writing.mp3" id="4_11cdo"]
+[ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_j1woq"]
+[ext_resource type="LabelSettings" uid="uid://cf6u4bferp8nl" path="res://ThemeEditor/no_outline.tres" id="5_dw4ol"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="5_g74au"]
 
 [sub_resource type="Animation" id="Animation_cnyae"]
@@ -116,6 +118,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
+label_settings = ExtResource("4_j1woq")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -124,6 +127,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Pressione a tecla 'Espaço' para avançar"
+label_settings = ExtResource("5_dw4ol")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

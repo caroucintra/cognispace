@@ -210,6 +210,7 @@ transform = Transform3D(-0.00389862, 0, 0.629342, 0, 0.629354, 0, -0.629342, 0, 
 
 [node name="Shadows" type="Node3D" parent="."]
 transform = Transform3D(5.06624, 0, -3.51143, 0, 6.16416, 0, 3.51143, 0, 5.06624, -4.60766, 7.01746, -10.9529)
+visible = false
 
 [node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("9_faem2")]
 transform = Transform3D(0.705298, 0, 2.98023e-08, 0, 0.705298, 0, -2.98023e-08, 0, 0.705298, 0, 0, 0)

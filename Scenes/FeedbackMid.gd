@@ -19,7 +19,16 @@ func _ready():
 			score = "Excelente"
 		elif (Global.points >= 2.0):
 			score = "Muito Bom"
-
+	if (score == "Excelente"):
+		$VBoxContainer/HBoxContainer/star1.visible = true
+		$VBoxContainer/HBoxContainer/star2.visible = true
+		$VBoxContainer/HBoxContainer/star3.visible = true
+	elif (score == "Muito Bom"):
+		$VBoxContainer/HBoxContainer/star1.visible = true
+		$VBoxContainer/HBoxContainer/star3.visible = true
+	else:
+		$VBoxContainer/HBoxContainer/star2.visible = true
+	
 	$VBoxContainer/Label.text = "Parabéns!\nVocê avançou para o nível " + str(Global.level) + "! A sua pontuação neste nível foi '" + score + "'!"
 	if (Global.tts):
 		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)

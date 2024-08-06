@@ -4,7 +4,6 @@ class_name Logic
 var help = true
 var scene_num
 
-
 func _process(_delta):
 	$ProgressBar.set_value(Global.points)
 	if (Global.game_over):
@@ -71,7 +70,8 @@ func voltar():
 	Global.game_over = true
 
 func _on_ajuda_button_pressed():
-	print(help)
+	if Global.game_name == "TornadoDaMemoria" and Global.tdm_started == false:
+		return
 	var dialog = AcceptDialog.new()
 	dialog.theme = load("res://ThemeEditor/menus_theme.tres")
 	if (help):
