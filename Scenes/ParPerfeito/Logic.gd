@@ -20,7 +20,10 @@ func call_dialog(a):
 	var dialog = AcceptDialog.new()
 	dialog.theme = load("res://ThemeEditor/menus_theme.tres")
 	if (a):
-		$AnimationPlayer.play("play_feedback")
+		if (Global.sound):
+			$ConfettiPlayer.play("Confetti/confetti_feedback")
+		else:
+			$ConfettiPlayer.play("Confetti/confetti_feedback_no_sound")
 		dialog.dialog_text = "Parabéns, você acertou! \nEstá pronto para a próxima?"
 	else:
 		dialog.dialog_text = "Tente novamente!"

@@ -20,9 +20,20 @@ func _ready():
 			score = "Bom"
 		_:
 			pass
+	if (score == "Excelente"):
+		$VBoxContainer/HBoxContainer/star1.visible = true
+		$VBoxContainer/HBoxContainer/star2.visible = true
+		$VBoxContainer/HBoxContainer/star3.visible = true
+	elif (score == "Muito Bom"):
+		$VBoxContainer/HBoxContainer/star1.visible = true
+		$VBoxContainer/HBoxContainer/star3.visible = true
+	else:
+		$VBoxContainer/HBoxContainer/star2.visible = true
+	
 	$VBoxContainer/Label.text = "Parabéns!\nVocê terminou este jogo em " + time_minutes + " minutos e " + time_seconds + " segundos. A sua pontuação foi '" + score + "'!"
 	if (Global.tts):
 		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)
+	Global.end_minigame()
 
 func _on_voltar_button_pressed():
 	DisplayServer.tts_stop()

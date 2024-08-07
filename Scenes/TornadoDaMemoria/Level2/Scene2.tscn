@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://7dkjblh3ype7" path="res://Models/pictureframe_small_highlighted.tscn" id="27_1jdbv"]
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/ObjectsAnimation.gd" id="28_xuhfu"]
 [ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="29_kxag2"]
+[ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="30_1dppj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -178,42 +179,11 @@ radius = 0.223747
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_de528"]
 
-[sub_resource type="Animation" id="Animation_kx2mp"]
-resource_name = "play_feedback"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
-_data = {
-"play_feedback": SubResource("Animation_kx2mp")
-}
-
 [sub_resource type="Curve" id="Curve_gmrlv"]
 _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08352, 0)
@@ -451,14 +421,6 @@ transform = Transform3D(3.75224, 0, 1.19209e-07, 0, 3.75224, 0, -1.19209e-07, 0,
 visible = false
 shape = SubResource("SphereShape3D_de528")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_kxag2")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s4n3x")
-}
-
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -638,6 +600,15 @@ scale_amount_min = 10.0
 scale_amount_max = 33.0
 scale_amount_curve = SubResource("Curve_gmrlv")
 color = Color(0.794791, 0.780768, 0.238602, 1)
+
+[node name="FireworksPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_kxag2")
+
+[node name="ConfettiPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x"),
+"Confetti": ExtResource("30_1dppj")
+}
 
 [connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
 [connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

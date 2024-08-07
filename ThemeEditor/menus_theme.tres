@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dsjyqvry1y226"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://dsjyqvry1y226"]
 
 [ext_resource type="Texture2D" uid="uid://0t7c0wq1uo63" path="res://Assets/checked.png" id="1_r8pfg"]
 [ext_resource type="Texture2D" uid="uid://73tuimu1em2l" path="res://Assets/unchecked.png" id="2_g211b"]
@@ -167,6 +167,15 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biq53"]
+bg_color = Color(0.992157, 1, 0.658824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qapjm"]
+bg_color = Color(0.984314, 1, 0.168627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx1c4"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lec4m"]
 bg_color = Color(0.992157, 1, 0.658824, 1)
 corner_radius_top_left = 15
@@ -207,6 +216,9 @@ CheckBox/styles/hover = SubResource("StyleBoxFlat_ft4ud")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_nssl0")
 CheckBox/styles/normal = SubResource("StyleBoxFlat_7o0dp")
 CheckBox/styles/pressed = SubResource("StyleBoxFlat_bcwch")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_biq53")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_qapjm")
+HSlider/styles/slider = SubResource("StyleBoxFlat_hx1c4")
 ProgressBar/colors/font_color = Color(0.14902, 0.14902, 0.14902, 1)
 ProgressBar/font_sizes/font_size = 15
 ProgressBar/styles/background = SubResource("StyleBoxFlat_lec4m")

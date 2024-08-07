@@ -5,6 +5,7 @@ var start: bool = false
 var max_time: int = 600
 var my_timer: float = 0.0
 var tts: bool = false
+var sound: bool = true
 
 var points: float
 var games: int
@@ -32,4 +33,5 @@ func end_minigame():
 	game_over = true
 	start = false
 	game_name = ""
+	tdm_started = false
 

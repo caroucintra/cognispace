@@ -336,7 +336,10 @@ func _check_end_of_game():
 		var dialog = AcceptDialog.new()
 		dialog.theme = load("res://ThemeEditor/menus_theme.tres")
 		var scene_tree = Engine.get_main_loop()
-		$AnimationPlayer.play("play_feedback")
+		if (Global.sound):
+			$ConfettiPlayer.play("Confetti/confetti_feedback")
+		else:
+			$ConfettiPlayer.play("Confetti/confetti_feedback_no_sound")
 		dialog.dialog_text = "Parabéns! \nVocês acertaram todos os pares! \nProntos para o próximo desafio?"
 		dialog.ok_button_text = "Sim"
 		dialog.title = ""

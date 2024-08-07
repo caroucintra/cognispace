@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="15_ks2yn"]
 [ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="16_jxbdb"]
 [ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="17_ku4dw"]
+[ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="18_24p8l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -29,42 +30,11 @@ uv1_scale = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_iqnrd")
 size = Vector3(80, 2, 80)
 
-[sub_resource type="Animation" id="Animation_kx2mp"]
-resource_name = "play_feedback"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
-_data = {
-"play_feedback": SubResource("Animation_kx2mp")
-}
-
 [sub_resource type="Curve" id="Curve_0r7cc"]
 _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5l2o5")
@@ -195,14 +165,6 @@ grow_horizontal = 0
 theme = ExtResource("12_0auoj")
 max_value = 5.0
 show_percentage = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_ks2yn")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s4n3x")
-}
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
@@ -425,6 +387,15 @@ transform = Transform3D(0.718475, 0.428824, -0.547635, 0.0692798, 0.739301, 0.66
 transform = Transform3D(0.998752, -0.0303093, 0.0396996, 0.0237353, 0.987363, 0.156691, -0.0439462, -0.155553, 0.986849, 10.3182, 1.52309, 2.77308)
 projection = 1
 size = 19.9262
+
+[node name="FireworksPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ks2yn")
+
+[node name="ConfettiPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x"),
+"Confetti": ExtResource("18_24p8l")
+}
 
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]

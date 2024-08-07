@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://4r3ylva07f66" path="res://Models/wall.tscn" id="10_ths0o"]
 [ext_resource type="PackedScene" uid="uid://cewv8iqxjvft3" path="res://Models/wall_window.tscn" id="11_ak5m6"]
 [ext_resource type="PackedScene" uid="uid://b7vclw7gmvpu7" path="res://Models/wall_half.tscn" id="12_n6fkm"]
+[ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="14_exs00"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="15_qnbm3"]
 [ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="16_m1h7y"]
 [ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="16_r5nyd"]
@@ -27,38 +28,7 @@ uv1_scale = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_iqnrd")
 size = Vector3(80, 2, 80)
 
-[sub_resource type="Animation" id="Animation_kx2mp"]
-resource_name = "play_feedback"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
-_data = {
-"play_feedback": SubResource("Animation_kx2mp")
-}
 
 [sub_resource type="Curve" id="Curve_nmoa6"]
 _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
@@ -190,12 +160,13 @@ theme = ExtResource("6_ugkml")
 max_value = 5.0
 show_percentage = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="FireworksPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_r5nyd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="ConfettiPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_s4n3x")
+"": SubResource("AnimationLibrary_s4n3x"),
+"Confetti": ExtResource("14_exs00")
 }
 
 [node name="BoxContainer" type="BoxContainer" parent="."]

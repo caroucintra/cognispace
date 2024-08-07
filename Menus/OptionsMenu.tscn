@@ -46,6 +46,12 @@ alignment = 1
 layout_mode = 2
 text = "Leitor de Texto"
 
+[node name="SoundCheckbox" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+keep_pressed_outside = true
+text = "Som"
+
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -64,4 +70,5 @@ focus_neighbor_right = NodePath("../VBoxContainer2/RdCButton")
 text = "Voltar"
 
 [connection signal="toggled" from="VBoxContainer/TextToSpeechCheckbox" to="." method="_on_text_to_speech_checkbox_toggled"]
+[connection signal="toggled" from="VBoxContainer/SoundCheckbox" to="." method="_on_sound_checkbox_toggled"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

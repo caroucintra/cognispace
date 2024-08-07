@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bfv6gi8dnthfi" path="res://Assets/restaurant_gltf/jar_A_small.gltf" id="16_dcre8"]
 [ext_resource type="PackedScene" uid="uid://bwm7glibhioya" path="res://Assets/restaurant_gltf/ketchup.gltf" id="17_oitq0"]
 [ext_resource type="PackedScene" uid="uid://b6vp5qkfn0xpc" path="res://Models/chair_yellow.tscn" id="18_vb4ov"]
+[ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="19_pmrjn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -30,42 +31,11 @@ uv1_scale = Vector3(10, 10, 10)
 material = SubResource("StandardMaterial3D_iqnrd")
 size = Vector3(80, 2, 80)
 
-[sub_resource type="Animation" id="Animation_kx2mp"]
-resource_name = "play_feedback"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxContainer/Confetti:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-3.1, -0.1, 0.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
-_data = {
-"play_feedback": SubResource("Animation_kx2mp")
-}
-
 [sub_resource type="Curve" id="Curve_8fmki"]
 _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_8mgvx")
@@ -169,14 +139,6 @@ grow_horizontal = 0
 theme = ExtResource("5_27b1s")
 max_value = 5.0
 show_percentage = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_e7oh4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s4n3x")
-}
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
@@ -415,6 +377,15 @@ transform = Transform3D(3.79772, 0, 0, 0, 3.79772, 0, 0, 0, 3.79772, -4.05053, 5
 
 [node name="chair_yellow" parent="." instance=ExtResource("18_vb4ov")]
 transform = Transform3D(3.49756, 0, -4.89851, 0, 6.019, 0, 4.89851, 0, 3.49756, 10.0325, -0.32032, -1.33512)
+
+[node name="FireworksPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_e7oh4")
+
+[node name="ConfettiPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s4n3x"),
+"Confetti": ExtResource("19_pmrjn")
+}
 
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]
