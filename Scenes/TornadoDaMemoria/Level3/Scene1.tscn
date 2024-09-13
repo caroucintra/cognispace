@@ -702,6 +702,8 @@ libraries = {
 [connection signal="input_event" from="Counter2" to="." method="_on_counter2_input_event"]
 [connection signal="input_event" from="Jar" to="." method="_on_jar_input_event"]
 [connection signal="input_event" from="Pan1" to="." method="_on_pan1_input_event"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]
 [connection signal="input_event" from="Counter1" to="." method="_on_counter1_input_event"]
 [connection signal="input_event" from="Lid" to="." method="_on_lid_input_event"]
 [connection signal="input_event" from="Pot" to="." method="_on_pot_input_event"]

@@ -1,7 +1,7 @@
 extends TdMLogic
 
-const cactus_initial_position = Vector3(-4.6, 7.01, -10.0)
-const books_initial_position = Vector3(4.80, 13.5, -4.7)
+const cactus_initial_position = Vector3(0.919, 13.052, -8.501)
+const books_initial_position = Vector3(12.035, 8.068, 2.233)
 
 func _ready():
 	scene_num = 2
@@ -41,7 +41,7 @@ func unselect_object(obj):
 			$Books/book_set2.remove_highlight()
 
 #Interaction with locations
-func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
+func _on_shelf_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if turn:
 			_not_turn()
@@ -59,7 +59,7 @@ func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
 			_:
 				_try_again()
 
-func _on_shelf_input_event(camera, event, position, normal, shape_idx):
+func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if not turn:
 			_not_turn()

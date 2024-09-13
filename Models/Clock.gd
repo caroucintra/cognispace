@@ -12,6 +12,6 @@ func _ready():
 func _process(delta):
 	time = Time.get_time_dict_from_system()
 	radian_minutes = time["minute"] * PI/30
-	radian_hours = time["hour"] * PI/6
+	radian_hours = (time["hour"] * PI/6) + radian_minutes/12
 	$face/pivot_minutes.rotation = radian_minutes
 	$face/pivot_hours.rotation = radian_hours

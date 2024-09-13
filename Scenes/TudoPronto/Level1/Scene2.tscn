@@ -142,10 +142,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.465
 anchor_bottom = 1.463
-offset_left = -306.0
-offset_top = -0.0883942
-offset_right = -96.0
-offset_bottom = 0.488861
+offset_left = -9.0
+offset_top = 570.655
+offset_right = 341.0
+offset_bottom = -529.721
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

@@ -6,7 +6,7 @@ func _ready():
 	if Global.sound:
 		$VBoxContainer/SoundCheckbox.button_pressed = true
 
-func _on_back_button_pressed():
+func _on_voltar_button_pressed():
 	get_tree().change_scene_to_file("res://Menus/Menu.tscn")
 
 

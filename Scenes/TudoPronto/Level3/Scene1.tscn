@@ -173,11 +173,14 @@ icon_alignment = 1
 [node name="BoxContainer" type="BoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.039
-anchor_right = 1.0
-anchor_bottom = 1.073
-offset_top = -0.308998
-offset_bottom = -0.0371094
+anchor_left = 0.184
+anchor_top = 0.045
+anchor_right = 0.861
+anchor_bottom = 1.0
+offset_left = -0.0880013
+offset_top = -0.105003
+offset_right = -14.852
+offset_bottom = -9.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="."]

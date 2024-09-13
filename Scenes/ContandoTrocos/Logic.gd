@@ -2,6 +2,7 @@ extends Logic
 class_name CTLogic
 
 var selected = 0
+var error = false
 var answer
 
 func _on_a1_button_pressed():
@@ -23,7 +24,7 @@ func _check_answer():
 		_try_again()
 		
 func _positive_feedback():
-	if (help): 
+	if (help and not error):
 		Global.points+=1
 	else:
 		Global.points+=0.5
@@ -32,6 +33,7 @@ func _positive_feedback():
 	next_scene()
 
 func _try_again():
+	error = true
 	call_dialog(0)
 
 func call_dialog(a):

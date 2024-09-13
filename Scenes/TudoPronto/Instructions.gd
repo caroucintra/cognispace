@@ -4,7 +4,11 @@ var voice_id = voices[0]
 
 func _ready():
 	if (Global.tts):
-		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)
+		DisplayServer.tts_speak($VBoxContainer/Label1.text, voice_id)
+		DisplayServer.tts_speak($VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer/Label2.text, voice_id)
+		DisplayServer.tts_speak($VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer/Label3.text, voice_id)
+		DisplayServer.tts_speak($VBoxContainer/HBoxContainer2/ColorRect3/VBoxContainer/Label4.text, voice_id)
+		DisplayServer.tts_speak($VBoxContainer/Label5.text, voice_id)
 
 func _on_back_button_pressed():
 	DisplayServer.tts_stop()

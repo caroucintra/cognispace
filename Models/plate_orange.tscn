@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0int5toncvl3" path="res://Assets/restaurant_gltf/plate.gltf" id="1_xfr0j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5cu5"]
-albedo_color = Color(0.876182, 0.535047, 0.188037, 1)
+albedo_color = Color(0.9438, 0.538964, 0.0418776, 1)
 
 [node name="plate_orange" instance=ExtResource("1_xfr0j")]
 

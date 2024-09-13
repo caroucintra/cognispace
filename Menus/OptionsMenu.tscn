@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvgaheie35m1m"]
+[gd_scene load_steps=5 format=3 uid="uid://bvgaheie35m1m"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_ks8cb"]
 [ext_resource type="Script" path="res://Menus/OptionsMenu.gd" id="2_dqbv2"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_hsjms"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_l61k8"]
 
 [node name="options_menu" type="Control"]
 layout_mode = 3
@@ -52,23 +53,16 @@ size_flags_horizontal = 0
 keep_pressed_outside = true
 text = "Som"
 
-[node name="BackButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -192.0
-offset_right = 106.0
-offset_bottom = -55.0
-grow_horizontal = 2
-grow_vertical = 0
-focus_neighbor_top = NodePath("../VBoxContainer2/RdCButton")
-focus_neighbor_right = NodePath("../VBoxContainer2/RdCButton")
-text = "Voltar"
+[node name="VoltarButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
+theme = ExtResource("1_ks8cb")
+text = " Voltar"
+icon = ExtResource("4_l61k8")
 
 [connection signal="toggled" from="VBoxContainer/TextToSpeechCheckbox" to="." method="_on_text_to_speech_checkbox_toggled"]
 [connection signal="toggled" from="VBoxContainer/SoundCheckbox" to="." method="_on_sound_checkbox_toggled"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]

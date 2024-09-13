@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://yvdu5t0y7fv7"]
+
+[ext_resource type="PackedScene" uid="uid://c3tvxhsfh64ib" path="res://Assets/furniture_gltf/pictureframe_small_C.gltf" id="1_1mo6x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbmm7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="pictureframe_small_C2" instance=ExtResource("1_1mo6x")]
+
+[node name="pictureframe_small_C" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wbmm7")

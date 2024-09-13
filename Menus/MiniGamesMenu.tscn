@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfdk211hkwyvt"]
+[gd_scene load_steps=9 format=3 uid="uid://dfdk211hkwyvt"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_76y8f"]
 [ext_resource type="Script" path="res://Menus/MiniGamesMenu.gd" id="2_kb444"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_arx0m"]
+[ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_jtb3g"]
+[ext_resource type="Texture2D" uid="uid://dam4mqrvrhbyi" path="res://Assets/tdm.png" id="4_uxjfg"]
+[ext_resource type="Texture2D" uid="uid://lhtxblkgkla4" path="res://Assets/pp.png" id="5_gjff6"]
+[ext_resource type="Texture2D" uid="uid://dy1xja56i36wv" path="res://Assets/ct.png" id="6_157cu"]
+[ext_resource type="Texture2D" uid="uid://f234w4h0csj5" path="res://Assets/tp.png" id="7_pi4so"]
 
 [node name="minigames_menu" type="Control"]
 layout_mode = 3
@@ -47,63 +52,67 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer3/HBoxContainer"]
+[node name="TdMButton" type="Button" parent="VBoxContainer3/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-alignment = 1
-
-[node name="TdMButton" type="Button" parent="VBoxContainer3/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_right = NodePath("../../VBoxContainer2/CTButton")
+focus_neighbor_right = NodePath("../CTButton")
 focus_neighbor_bottom = NodePath("../PPButton")
+theme = ExtResource("1_76y8f")
 theme_override_font_sizes/font_size = 60
-text = "Tornado da
+text = "Tornado 
+da
 Memória"
+icon = ExtResource("4_uxjfg")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="PPButton" type="Button" parent="VBoxContainer3/HBoxContainer/VBoxContainer"]
+[node name="PPButton" type="Button" parent="VBoxContainer3/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../TdMButton")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TPButton")
-focus_neighbor_bottom = NodePath("../../../BackButton")
+focus_neighbor_right = NodePath("../TPButton")
+theme = ExtResource("1_76y8f")
 theme_override_font_sizes/font_size = 60
 text = "Par
 Perfeito"
+icon = ExtResource("5_gjff6")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer3/HBoxContainer"]
+[node name="CTButton" type="Button" parent="VBoxContainer3/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-alignment = 1
-
-[node name="CTButton" type="Button" parent="VBoxContainer3/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TdMButton")
+focus_neighbor_left = NodePath("../TdMButton")
 focus_neighbor_bottom = NodePath("../TPButton")
+theme = ExtResource("1_76y8f")
 theme_override_font_sizes/font_size = 60
 text = "Contando
 Trocos"
+icon = ExtResource("6_157cu")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TPButton" type="Button" parent="VBoxContainer3/HBoxContainer/VBoxContainer2"]
+[node name="TPButton" type="Button" parent="VBoxContainer3/HBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/PPButton")
+focus_neighbor_left = NodePath("../PPButton")
 focus_neighbor_top = NodePath("../CTButton")
-focus_neighbor_bottom = NodePath("../../../BackButton")
+theme = ExtResource("1_76y8f")
 theme_override_font_sizes/font_size = 60
 text = "Tudo
 Pronto?"
+icon = ExtResource("7_pi4so")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="BackButton" type="Button" parent="VBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-focus_neighbor_left = NodePath("../HBoxContainer/VBoxContainer/PPButton")
-focus_neighbor_top = NodePath("../HBoxContainer/VBoxContainer2/TPButton")
-focus_neighbor_right = NodePath("../HBoxContainer/VBoxContainer2/TPButton")
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 316.0
+offset_bottom = 164.0
 theme = ExtResource("1_76y8f")
-theme_type_variation = &"FlatButton"
-text = "Voltar"
+text = " Voltar"
+icon = ExtResource("4_jtb3g")
 
-[connection signal="pressed" from="VBoxContainer3/HBoxContainer/VBoxContainer/TdMButton" to="." method="_on_tdm_button_pressed"]
-[connection signal="pressed" from="VBoxContainer3/HBoxContainer/VBoxContainer/PPButton" to="." method="_on_pp_button_pressed"]
-[connection signal="pressed" from="VBoxContainer3/HBoxContainer/VBoxContainer2/CTButton" to="." method="_on_ct_button_pressed"]
-[connection signal="pressed" from="VBoxContainer3/HBoxContainer/VBoxContainer2/TPButton" to="." method="_on_tp_button_pressed"]
-[connection signal="pressed" from="VBoxContainer3/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/HBoxContainer/TdMButton" to="." method="_on_tdm_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/HBoxContainer/PPButton" to="." method="_on_pp_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/HBoxContainer/CTButton" to="." method="_on_ct_button_pressed"]
+[connection signal="pressed" from="VBoxContainer3/HBoxContainer/TPButton" to="." method="_on_tp_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

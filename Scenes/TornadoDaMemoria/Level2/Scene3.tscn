@@ -615,3 +615,5 @@ libraries = {
 [connection signal="input_event" from="Cactus" to="." method="_on_cactus_input_event"]
 [connection signal="input_event" from="Picture" to="." method="_on_picture_input_event"]
 [connection signal="input_event" from="Plate" to="." method="_on_plate_input_event"]
+[connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]

@@ -1,121 +1,126 @@
 extends TdMLogic
 
-const jar_initial_position = Vector3(-12.361, 6.661, -13.627)
-const pan1_initial_position = Vector3(-14.405, 6.99, -7.697)
-const lid_initial_position = Vector3(-1.84, 8.965, 2.473)
-const pot_initial_position = Vector3(7.685, 8.077, 1.348)
-const pan2_initial_position = Vector3(-1.84, 8.077, 2.473)
-const knife_initial_position = Vector3(-6.609, 8.07, -4.085)
+const cactus_initial_position = Vector3(0.919, 14.369, -8.501)
+const cactus2_initial_position = Vector3(3.558, 6.952, 0.994)
+const books_initial_position = Vector3(-4.992, 15.55, -13.336)
+const picture_initial_position = Vector3(4.993, 8.384, -3.517)
+const candle_initial_position = Vector3(-2.465, 14.381, -10.997)
+const lamp_initial_position = Vector3(8.659,7.275, 2.141)
 
 func _ready():
 	scene_num = 2
 	num_of_objs = 6
 	
 #Interaction with objects
-func _on_jar_input_event(camera, event, position, normal, shape_idx):
+func _on_cactus_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Jar":
-			select_object("Jar")
+		if selected_object != "Cactus":
+			select_object("Cactus")
 		else:
-			unselect_object("Jar")
+			unselect_object("Cactus")
 
-func _on_pan1_input_event(camera, event, position, normal, shape_idx):
+func _on_books_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Pan1":
-			select_object("Pan1")
+		if selected_object != "Books":
+			select_object("Books")
 		else:
-			unselect_object("Pan1")
+			unselect_object("Books")
 
-func _on_lid_input_event(camera, event, position, normal, shape_idx):
+
+func _on_lamp_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Lid":
-			select_object("Lid")
+		if selected_object != "Lamp":
+			select_object("Lamp")
 		else:
-			unselect_object("Lid")
-			
-func _on_pot_input_event(camera, event, position, normal, shape_idx):
+			unselect_object("Lamp")
+
+
+func _on_cactus2_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Pot":
-			select_object("Pot")
+		if selected_object != "Cactus2":
+			select_object("Cactus2")
 		else:
-			unselect_object("Pot")
-			
-func _on_pan2_input_event(camera, event, position, normal, shape_idx):
+			unselect_object("Cactus2")
+
+
+func _on_picture_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Pan2":
-			select_object("Pan2")
+		if selected_object != "Picture":
+			select_object("Picture")
 		else:
-			unselect_object("Pan2")
-			
-func _on_knife_input_event(camera, event, position, normal, shape_idx):
+			unselect_object("Picture")
+
+
+func _on_candle_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if selected_object != "Knife":
-			select_object("Knife")
+		if selected_object != "Candle":
+			select_object("Candle")
 		else:
-			unselect_object("Knife")
+			unselect_object("Candle")
+
 
 func select_object(obj):
 	unselect_object(selected_object)
 	match obj:
-		"Pot":
-			selected_object = "Pot"
-			$Pot/pot_stew/pot_large2.add_highlight()
-		"Pan1":
-			selected_object = "Pan1"
-			$Pan1/pan_0062.add_highlight()		
-		"Pan2":
-			selected_object = "Pan2"
-			$Pan2/pan_B2.add_highlight()
-		"Knife":
-			selected_object = "Knife"
-			$Knife/knife2.add_highlight()
-		"Jar":
-			selected_object = "Jar"
-			$Jar/jar_A_medium2.add_highlight()
-		"Lid":
-			selected_object = "Lid"
-			$Lid/lid_B2.add_highlight()
+		"Cactus":
+			selected_object = "Cactus"
+			$Cactus/cactus_small_A2.add_highlight()
+		"Books":
+			selected_object = "Books"
+			$Books/book_set2.add_highlight()
+		"Lamp":
+			selected_object = "Lamp"
+			$Lamp/lamp_table2.add_highlight()
+		"Picture":
+			selected_object = "Picture"
+			$Picture/pictureframe_small_C2.add_highlight()
+		"Cactus2":
+			selected_object = "Cactus2"
+			$Cactus2/cactus_medium_A2.add_highlight()
+		"Candle":
+			selected_object = "Candle"
+			$Candle/candle_triple2.add_highlight()
 
 func unselect_object(obj):
 	selected_object = ""
 	match obj:
-		"Pot":	
-			$Pot/pot_stew/pot_large2.remove_highlight()
-		"Pan1":
-			$Pan1/pan_0062.remove_highlight()
-		"Pan2":
-			$Pan2/pan_B2.remove_highlight()
-		"Jar":
-			$Jar/jar_A_medium2.remove_highlight()
-		"Knife":
-			$Knife/knife2.remove_highlight()
-		"Lid":
-			$Lid/lid_B2.remove_highlight()
+		"Cactus":
+			$Cactus/cactus_small_A2.remove_highlight()
+		"Books":
+			$Books/book_set2.remove_highlight()
+		"Lamp":
+			$Lamp/lamp_table2.remove_highlight()
+		"Picture":
+			$Picture/pictureframe_small_C2.remove_highlight()
+		"Cactus2":
+			$Cactus2/cactus_medium_A2.remove_highlight()
+		"Candle":
+			$Candle/candle_triple2.remove_highlight()
 
 #Interaction with locations
-func _on_counter1_input_event(camera, event, position, normal, shape_idx):
+func _on_shelf_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if turn:
 			_not_turn()
 			unselect_object(selected_object)
 			return
 		match (selected_object):
-			"Jar":
-				$Jar.position = jar_initial_position
-				$Jar/jar_A_medium2.rotation = Vector3(0,0,0)
-				$Shadows/jar_A_medium_shadow.visible = false
+			"Cactus":
+				$Cactus.position = cactus_initial_position
+				$Cactus/cactus_small_A2.rotation = Vector3(0,0,0)
+				$Shadows/cactus_small_A2_shadow.visible = false
 				_points_won()
 				unselect_object(selected_object)
-			"Knife":
-				$Knife.position = knife_initial_position
-				$Knife/knife2.rotation = Vector3(0,0,0)
-				$Shadows/knife2_shadow.visible = false
+			"Books":
+				$Books.position = books_initial_position
+				$Books/book_set2.rotation = Vector3(0,0,0)
+				$Shadows/book_set2_shadow.visible = false
 				_points_won()
 				unselect_object(selected_object)
-			"Pan1":
-				$Pan1.position = pan1_initial_position
-				$Pan1/pan_0062.rotation = Vector3(0,0,0)
-				$Shadows/pan_0062_shadow.visible = false
+			"Candle":
+				$Candle.position = candle_initial_position
+				$Candle/candle_triple2.rotation = Vector3(0,0,0)
+				$Shadows/candle_triple2_shadow.visible = false
 				_points_won()
 				unselect_object(selected_object)
 			"":
@@ -123,32 +128,33 @@ func _on_counter1_input_event(camera, event, position, normal, shape_idx):
 			_:
 				_try_again()
 
-func _on_counter2_input_event(camera, event, position, normal, shape_idx):
+func _on_cabinet_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if not turn:
 			_not_turn()
 			unselect_object(selected_object)
 			return
 		match (selected_object):
-			"Pan2":
-				$Pan2.position = pan2_initial_position
-				$Pan2/pan_B2.rotation = Vector3(0,0,0)
-				$Shadows/pan_B2_shadow.visible = false
+			"Lamp":
+				$Lamp.position = lamp_initial_position
+				$Lamp/lamp_table2.rotation = Vector3(0,0,0)
 				_points_won()
+				$Shadows/lamp_table2_shadow.visible = false
 				unselect_object(selected_object)
-			"Pot":
-				$Pot.position = pot_initial_position
-				$Pot/pot_stew/pot_large2.rotation = Vector3(0,0,0)
-				$Shadows/pot_large2_shadow.visible = false
+			"Cactus2":
+				$Cactus2.position = cactus2_initial_position
+				$Cactus2/cactus_medium_A2.rotation = Vector3(0,0,0)
 				_points_won()
+				$Shadows/cactus_medium_A2.visible = false
 				unselect_object(selected_object)
-			"Lid":
-				$Lid.position = lid_initial_position
-				$Lid/lid_B2.rotation = Vector3(0,0,0)
-				$Shadows/lid_B2_shadow.visible = false
+			"Picture":
+				$Picture.position = picture_initial_position
+				$Picture/pictureframe_small_C2.rotation = Vector3(0,0,0)
 				_points_won()
+				$Shadows/pictureframe_small_C2.visible = false
 				unselect_object(selected_object)
 			"":
 				pass
 			_:
 				_try_again()
+

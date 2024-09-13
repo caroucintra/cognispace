@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmxqsa365buy6"]
+[gd_scene load_steps=8 format=3 uid="uid://cmxqsa365buy6"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_11p72"]
 [ext_resource type="Script" path="res://Scenes/ContandoTrocos/Instructions.gd" id="2_2ieef"]
@@ -6,6 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_6gu1c"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_uqarf"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_cwobj"]
+[ext_resource type="LabelSettings" uid="uid://cf6u4bferp8nl" path="res://ThemeEditor/no_outline.tres" id="5_fum1s"]
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
@@ -49,14 +50,101 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label1" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
-text = "Este jogo é para um jogador. O jogador deve reconhecer as moedas e notas e utilizar os seus conhecimentos matemáticos para responder às seguintes questões.
-Está pronto/a para o desafio?"
+text = "Este jogo é para 1 jogador."
+label_settings = ExtResource("4_6gu1c")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -116.0
+offset_right = 180.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "1. Reconhecer"
+label_settings = ExtResource("4_6gu1c")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "O jogador deverá 
+reconhecer as moedas 
+e notas em cima 
+da mesa."
+label_settings = ExtResource("5_fum1s")
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "2. Contar"
+label_settings = ExtResource("4_6gu1c")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "Depois, deverá utilizar 
+os seus conhecimentos 
+matemáticos para 
+responder às questões!"
+label_settings = ExtResource("5_fum1s")
+horizontal_alignment = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "Está pronto/a para o desafio?"
 label_settings = ExtResource("4_6gu1c")
 horizontal_alignment = 1
 autowrap_mode = 3

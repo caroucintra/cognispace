@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gvdc4aju6y1a"]
+
+[ext_resource type="PackedScene" uid="uid://bed6byd1025vd" path="res://Models/burger_whole.tscn" id="1_ta58x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfj3i"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="food_burger2" instance=ExtResource("1_ta58x")]
+
+[node name="food_burger" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wfj3i")

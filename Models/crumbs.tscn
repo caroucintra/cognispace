@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqqelmmk4q30r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcbw4"]
+albedo_color = Color(0.870588, 0.698039, 0.498039, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bmma2"]
+material = SubResource("StandardMaterial3D_fcbw4")
+
+[node name="crumbs" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.16528, 0, 0, 0, 0.0890363, 0, 0, 0, 0.152017, 0.179193, 0.0450724, -0.0808494)
+mesh = SubResource("SphereMesh_bmma2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0848493, 0, 0.157808, 0, 0.0890363, 0, -0.206874, 0, 0.0647249, -0.164644, 0.0450724, 0.00379801)
+mesh = SubResource("SphereMesh_bmma2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0296478, 0, 0.112303, 0, 0.0676875, 0, -0.122102, 0, 0.0272687, 0.00424477, 0.0450724, 0.130566)
+mesh = SubResource("SphereMesh_bmma2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0477248, 0, 0.0738564, 0, 0.0453079, 0, -0.116359, 0, 0.0302922, 0.066363, 0.0447586, -0.208679)
+mesh = SubResource("SphereMesh_bmma2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0238996, 0, 0.0666466, 0, 0.0321017, 0, -0.0582704, 0, 0.0273351, -0.0114986, 0.0447586, -0.188777)
+mesh = SubResource("SphereMesh_bmma2")

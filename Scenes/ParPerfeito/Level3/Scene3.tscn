@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c07eu2p1sllie"]
+[gd_scene load_steps=35 format=3 uid="uid://c07eu2p1sllie"]
 
 [ext_resource type="Script" path="res://Scenes/ParPerfeito/Level3/Scene3.gd" id="1_ccugo"]
 [ext_resource type="Texture2D" uid="uid://cc04jte2bbdbk" path="res://Assets/grass-texture.jpg" id="2_o0a5s"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://6k7l0q0oa1w6" path="res://Assets/restaurant_gltf/food_ingredient_burger_cooked.gltf" id="24_2jo3h"]
 [ext_resource type="PackedScene" uid="uid://bw6lbwrkvurj0" path="res://Assets/restaurant_gltf/food_ingredient_bun_bottom.gltf" id="25_5iyb6"]
 [ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="26_o6fas"]
+[ext_resource type="AudioStream" uid="uid://b3ph6ohwlndp3" path="res://Assets/forest.mp3" id="27_fsh0v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -43,6 +44,27 @@ _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.8791
 point_count = 2
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+
+[sub_resource type="Animation" id="Animation_eqtso"]
+length = 190.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundPlayer/AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2sx3t"]
+_data = {
+"background_sound": SubResource("Animation_eqtso")
+}
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_ccugo")
@@ -86,7 +108,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Onde está o hambúrger?"
+text = "Onde está o hambúrguer?"
 label_settings = ExtResource("4_eov87")
 horizontal_alignment = 1
 
@@ -99,8 +121,8 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A3Button")
 focus_neighbor_right = NodePath("../A2Button")
 theme = ExtResource("5_molv1")
-text = "O hambúrger 
-está em cima 
+text = "Está 
+em cima 
 da mesa"
 
 [node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
@@ -109,8 +131,8 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A1Button")
 focus_neighbor_right = NodePath("../A3Button")
 theme = ExtResource("5_molv1")
-text = "O hambúrger 
-está a cair
+text = "Está 
+a cair
 no chão"
 
 [node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
@@ -119,8 +141,8 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A2Button")
 focus_neighbor_right = NodePath("../A1Button")
 theme = ExtResource("5_molv1")
-text = "O hambúrger 
-já caiu
+text = "Já 
+caiu
 no chão"
 
 [node name="VoltarButton" type="Button" parent="."]
@@ -418,6 +440,14 @@ libraries = {
 "": SubResource("AnimationLibrary_s4n3x"),
 "Confetti": ExtResource("26_o6fas")
 }
+
+[node name="BackgroundPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"Background": SubResource("AnimationLibrary_2sx3t")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackgroundPlayer"]
+stream = ExtResource("27_fsh0v")
 
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]

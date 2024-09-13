@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b3or06io3upbg"]
+[gd_scene load_steps=28 format=3 uid="uid://b3or06io3upbg"]
 
 [ext_resource type="Script" path="res://Scenes/ContandoTrocos/Level3/Scene1.gd" id="1_o0k3e"]
 [ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_125pm"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="16_r5nyd"]
 [ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="18_7qrgd"]
 [ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="19_r5pyp"]
+[ext_resource type="AudioStream" uid="uid://cdy3x4mki2vf4" path="res://Assets/kitchen.mp3" id="20_3ggyj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4xlg"]
 size = Vector3(30, 1, 30)
@@ -36,6 +37,27 @@ _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.8791
 point_count = 2
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+
+[sub_resource type="Animation" id="Animation_eqtso"]
+length = 190.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundPlayer/AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2sx3t"]
+_data = {
+"background_sound": SubResource("Animation_eqtso")
+}
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_o0k3e")
@@ -109,6 +131,7 @@ label_settings = ExtResource("5_psk6t")
 horizontal_alignment = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
@@ -395,6 +418,14 @@ libraries = {
 "": SubResource("AnimationLibrary_s4n3x"),
 "Confetti": ExtResource("19_r5pyp")
 }
+
+[node name="BackgroundPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"Background": SubResource("AnimationLibrary_2sx3t")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BackgroundPlayer"]
+stream = ExtResource("20_3ggyj")
 
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A1Button" to="." method="_on_a1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BoxContainer/A2Button" to="." method="_on_a2_button_pressed"]

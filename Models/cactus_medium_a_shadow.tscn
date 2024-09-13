@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cviyxck8gov1s"]
+
+[ext_resource type="PackedScene" uid="uid://nc3sjm07jaqn" path="res://Assets/furniture_gltf/cactus_medium_A.gltf" id="1_v4rs3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljosk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="cactus_medium_A2" instance=ExtResource("1_v4rs3")]
+
+[node name="cactus_medium_A" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ljosk")

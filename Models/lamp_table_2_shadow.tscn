@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqirtc8pcrwyo"]
+
+[ext_resource type="PackedScene" uid="uid://cswbcnyqi2bmo" path="res://Assets/furniture_gltf/lamp_table.gltf" id="1_snnsk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dagen"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="lamp_table2_shadow" instance=ExtResource("1_snnsk")]
+
+[node name="lamp_table" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dagen")

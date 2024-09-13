@@ -2,18 +2,20 @@ extends Logic
 class_name PPLogic
 
 var selected = 0
+var error = false
 var answer
 
 func _positive_feedback():
-	if (help): 
-		Global.points += 1
+	if (help and not error):
+		Global.points+=1
 	else:
-		Global.points += 0.5
+		Global.points+=0.5
 	Global.games += 1
 	await call_dialog(1)
 	next_scene()
 
 func _try_again():
+	error = true
 	call_dialog(0)
 
 func call_dialog(a):

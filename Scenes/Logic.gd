@@ -12,7 +12,7 @@ func _process(_delta):
 func next_scene():
 	if (Global.game_name == "ContandoTrocos" or Global.game_name == "ParPerfeito"):
 		if (Global.games == 5):
-			if (Global.points < 3.0):
+			if (Global.points < 3.0 or Global.level == 3):
 				Global.points = 0
 				Global.games = 0
 				var rng = RandomNumberGenerator.new()
@@ -24,8 +24,6 @@ func next_scene():
 				if (Global.level != 3):
 					Global.num_of_scenes = 3
 					get_tree().change_scene_to_file("res://Scenes/FeedbackMid.tscn")
-				else:
-					Global.game_over = true
 		else:
 			var rng = RandomNumberGenerator.new()
 			var rnd = scene_num
@@ -34,7 +32,7 @@ func next_scene():
 			get_tree().change_scene_to_file("res://Scenes/" + Global.game_name + "/Level"+ str(Global.level) + "/Scene" + str(rnd) + ".tscn")
 	else:
 		if (Global.games == 3):
-			if (Global.points < 2.0):
+			if (Global.points < 2.0  or Global.level == 3):
 				Global.points = 0
 				Global.games = 0
 				var rng = RandomNumberGenerator.new()
@@ -45,8 +43,6 @@ func next_scene():
 			else:
 				if (Global.level != 3):
 					get_tree().change_scene_to_file("res://Scenes/FeedbackMid.tscn")
-				else:
-					Global.game_over = true
 		else:
 			var rng = RandomNumberGenerator.new()
 			var rnd = scene_num

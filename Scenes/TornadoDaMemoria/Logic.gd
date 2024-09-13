@@ -7,11 +7,13 @@ var num_of_objs
 var objs_won = []
 var game_over = false
 var turn: bool = false
+var error: bool = false
 
 func _positive_feedback():
 	call_dialog(1)
 
 func _try_again():
+	error = true
 	call_dialog(0)
 
 func _not_turn():
@@ -47,7 +49,7 @@ func _check_end_of_game():
 	if (objs_won.size() == num_of_objs):
 		game_over = true
 		Global.tdm_started = false
-		if (help): 
+		if (help and not error): 
 			Global.points+= 1
 		else:
 			Global.points+= 0.5

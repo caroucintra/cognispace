@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvkdt4nlu3gbh"]
+[gd_scene load_steps=11 format=3 uid="uid://dvkdt4nlu3gbh"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_sr1f3"]
 [ext_resource type="Script" path="res://Scenes/FeedbackMid.gd" id="2_6uc6k"]
@@ -7,6 +7,38 @@
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="5_6078o"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="5_i6n3u"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="6_7nhra"]
+[ext_resource type="AudioStream" uid="uid://1aygtkqb0ujq" path="res://Assets/applause_cheer.mp3" id="8_0qto5"]
+
+[sub_resource type="Animation" id="Animation_v06dw"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-62.685, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxftn"]
+_data = {
+"cheer_feedback": SubResource("Animation_v06dw")
+}
 
 [node name="Feedback" type="Control"]
 layout_mode = 3
@@ -102,6 +134,14 @@ grow_horizontal = 0
 theme = ExtResource("1_sr1f3")
 text = " Continuar"
 icon = ExtResource("6_7nhra")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_0qto5")
+
+[node name="CheerPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"Cheer": SubResource("AnimationLibrary_mxftn")
+}
 
 [connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
 [connection signal="pressed" from="ContinuarButton" to="." method="_on_continuar_button_pressed"]

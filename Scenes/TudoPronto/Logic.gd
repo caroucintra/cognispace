@@ -18,6 +18,7 @@ var p2_selection:int = 0
 var p1_last_focus:int = 1
 
 var answer_pairs
+var error = false
 	
 func _change_focus():
 	match p1_last_focus:
@@ -77,7 +78,6 @@ func _on_p2_a1_button_toggled(toggled_on):
 		$Control2/P2HBoxContainer/P2A1Button.button_pressed = false
 		var dialog = AcceptDialog.new()
 		dialog.dialog_text = "Player 2 deve jogar com o rato!"
-		dialog.title = "Oops!"
 		var scene_tree = Engine.get_main_loop()
 		scene_tree.current_scene.add_child(dialog)
 		dialog.popup_centered()
@@ -94,7 +94,6 @@ func _on_p2_a2_button_toggled(toggled_on):
 		$Control2/P2HBoxContainer/P2A2Button.button_pressed = false
 		var dialog = AcceptDialog.new()
 		dialog.dialog_text = "Player 2 deve jogar com o rato!"
-		dialog.title = "Oops!"
 		var scene_tree = Engine.get_main_loop()
 		scene_tree.current_scene.add_child(dialog)
 		dialog.popup_centered()
@@ -111,7 +110,6 @@ func _on_p2_a3_button_toggled(toggled_on):
 		$Control2/P2HBoxContainer/P2A3Button.button_pressed = false
 		var dialog = AcceptDialog.new()
 		dialog.dialog_text = "Player 2 deve jogar com o rato!"
-		dialog.title = "Oops!"
 		var scene_tree = Engine.get_main_loop()
 		scene_tree.current_scene.add_child(dialog)
 		dialog.popup_centered()
@@ -176,6 +174,8 @@ func _on_p1_a1_button_toggled(toggled_on):
 		p1_selected = true
 		p1_selection = 1
 		_check_2_buttons_pressed()
+		p1_last_focus = 2
+		_change_focus()
 	elif (is_inside_p1hbox):
 		_mouse_warning()
 		$Control/P1HBoxContainer/P1A1Button.button_pressed = false
@@ -185,6 +185,9 @@ func _on_p1_a2_button_toggled(toggled_on):
 		p1_selected = true
 		p1_selection = 2
 		_check_2_buttons_pressed()
+		p1_last_focus = 3
+		_change_focus()
+		$Control/P1HBoxContainer/P1A2Button.button_pressed = true
 	elif (is_inside_p1hbox):
 		_mouse_warning()
 		$Control/P1HBoxContainer/P1A2Button.button_pressed = false
@@ -194,6 +197,8 @@ func _on_p1_a3_button_toggled(toggled_on):
 		p1_selected = true
 		p1_selection = 3
 		_check_2_buttons_pressed()
+		p1_last_focus = 1
+		_change_focus()
 	elif (is_inside_p1hbox):
 		_mouse_warning()
 		$Control/P1HBoxContainer/P1A3Button.button_pressed = false
@@ -203,6 +208,8 @@ func _on_p1_a4_button_toggled(toggled_on):
 		p1_selected = true
 		p1_selection = 4
 		_check_2_buttons_pressed()
+		p1_last_focus = 2
+		_change_focus()
 	elif (is_inside_p1hbox):
 		_mouse_warning()
 		$Control/P1HBoxContainer/P1A4Button.button_pressed = false
@@ -212,6 +219,8 @@ func _on_p1_a5_button_toggled(toggled_on):
 		p1_selected = true
 		p1_selection = 5
 		_check_2_buttons_pressed()
+		p1_last_focus = 3
+		_change_focus()
 	elif (is_inside_p1hbox):
 		_mouse_warning()
 		$Control/P1HBoxContainer/P1A5Button.button_pressed = false
@@ -225,6 +234,7 @@ func _positive_feedback():
 	call_dialog(1)
 
 func _try_again():
+	error = true
 	call_dialog(0)
 	
 func _almost_there():
@@ -328,7 +338,7 @@ func _disable_buttons(buttons):
 func _check_end_of_game():
 	if (false not in answer_pairs[1]):
 		game_over = true
-		if (help): 
+		if (help and not error): 
 			Global.points+= 1
 		else:
 			Global.points+= 0.5
@@ -364,7 +374,7 @@ func _mouse_warning():
 	var dialog = AcceptDialog.new()
 	dialog.theme = load("res://ThemeEditor/menus_theme.tres")
 	dialog.dialog_text = "Player 1 deve jogar com as setas!"
-	dialog.title = "Oops!"
+	dialog.title = ""	
 	var scene_tree = Engine.get_main_loop()
 	scene_tree.current_scene.add_child(dialog)
 	dialog.popup_centered()

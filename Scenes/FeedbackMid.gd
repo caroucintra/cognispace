@@ -32,6 +32,8 @@ func _ready():
 	$VBoxContainer/Label.text = "Parabéns!\nVocê avançou para o nível " + str(Global.level) + "! A sua pontuação neste nível foi '" + score + "'!"
 	if (Global.tts):
 		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)
+	elif (Global.sound):
+		$CheerPlayer.play("Cheer/cheer_feedback")
 
 func _on_continuar_button_pressed():
 	Global.points = 0

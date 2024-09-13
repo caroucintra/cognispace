@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2rmrqbcioclr" path="res://Assets/restaurant_gltf/chair_B.gltf" id="1_kr71s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5et8"]
-albedo_color = Color(0.741338, 0.488264, 0.212085, 1)
+albedo_color = Color(0.996386, 0.912504, 0.40033, 1)
 
 [node name="chair_yellow" instance=ExtResource("1_kr71s")]
 

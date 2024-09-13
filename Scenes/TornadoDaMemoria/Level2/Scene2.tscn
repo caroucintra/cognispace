@@ -1,32 +1,31 @@
-[gd_scene load_steps=48 format=3 uid="uid://b62wvp16qmq26"]
+[gd_scene load_steps=47 format=3 uid="uid://b62wvp16qmq26"]
 
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Level2/Scene2.gd" id="1_yvspv"]
 [ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_elt6a"]
 [ext_resource type="PackedScene" uid="uid://cab8vsxfvdlyp" path="res://Models/wall_2.tscn" id="3_jg47h"]
 [ext_resource type="PackedScene" uid="uid://f2m020rkfxxk" path="res://Models/wall_half_2.tscn" id="4_5sfy7"]
-[ext_resource type="PackedScene" uid="uid://dkauphqq7n2sr" path="res://Assets/furniture_gltf/bed_double_A.gltf" id="5_qvrd0"]
-[ext_resource type="PackedScene" uid="uid://vnqv3ab1h7r0" path="res://Assets/furniture_gltf/lamp_standing.gltf" id="6_35cft"]
-[ext_resource type="PackedScene" uid="uid://digcmdilhm0ji" path="res://Models/wallet.tscn" id="7_ae2g2"]
-[ext_resource type="PackedScene" uid="uid://bag7gv3bvhyh2" path="res://Assets/furniture_gltf/rug_rectangle_stripes_A.gltf" id="8_pel7e"]
 [ext_resource type="PackedScene" uid="uid://dxk2xnnaqsm1r" path="res://Models/cactus_small_highlighted.tscn" id="9_nw7vi"]
 [ext_resource type="PackedScene" uid="uid://cong4g7rdkbeq" path="res://Models/book_set_shadow.tscn" id="10_rvbcf"]
 [ext_resource type="PackedScene" uid="uid://chfeieccev0x" path="res://Assets/furniture_gltf/shelf_B_large.gltf" id="11_54ibt"]
-[ext_resource type="PackedScene" uid="uid://7l7u01msuo5v" path="res://Models/pictureframe_small_shadow.tscn" id="11_xm1ot"]
-[ext_resource type="PackedScene" uid="uid://dn4e6hh6u0nlh" path="res://Models/keyring_shadow.tscn" id="12_2b662"]
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="15_7mqg5"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="16_d6byp"]
+[ext_resource type="PackedScene" uid="uid://buie6tti5cc74" path="res://Assets/furniture_gltf/pictureframe_large_B.gltf" id="17_63h8i"]
 [ext_resource type="Texture2D" uid="uid://d1otjyenwnjch" path="res://Assets/doctor_small.png" id="17_pknmw"]
+[ext_resource type="PackedScene" uid="uid://c7rl43ny1r8ko" path="res://Assets/furniture_gltf/rug_rectangle_stripes_B.gltf" id="18_hph27"]
 [ext_resource type="Texture2D" uid="uid://bby7f4r51xmcq" path="res://Assets/doctor.png" id="18_lg6mi"]
+[ext_resource type="PackedScene" uid="uid://dd0djwd8mdnon" path="res://Assets/furniture_gltf/armchair_pillows.gltf" id="19_3xpt3"]
 [ext_resource type="AnimationLibrary" uid="uid://6wfnd4e8os6" path="res://ThemeEditor/Tornado.res" id="19_eetdc"]
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/TornadoAnimation.gd" id="19_yvm06"]
+[ext_resource type="PackedScene" uid="uid://dq3pf64gjvndt" path="res://Models/candle_triple_2_shadow.tscn" id="20_c3he5"]
 [ext_resource type="Texture2D" uid="uid://b44cm735rk4s2" path="res://Assets/glow_circle3.png" id="20_rvu2g"]
 [ext_resource type="Texture2D" uid="uid://ec716c3waxhg" path="res://Assets/blur_white_dot40.png" id="21_7cl7a"]
+[ext_resource type="PackedScene" uid="uid://dqirtc8pcrwyo" path="res://Models/lamp_table_2_shadow.tscn" id="21_mupap"]
 [ext_resource type="AudioStream" uid="uid://b7fq447cj33d4" path="res://Assets/wind-blowing-trimmed2.mp3" id="22_yxgex"]
 [ext_resource type="PackedScene" uid="uid://c3nxy0qc8sv25" path="res://Models/cactus_small_shadow.tscn" id="23_ayqpn"]
-[ext_resource type="PackedScene" uid="uid://c43sxdnt6qicp" path="res://Assets/furniture_gltf/cabinet_small.gltf" id="24_qlk6g"]
-[ext_resource type="PackedScene" uid="uid://dqcuogswphjri" path="res://Models/keyring_highlighted.tscn" id="25_3fc6k"]
+[ext_resource type="PackedScene" uid="uid://dpia4tua0yqo1" path="res://Assets/furniture_gltf/cabinet_medium.gltf" id="24_fwjwy"]
+[ext_resource type="PackedScene" uid="uid://biwigd8qmfw86" path="res://Models/lamp_table_highlighted.tscn" id="25_ypq4i"]
 [ext_resource type="PackedScene" uid="uid://cxf0n4d88c5lp" path="res://Models/book_set_highlighted.tscn" id="26_1h0tj"]
-[ext_resource type="PackedScene" uid="uid://7dkjblh3ype7" path="res://Models/pictureframe_small_highlighted.tscn" id="27_1jdbv"]
+[ext_resource type="PackedScene" uid="uid://crs4akxmgfs8h" path="res://Models/candle_triple_2_highlighted.tscn" id="27_xmlm3"]
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/ObjectsAnimation.gd" id="28_xuhfu"]
 [ext_resource type="AudioStream" uid="uid://d1rxlluort1mq" path="res://Assets/fireworks2.mp3" id="29_kxag2"]
 [ext_resource type="AnimationLibrary" uid="uid://dl7o1kwn6d6oh" path="res://ThemeEditor/Confetti.res" id="30_1dppj"]
@@ -51,98 +50,98 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cactus/cactus_small_A2:rotation")
+tracks/0/path = NodePath("Lamp:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.300587, -0.913993, -0.463671), Vector3(0.178957, -1.28318, -0.108998), Vector3(0.455316, -1.94038, -0.0187912), Vector3(0.0807434, -2.91912, 0.268015)]
+"values": [Vector3(5.90124, 7.26404, 0.441528), Vector3(-6.53373, 4.7078, 0.441528), Vector3(-4.93357, 11.6263, -6.54904), Vector3(-6.31238, 11.7726, -9.69737), Vector3(-6.583, 14.4834, 2.81498), Vector3(-6.95509, 2.44156, 0.441528)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Keys/keyring2:rotation")
+tracks/1/path = NodePath("Lamp/lamp_table2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.386802, 0.360714, -0.179149), Vector3(0.0406234, -1.93803, -0.27509), Vector3(-0.339612, -2.51192, -0.12327), Vector3(-0.0642602, -0.611251, -0.0200005)]
+"values": [Vector3(0, 0, 0), Vector3(-0.498921, -0.186842, 0.80225), Vector3(-1.26441, -1.86678, -2.41243), Vector3(-0.860669, -2.13426, -2.86077), Vector3(0.918784, 2.4027, 0.987227), Vector3(-1.00835, 2.31306e-08, -1.16544)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Books/book_set2:rotation")
+tracks/2/path = NodePath("Books:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.743587, -1.31512, -0.175137), Vector3(-1.05763, -2.28132, 1.18657), Vector3(-0.653482, -1.1277, -0.0191697), Vector3(-1.18054, -0.961547, -0.0944753)]
+"values": [Vector3(12.0347, 8.06846, 2.23252), Vector3(-0.634129, 13.0821, 2.92166), Vector3(-10.1643, 10.4357, 3.74236), Vector3(7.56464, 12.4135, 6.72932), Vector3(-10.1893, 9.44782, -7.70023), Vector3(3.36795, 0.606165, 6.17045)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Picture/pictureframe_small_A2:rotation")
+tracks/3/path = NodePath("Books/book_set2:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.462671, -0.179532, 0.945831), Vector3(-1.16987, -0.896095, 2.05148), Vector3(-0.694729, 0.404497, -0.244274), Vector3(-0.936586, -1.19769, 0.576774)]
+"values": [Vector3(0, 0, 0), Vector3(-0.442217, -0.798978, -0.00866824), Vector3(0.624554, 1.23125, 2.86467), Vector3(-1.04448, -0.83548, 2.10834), Vector3(-0.347298, 1.57147, -0.170271), Vector3(-0.624997, -0.197427, -0.0172098)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Keys:position")
+tracks/4/path = NodePath("Candle:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-7.0944, 7.43472, -7.41816), Vector3(-12.7167, 3.65978, 0.577936), Vector3(-2.41785, 3.65978, 0.577936), Vector3(4.22329, 4.61036, 10.0538), Vector3(-4.86022, 3.38369, 8.50882)]
+"values": [Vector3(-2.46469, 13.0117, -10.9971), Vector3(-10.6356, 12.6616, -1.56446), Vector3(3.35503, 12.0275, 6.97062), Vector3(-7.99958, 11.5352, 7.22059), Vector3(-5.6691, 12.1345, -7.84256), Vector3(-2.46469, -0.0526896, 7.89907)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Books:position")
+tracks/5/path = NodePath("Candle/candle_triple2:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(5.01036, 14.0329, -4.82969), Vector3(8.11902, 13.5674, 7.85489), Vector3(-7.9587, 10.5623, 7.85489), Vector3(-9.98062, 10.5623, -5.96088), Vector3(-9.00865, 1.39709, -4.17448)]
+"values": [Vector3(0, 0, 0), Vector3(0.339115, -0.137158, -1.18429), Vector3(0.27448, 1.33725, -0.36568), Vector3(-0.75066, -0.436197, -0.767335), Vector3(0.151212, 1.21843, 0.482301), Vector3(-1.03831, 6.44364e-08, -0.697643)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Picture:position")
+tracks/6/path = NodePath("Cactus:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.6, 3.4, 4.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(12.0108, 13.6601, -0.0217915), Vector3(7.2864, 5.87968, 8.36684), Vector3(-0.386838, 5.87968, 10.3431), Vector3(-11.2342, 3.71832, 2.10851), Vector3(-0.175885, 3.62726, 3.72412)]
+"values": [Vector3(0.927729, 13.0523, -8.43216), Vector3(-0.0245485, 9.17572, 5.51242), Vector3(4.2689, 12.0085, -1.58269), Vector3(-7.51793, 3.59592, -0.56578), Vector3(9.00947, 9.71804, 6.41993), Vector3(-10.7035, 0.825585, -0.000446796)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Cactus:position")
+tracks/7/path = NodePath("Cactus/cactus_small_A2:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1, 1.0001, 1.8, 2.6, 3.4, 4.2),
+"times": PackedFloat32Array(1, 1.7, 2.5, 3.2, 4.1, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-4.60766, 7.00438, -10.9529), Vector3(-4.60766, 7.00438, -10.9529), Vector3(3.00595, 8.49529, 2.1543), Vector3(10.276, 4.49645, 15.644), Vector3(-1.4604, 4.5926, 7.12693), Vector3(-13.1968, 0.225191, -1.39015)]
+"values": [Vector3(0, 0, 0), Vector3(0.360978, 1.17133, 0.830687), Vector3(-0.0708918, -1.10162, 0.717993), Vector3(-0.990768, -1.50722, 0.209589), Vector3(-0.785935, -0.724002, 0.179122), Vector3(0.0455052, 2.16554, -0.409254)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ws4m"]
@@ -166,24 +165,27 @@ point_count = 3
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00892866), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_e0hjs"]
-radius = 0.223747
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_kort7"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_e22x5"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_c2ste"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ivqix"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_de528"]
-
 [sub_resource type="Curve" id="Curve_gmrlv"]
 _data = [Vector2(0.00865801, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.982684, 0.879121), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s4n3x"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v8j3k"]
+height = 1.70022
+radius = 0.223747
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p63cc"]
+size = Vector3(1.23987, 0.847168, 0.878052)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m3c2c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xcq16"]
+radius = 0.624242
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m4r6v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d8atu"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08352, 0)
@@ -208,48 +210,6 @@ transform = Transform3D(0.70474, 0.359718, -0.61151, 0.0694738, 0.822797, 0.5640
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(0.998831, 0.0215947, 0.0432516, -0.0288492, 0.984173, 0.174847, -0.0387913, -0.175891, 0.983645, -1.17631, 9.25302, 20.3844)
 size = 28.159
-
-[node name="Counter" type="Node3D" parent="."]
-transform = Transform3D(1.38305, 0, 0, 0, 1.38305, 0, 0, 0, 1.38305, -5.51886, 0, 6.86926)
-
-[node name="SceneBG" type="Node3D" parent="."]
-transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, -11.019, -0.343, -21.372)
-
-[node name="wall3" parent="SceneBG" instance=ExtResource("3_jg47h")]
-
-[node name="wall4" parent="SceneBG" instance=ExtResource("3_jg47h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7977, 0, -0.0116293)
-
-[node name="wall_half3" parent="SceneBG" instance=ExtResource("4_5sfy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59617, 0, -0.0220425)
-
-[node name="bed_double_A2" parent="SceneBG" instance=ExtResource("5_qvrd0")]
-transform = Transform3D(0.789649, 0, -0.0190912, 0, 0.78988, 0, 0.0190912, 0, 0.789649, 3.77821, 0.0834811, 1.53902)
-
-[node name="lamp_standing2" parent="SceneBG" instance=ExtResource("6_35cft")]
-transform = Transform3D(0.610367, 0, 0.501361, 0, 0.78988, 0, -0.501361, 0, 0.610367, 0.655562, 0.0727052, 1.08759)
-
-[node name="wallet" parent="SceneBG" instance=ExtResource("7_ae2g2")]
-transform = Transform3D(0.3867, -0.00330328, -0.595393, 0.00517182, 0.709939, -0.000579748, 0.595379, -0.00402148, 0.386714, 1.82062, 0.957555, 0.808755)
-
-[node name="rug_rectangle_stripes_A2" parent="SceneBG" instance=ExtResource("8_pel7e")]
-transform = Transform3D(-0.00389862, 0, 0.629342, 0, 0.629354, 0, -0.629342, 0, -0.00389862, 1.86842, -0.0120109, 2.04647)
-
-[node name="Shadows" type="Node3D" parent="."]
-transform = Transform3D(5.06624, 0, -3.51143, 0, 6.16416, 0, 3.51143, 0, 5.06624, -4.60766, 7.01746, -10.9529)
-visible = false
-
-[node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("23_ayqpn")]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
-
-[node name="book_set2_shadow" parent="Shadows" instance=ExtResource("10_rvbcf")]
-transform = Transform3D(0.601706, 0, -0.0900332, 0, 0.608406, 0, 0.0900332, 0, 0.601706, 1.82929, 1.06258, -0.0402979)
-
-[node name="pictureframe_small_shadow" parent="Shadows" instance=ExtResource("11_xm1ot")]
-transform = Transform3D(0.69248, 0.0221092, -0.0484536, 0, 0.631856, 0.288313, 0.0532594, -0.287464, 0.629995, 3.22597, 1.07762, -0.0782955)
-
-[node name="keyring2_shadow" parent="Shadows" instance=ExtResource("12_2b662")]
-transform = Transform3D(0.403999, 0, 0.280013, 0, 0.491551, 0, -0.280013, 0, 0.403999, -0.00483811, 0.0677369, 0.70109)
 
 [node name="ObjectsAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -354,72 +314,6 @@ size_flags_vertical = 4
 visible = false
 position = Vector2(-347, -347)
 texture = ExtResource("18_lg6mi")
-
-[node name="Shelf" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.775143, 0, -0.631786, 0, 1, 0, 0.631786, 0, 0.775143, 8.69997, 12.1275, -2.97842)
-
-[node name="shelf_B_large2" parent="Shelf" instance=ExtResource("11_54ibt")]
-transform = Transform3D(10.4484, 0, 0, 0, 8.95513, 0, 0, 0, 3.35496, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf"]
-transform = Transform3D(0.191002, 10.9425, -4.76837e-07, -10.9425, 0.191002, -5.75593e-09, 7.45058e-09, 9.53674e-07, 10.9442, 0.270458, 0.459572, 1.56543)
-visible = false
-shape = SubResource("CylinderShape3D_e0hjs")
-
-[node name="Cabinet" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.792311, 0, -0.610118, 0, 1, 0, 0.610118, 0, 0.792311, -4.39325, 0.0956881, -8.62787)
-
-[node name="cabinet_small2" parent="Cabinet" instance=ExtResource("24_qlk6g")]
-transform = Transform3D(6.99416, 0, 0, 0, 6.99416, 0, 0, 0, 6.99416, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet"]
-transform = Transform3D(9.96174, 0, 1.43051e-06, 0, 9.96174, 0, -1.43051e-06, 0, 9.96174, 0, 3.39694, 0)
-visible = false
-shape = SubResource("SphereShape3D_kort7")
-
-[node name="Keys" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0944, 7.43472, -7.41816)
-
-[node name="keyring2" parent="Keys" instance=ExtResource("25_3fc6k")]
-transform = Transform3D(3.1, 0, 0, 0, 3.1, 0, 0, 0, 3.1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Keys"]
-transform = Transform3D(3.60251, 0, 0, 0, 3.60251, 0, 0, 0, 3.60251, 0, 0, 0)
-visible = false
-shape = SubResource("SphereShape3D_e22x5")
-
-[node name="Books" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.728538, 0, -0.685005, 0, 1, 0, 0.685005, 0, 0.728538, 5.01036, 14.0329, -4.82969)
-
-[node name="book_set2" parent="Books" instance=ExtResource("26_1h0tj")]
-transform = Transform3D(3.70634, 0, 0, 0, 3.70634, 0, 0, 0, 3.70634, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Books"]
-transform = Transform3D(3.32376, 0, 1.19209e-07, 0, 3.32376, 0, -1.19209e-07, 0, 3.32376, 0, 0, 0)
-visible = false
-shape = SubResource("SphereShape3D_c2ste")
-
-[node name="Picture" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.775782, 0.261943, -0.574063, 0, 0.909766, 0.415122, 0.631001, -0.322044, 0.70578, 12.0108, 13.6601, -0.0217915)
-
-[node name="pictureframe_small_A2" parent="Picture" instance=ExtResource("27_1jdbv")]
-transform = Transform3D(3.66735, 0, 0, 0, 3.71737, 0, 0, 0, 3.69017, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Picture"]
-transform = Transform3D(3.55995, 1.19209e-07, 0, 5.96046e-08, 3.55995, 0, -1.19209e-07, -1.78814e-07, 3.55995, 0, 0, 0)
-visible = false
-shape = SubResource("SphereShape3D_ivqix")
-
-[node name="Cactus" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.821886, 0, -0.569652, 0, 1, 0, 0.569652, 0, 0.821886, -4.60766, 7.00438, -10.9529)
-
-[node name="cactus_small_A2" parent="Cactus" instance=ExtResource("9_nw7vi")]
-transform = Transform3D(4.259, 0, 0, 0, 4.259, 0, 0, 0, 4.259, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cactus"]
-transform = Transform3D(3.75224, 0, 1.19209e-07, 0, 3.75224, 0, -1.19209e-07, 0, 3.75224, 0, 1.6295, 0)
-visible = false
-shape = SubResource("SphereShape3D_de528")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
@@ -610,11 +504,112 @@ libraries = {
 "Confetti": ExtResource("30_1dppj")
 }
 
+[node name="SceneBG" type="Node3D" parent="."]
+transform = Transform3D(5.96782, 0, -4.90202, 0, 7.723, 0, 4.90202, 0, 5.96782, -11.019, -0.343, -21.372)
+
+[node name="wall3" parent="SceneBG" instance=ExtResource("3_jg47h")]
+
+[node name="wall4" parent="SceneBG" instance=ExtResource("3_jg47h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7977, 0, -0.0116293)
+
+[node name="wall_half3" parent="SceneBG" instance=ExtResource("4_5sfy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59617, 0, -0.0220425)
+
+[node name="pictureframe_large_B2" parent="SceneBG" instance=ExtResource("17_63h8i")]
+transform = Transform3D(0.764479, 0, 5.96046e-08, 0, 0.76448, 0, -5.96046e-08, 0, 0.764479, 4.06397, 1.63908, 0.183991)
+
+[node name="rug_rectangle_stripes_B2" parent="SceneBG" instance=ExtResource("18_hph27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38805, 0, 1.50198)
+
+[node name="armchair_pillows2" parent="SceneBG" instance=ExtResource("19_3xpt3")]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.569827, 0, 0.976271)
+
+[node name="Shadows" type="Node3D" parent="."]
+visible = false
+
+[node name="book_set2_shadow" parent="Shadows" instance=ExtResource("10_rvbcf")]
+transform = Transform3D(3.37777, 0, -3.17594, 0, 4.63637, 0, 3.17594, 0, 3.37777, 12.0347, 8.06846, 2.23252)
+
+[node name="candle_triple2_shadow" parent="Shadows" instance=ExtResource("20_c3he5")]
+transform = Transform3D(2.56688, 0, 0, 0, 2.56688, 0, 0, 0, 2.56688, -2.46469, 13.0117, -10.9971)
+
+[node name="lamp_table2_shadow" parent="Shadows" instance=ExtResource("21_mupap")]
+transform = Transform3D(3.81117, 0, 0, 0, 3.81117, 0, 0, 0, 3.81117, 5.90124, 7.26404, 0.441528)
+
+[node name="cactus_small_A2_shadow" parent="Shadows" instance=ExtResource("23_ayqpn")]
+transform = Transform3D(4.9429, 0, -3.42594, 0, 6.01409, 0, 3.42594, 0, 4.9429, 0.919051, 13.0523, -8.50082)
+
+[node name="Shelf" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.775143, 0, -0.631786, 0, 1, 0, 0.631786, 0, 0.775143, -1.94892, 12.1275, -11.214)
+
+[node name="shelf_B_large2" parent="Shelf" instance=ExtResource("11_54ibt")]
+transform = Transform3D(10.4484, 0, -1.19209e-07, 0, 8.95513, 0, 3.8147e-06, 0, 3.35496, -1.51401, 0, -0.477252)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf"]
+transform = Transform3D(0.191002, 10.9425, 0, -10.9425, 0.191002, -5.75593e-09, 0, 1.90735e-06, 10.9442, -0.431858, 0.459572, 1.38334)
+visible = false
+shape = SubResource("CylinderShape3D_v8j3k")
+
+[node name="Cabinet" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.792311, 0, -0.610118, 0, 1, 0, 0.610118, 0, 0.792311, 9.95256, 0.0956881, 2.48988)
+
+[node name="cabinet_medium2" parent="Cabinet" instance=ExtResource("24_fwjwy")]
+transform = Transform3D(6.95106, 0, 0, 0, 6.95106, 0, 0, 0, 6.95106, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(10.4733, 0, 1.90735e-06, 0, 10.4733, 0, -1.90735e-06, 0, 10.4733, -0.267838, 2.59661, -0.638597)
+visible = false
+shape = SubResource("BoxShape3D_p63cc")
+
+[node name="Lamp" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.90124, 7.26404, 0.441528)
+
+[node name="lamp_table2" parent="Lamp" instance=ExtResource("25_ypq4i")]
+transform = Transform3D(3.81117, 0, 0, 0, 3.81117, 0, 0, 0, 3.81117, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp"]
+transform = Transform3D(4.26407, 0, 0, 0, 4.26407, 0, 0, 0, 4.26407, 1.42857, 1.79938, 0)
+visible = false
+shape = SubResource("SphereShape3D_m3c2c")
+
+[node name="Books" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.728538, 0, -0.685005, 0, 1, 0, 0.685005, 0, 0.728538, 12.0347, 8.06846, 2.23252)
+
+[node name="book_set2" parent="Books" instance=ExtResource("26_1h0tj")]
+transform = Transform3D(4.40989, 0, 0, 0, 4.40989, 0, 0, 0, 4.40989, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Books"]
+transform = Transform3D(1.72052, -2.2759, -1.70513, 2.2759, -0.0929788, 2.42054, -1.70513, -2.42054, 1.51026, 0, 0, 0)
+visible = false
+shape = SubResource("SphereShape3D_xcq16")
+
+[node name="Candle" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.918032, -0.396507, 0, 0.396507, 0.918032, -2.46469, 13.0117, -10.9971)
+
+[node name="candle_triple2" parent="Candle" instance=ExtResource("27_xmlm3")]
+transform = Transform3D(2.56687, 0, 0, 0, 2.56687, 0, 0, 0, 2.56688, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle"]
+transform = Transform3D(0.910371, 0.787435, -0.137638, -0.239994, 0.468216, 1.0913, 0.762495, -0.792774, 0.507819, 0.835866, 0.455882, -0.613117)
+visible = false
+shape = SubResource("CylinderShape3D_m4r6v")
+
+[node name="Cactus" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.506335, 0, -0.862337, 0, 1, 0, 0.862337, 0, 0.506335, 0.927729, 13.0523, -8.43216)
+
+[node name="cactus_small_A2" parent="Cactus" instance=ExtResource("9_nw7vi")]
+transform = Transform3D(5.943, 0, 0, 0, 5.94299, 0, 0, 0, 5.94299, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cactus"]
+transform = Transform3D(3.75224, 0, 4.76837e-07, 0, 3.75224, 0, -4.76837e-07, 0, 3.75224, 0.356005, 1.6295, -1.05812)
+visible = false
+shape = SubResource("SphereShape3D_d8atu")
+
 [connection signal="pressed" from="VoltarButton" to="." method="_on_voltar_button_pressed"]
 [connection signal="pressed" from="AjudaButton" to="." method="_on_ajuda_button_pressed"]
 [connection signal="input_event" from="Shelf" to="." method="_on_shelf_input_event"]
 [connection signal="input_event" from="Cabinet" to="." method="_on_cabinet_input_event"]
-[connection signal="input_event" from="Keys" to="." method="_on_keys_input_event"]
+[connection signal="input_event" from="Lamp" to="." method="_on_lamp_input_event"]
 [connection signal="input_event" from="Books" to="." method="_on_books_input_event"]
-[connection signal="input_event" from="Picture" to="." method="_on_picture_input_event"]
+[connection signal="input_event" from="Candle" to="." method="_on_candle_input_event"]
 [connection signal="input_event" from="Cactus" to="." method="_on_cactus_input_event"]

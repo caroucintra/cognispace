@@ -33,6 +33,8 @@ func _ready():
 	$VBoxContainer/Label.text = "Parabéns!\nVocê terminou este jogo em " + time_minutes + " minutos e " + time_seconds + " segundos. A sua pontuação foi '" + score + "'!"
 	if (Global.tts):
 		DisplayServer.tts_speak($VBoxContainer/Label.text, voice_id)
+	elif (Global.sound):
+		$CheerPlayer.play("Cheer/cheer_feedback")
 	Global.end_minigame()
 
 func _on_voltar_button_pressed():

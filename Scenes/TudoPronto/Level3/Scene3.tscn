@@ -5,18 +5,18 @@
 [ext_resource type="Theme" uid="uid://dd6pq4u1bplm7" path="res://ThemeEditor/tudopronto.tres" id="3_58o11"]
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="3_hq5bg"]
 [ext_resource type="ButtonGroup" uid="uid://dpi5umlb8ints" path="res://ThemeEditor/BG2.tres" id="4_v8osq"]
-[ext_resource type="Texture2D" uid="uid://jv6p32ayb6d1" path="res://Assets/stove_decorated_stew.png" id="5_275bs"]
-[ext_resource type="Texture2D" uid="uid://chxaqd7wvifsg" path="res://Assets/stew_plate.png" id="6_3qqsi"]
-[ext_resource type="Texture2D" uid="uid://dpwmlvllvowgi" path="res://Assets/vegetables_and_meat.png" id="7_v1p53"]
-[ext_resource type="Texture2D" uid="uid://lynahcn3beqi" path="res://Assets/pot_stew.png" id="8_o1w7c"]
-[ext_resource type="Texture2D" uid="uid://nihsqa325ulc" path="res://Assets/vegetables_and_meat_chopped.png" id="9_ogwvm"]
+[ext_resource type="Texture2D" uid="uid://huowopht0gq8" path="res://Assets/burger_ingredients2.png" id="5_btjt6"]
+[ext_resource type="Texture2D" uid="uid://cgefgtql16bl7" path="res://Assets/burger_plate2.png" id="6_f1xxk"]
+[ext_resource type="Texture2D" uid="uid://b65af4nlyoh80" path="res://Assets/burger_ingredients_chopped2.png" id="7_fr6el"]
+[ext_resource type="Texture2D" uid="uid://s6u2gidhtmpr" path="res://Assets/patty_uncooked.png" id="8_1fsau"]
+[ext_resource type="Texture2D" uid="uid://ditjooyvnc04p" path="res://Assets/burger2.png" id="9_8f3xl"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="10_gafsq"]
 [ext_resource type="ButtonGroup" uid="uid://dt1kacio8q381" path="res://ThemeEditor/BG3.tres" id="11_cutao"]
 [ext_resource type="Texture2D" uid="uid://chp7lhn8bi85n" path="res://Assets/plate.png" id="12_67v81"]
 [ext_resource type="Texture2D" uid="uid://c4ilv4btg13of" path="res://Assets/knife3.png" id="13_4sekd"]
-[ext_resource type="Texture2D" uid="uid://cq4ektokn7c8v" path="res://Assets/pot.png" id="14_irala"]
+[ext_resource type="Texture2D" uid="uid://dgc5s6s8o3a8" path="res://Assets/buns2.png" id="14_7fhqq"]
 [ext_resource type="Texture2D" uid="uid://bdjk18beut8oh" path="res://Assets/dining_table.png" id="15_qfh8l"]
-[ext_resource type="Texture2D" uid="uid://c1tw3yf2vjc28" path="res://Assets/stove2.png" id="16_1epsi"]
+[ext_resource type="Texture2D" uid="uid://cmv4kpqqvrygk" path="res://Assets/frying_pan2.png" id="16_d6318"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="17_xm6on"]
 [ext_resource type="PackedScene" uid="uid://v3ankl06dpwe" path="res://Models/kitchencounter_straight_a_backsplash.tscn" id="18_egj47"]
 [ext_resource type="PackedScene" uid="uid://qsx6ti0x7lj3" path="res://Models/kitchencounter_innercorner_backsplash.tscn" id="19_d4lsa"]
@@ -94,9 +94,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -105.0
-offset_top = -486.5
+offset_top = -447.5
 offset_right = 105.0
-offset_bottom = 486.5
+offset_bottom = 410.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.04)
@@ -115,7 +115,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("4_v8osq")
-icon = ExtResource("5_275bs")
+icon = ExtResource("5_btjt6")
 icon_alignment = 1
 
 [node name="P1A2Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -128,7 +128,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("4_v8osq")
-icon = ExtResource("6_3qqsi")
+icon = ExtResource("6_f1xxk")
 icon_alignment = 1
 
 [node name="P1A3Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -141,7 +141,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("4_v8osq")
-icon = ExtResource("7_v1p53")
+icon = ExtResource("7_fr6el")
 icon_alignment = 1
 
 [node name="P1A4Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -154,7 +154,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("4_v8osq")
-icon = ExtResource("8_o1w7c")
+icon = ExtResource("8_1fsau")
 icon_alignment = 1
 
 [node name="P1A5Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -167,17 +167,20 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("4_v8osq")
-icon = ExtResource("9_ogwvm")
+icon = ExtResource("9_8f3xl")
 icon_alignment = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.039
-anchor_right = 1.0
-anchor_bottom = 1.073
-offset_top = -0.308998
-offset_bottom = -0.0371094
+anchor_left = 0.184
+anchor_top = 0.081
+anchor_right = 0.816
+anchor_bottom = 0.916
+offset_left = -0.0880013
+offset_top = 0.411011
+offset_right = 0.0880127
+offset_bottom = -0.204102
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="."]
@@ -193,9 +196,9 @@ offset_bottom = 47.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Cozinhar
+text = "Montar
 um
-ensopado"
+hambúrger"
 label_settings = ExtResource("10_gafsq")
 horizontal_alignment = 1
 
@@ -221,10 +224,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -112.5
-offset_top = -501.0
-offset_right = 112.5
-offset_bottom = 501.0
+offset_left = -112.0
+offset_top = -447.0
+offset_right = 113.0
+offset_bottom = 445.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -261,7 +264,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("11_cutao")
-icon = ExtResource("14_irala")
+icon = ExtResource("14_7fhqq")
 icon_alignment = 1
 
 [node name="P2A4Button" type="Button" parent="Control2/P2HBoxContainer"]
@@ -283,7 +286,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_58o11")
 toggle_mode = true
 button_group = ExtResource("11_cutao")
-icon = ExtResource("16_1epsi")
+icon = ExtResource("16_d6318")
 icon_alignment = 1
 
 [node name="VoltarButton" type="Button" parent="."]

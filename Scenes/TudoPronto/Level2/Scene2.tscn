@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b1rpij5tbokek" path="res://Assets/wood-floor-texture.jpg" id="2_bj33o"]
 [ext_resource type="Theme" uid="uid://dd6pq4u1bplm7" path="res://ThemeEditor/tudopronto.tres" id="3_uwkmn"]
 [ext_resource type="ButtonGroup" uid="uid://dpi5umlb8ints" path="res://ThemeEditor/BG2.tres" id="4_o6npe"]
-[ext_resource type="Texture2D" uid="uid://c367p0vi7k0al" path="res://Assets/burger_plate.png" id="5_fsgnc"]
-[ext_resource type="Texture2D" uid="uid://ct72sbunx3l3c" path="res://Assets/burger_ingredients.png" id="6_r52gy"]
-[ext_resource type="Texture2D" uid="uid://ds5tgd2fxw5es" path="res://Assets/burger.png" id="7_1y8ec"]
-[ext_resource type="Texture2D" uid="uid://cimpfu442ov32" path="res://Assets/burger_ingredients_chopped.png" id="8_5kahq"]
+[ext_resource type="Texture2D" uid="uid://bx1fs7nb3vk83" path="res://Assets/veggies_chopped.png" id="5_chsst"]
+[ext_resource type="Texture2D" uid="uid://bk07bf1gvbjts" path="res://Assets/salad_bowl.png" id="6_iab8l"]
+[ext_resource type="Texture2D" uid="uid://dg8o1osjfhmv5" path="res://Assets/spices.png" id="7_6eni1"]
+[ext_resource type="Texture2D" uid="uid://wb8r7fpvvowk" path="res://Assets/veggies.png" id="8_uenr0"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="9_fffqe"]
 [ext_resource type="ButtonGroup" uid="uid://dt1kacio8q381" path="res://ThemeEditor/BG3.tres" id="10_mp8mg"]
-[ext_resource type="Texture2D" uid="uid://b77twprdyol63" path="res://Assets/buns.png" id="11_gnyqo"]
-[ext_resource type="Texture2D" uid="uid://bchp22l64yia" path="res://Assets/plate2.png" id="12_7k78q"]
+[ext_resource type="Texture2D" uid="uid://didhm5en4v00l" path="res://Assets/table_with_salad.png" id="12_no873"]
 [ext_resource type="Texture2D" uid="uid://t5shyy5m1c6l" path="res://Assets/round_table2.png" id="13_inx47"]
+[ext_resource type="Texture2D" uid="uid://bjb2bch2tfofu" path="res://Assets/bowl.png" id="13_vrxoa"]
 [ext_resource type="Texture2D" uid="uid://bq30op65d1fj6" path="res://Assets/knife2.png" id="14_6gaky"]
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="15_f8ayb"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="16_xxb68"]
@@ -77,7 +77,7 @@ anchor_top = 0.253
 anchor_right = 0.357
 anchor_bottom = 0.938
 offset_left = -393.264
-offset_top = -535.944
+offset_top = -486.944
 offset_right = 17.736
 offset_bottom = 301.176
 grow_horizontal = 2
@@ -93,9 +93,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -113.5
-offset_top = -472.5
+offset_top = -533.0
 offset_right = 205.5
-offset_bottom = 565.5
+offset_bottom = 434.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.04)
@@ -116,7 +116,7 @@ theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_mask = 0
 button_group = ExtResource("4_o6npe")
-icon = ExtResource("5_fsgnc")
+icon = ExtResource("5_chsst")
 icon_alignment = 1
 
 [node name="P1A2Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -128,7 +128,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("4_o6npe")
-icon = ExtResource("6_r52gy")
+icon = ExtResource("6_iab8l")
 icon_alignment = 1
 
 [node name="P1A3Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -140,7 +140,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("4_o6npe")
-icon = ExtResource("7_1y8ec")
+icon = ExtResource("7_6eni1")
 icon_alignment = 1
 
 [node name="P1A4Button" type="Button" parent="Control/P1HBoxContainer"]
@@ -152,7 +152,7 @@ mouse_default_cursor_shape = 8
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("4_o6npe")
-icon = ExtResource("8_5kahq")
+icon = ExtResource("8_uenr0")
 icon_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
@@ -161,9 +161,9 @@ anchors_preset = -1
 anchor_top = -0.465
 anchor_bottom = 1.463
 offset_left = 92.0
-offset_top = 763.665
-offset_right = 437.0
-offset_bottom = -713.103
+offset_top = 655.88
+offset_right = 411.0
+offset_bottom = -713.416
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -178,8 +178,9 @@ offset_bottom = 47.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Montar um
-hambúrger"
+text = "Preparar
+uma
+salada"
 label_settings = ExtResource("9_fffqe")
 horizontal_alignment = 1
 
@@ -206,9 +207,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -169.5
-offset_top = -497.0
+offset_top = -533.0
 offset_right = 152.5
-offset_bottom = 582.0
+offset_bottom = 473.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -223,7 +224,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("10_mp8mg")
-icon = ExtResource("11_gnyqo")
+icon = ExtResource("14_6gaky")
 icon_alignment = 1
 
 [node name="P2A2Button" type="Button" parent="Control2/P2HBoxContainer"]
@@ -233,7 +234,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("10_mp8mg")
-icon = ExtResource("12_7k78q")
+icon = ExtResource("12_no873")
 icon_alignment = 1
 
 [node name="P2A3Button" type="Button" parent="Control2/P2HBoxContainer"]
@@ -243,7 +244,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("10_mp8mg")
-icon = ExtResource("13_inx47")
+icon = ExtResource("13_vrxoa")
 icon_alignment = 1
 
 [node name="P2A4Button" type="Button" parent="Control2/P2HBoxContainer"]
@@ -253,7 +254,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_uwkmn")
 toggle_mode = true
 button_group = ExtResource("10_mp8mg")
-icon = ExtResource("14_6gaky")
+icon = ExtResource("13_inx47")
 icon_alignment = 1
 
 [node name="VoltarButton" type="Button" parent="."]

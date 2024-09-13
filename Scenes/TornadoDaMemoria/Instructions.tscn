@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://compfmpg1pm68"]
+[gd_scene load_steps=8 format=3 uid="uid://compfmpg1pm68"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_0v4ed"]
 [ext_resource type="Script" path="res://Scenes/TornadoDaMemoria/Instructions.gd" id="2_yvca5"]
 [ext_resource type="Texture2D" uid="uid://c3jilcdrom06" path="res://Assets/Background_Menus2.png" id="3_ewnph"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_d6idv"]
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_jgn27"]
+[ext_resource type="LabelSettings" uid="uid://cf6u4bferp8nl" path="res://ThemeEditor/no_outline.tres" id="5_54b8w"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_m34cj"]
 
 [node name="Instructions" type="Control"]
@@ -49,19 +50,147 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label1" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
-text = "Este jogo é para dois jogadores. Os jogadores terão alguns segundos para memorizar as posições dos objetos na cena, antes do tornado trocar tudo de sítio. Depois, os jogadores devem organizar a cena a vez sendo o jogador 1 o primeiro. Em todas as cenas poderão observar um espaço a esquerda e outro a direita. O jogador 1 deve organizar os objetos que estavam localizados inicialmente a esquerda, e o jogador 2, os objetos da direita.
-Estão prontos para o desafio?"
+text = "Este jogo é para 2 jogadores."
 label_settings = ExtResource("4_d6idv")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+[node name="BoxContainer3" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "1. Memorizar"
+label_settings = ExtResource("4_d6idv")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Os jogadores terão
+alguns segundos para
+memorizar as posições
+dos objetos na cena,
+antes do tornado mudar
+tudo de sítio. "
+label_settings = ExtResource("5_54b8w")
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "2. Escolher"
+label_settings = ExtResource("4_d6idv")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "O jogador 1 deve 
+organizar os objetos
+que estavam localizados 
+inicialmente à esquerda, 
+e o jogador 2, os objetos 
+que estavam à direita."
+label_settings = ExtResource("5_54b8w")
+horizontal_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect3/VBoxContainer"]
+layout_mode = 2
+text = "3. Organizar"
+label_settings = ExtResource("4_d6idv")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect3/VBoxContainer"]
+layout_mode = 2
+text = "Finalmente, os jogadores
+deverão, à vez,  selecionar
+os objetos e depois as
+suas localizações
+originais para
+organizar a cena. O
+jogador 1 será o primeiro."
+label_settings = ExtResource("5_54b8w")
+horizontal_alignment = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "Estão prontos para o desafio?"
+label_settings = ExtResource("4_d6idv")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer4" type="BoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 

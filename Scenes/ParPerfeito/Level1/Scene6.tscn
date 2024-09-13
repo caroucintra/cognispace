@@ -101,8 +101,8 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A3Button")
 focus_neighbor_right = NodePath("../A2Button")
 theme = ExtResource("8_aexx0")
-text = "O hambúrger 
-está no centro
+text = "Está 
+no centro
 da mesa"
 
 [node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
@@ -111,9 +111,9 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A1Button")
 focus_neighbor_right = NodePath("../A3Button")
 theme = ExtResource("8_aexx0")
-text = "O hambúrger 
-está a direita
-do prato vazio"
+text = "Está à 
+direita do 
+prato vazio"
 
 [node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
 layout_mode = 2
@@ -121,9 +121,9 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A2Button")
 focus_neighbor_right = NodePath("../A1Button")
 theme = ExtResource("8_aexx0")
-text = "O hambúrger 
-está a esquerda
-do prato vazio"
+text = "Está à 
+esquerda do 
+prato vazio"
 
 [node name="VoltarButton" type="Button" parent="."]
 offset_left = 29.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c27u0x6wmdu3"]
+[gd_scene load_steps=8 format=3 uid="uid://c27u0x6wmdu3"]
 
 [ext_resource type="Theme" uid="uid://dsjyqvry1y226" path="res://ThemeEditor/menus_theme.tres" id="1_o8eov"]
 [ext_resource type="Script" path="res://Scenes/TudoPronto/Instructions.gd" id="2_y8s36"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnn3xdr0ywhc8" path="res://Assets/back_icon.png" id="4_12ki2"]
 [ext_resource type="LabelSettings" uid="uid://cu58gbxvkh0uq" path="res://ThemeEditor/label_settings.tres" id="4_k6qkf"]
 [ext_resource type="Texture2D" uid="uid://db1ee5ts48vp4" path="res://Assets/check.png" id="5_3iska"]
+[ext_resource type="LabelSettings" uid="uid://cf6u4bferp8nl" path="res://ThemeEditor/no_outline.tres" id="5_xxu78"]
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
@@ -50,19 +51,144 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label1" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
-text = "Este jogo é para dois jogadores. Os jogadores devem criar associações entre os botões da direita e da esquerda, na ordem, de maneira a concretizar a ação do centro da tela. O jogador 1 deve controlar os botões da esquerda com as setas ←↑↓→ e o jogador 2 os botões da direita com o rato.
-Estão prontos para o desafio?"
+text = "Este jogo é para 2 jogadores."
 label_settings = ExtResource("4_k6qkf")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+[node name="BoxContainer3" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "1. Reconhecer"
+label_settings = ExtResource("4_k6qkf")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Os jogadores deverão
+reconhecer a ação
+descrita no centro
+da tela, pois será o
+seu objetivo."
+label_settings = ExtResource("5_xxu78")
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "2. Associar"
+label_settings = ExtResource("4_k6qkf")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect2/VBoxContainer"]
+layout_mode = 2
+text = "Para concretiza-lo, devem
+criar associações
+entre os botões da
+direita e da esquerda,
+na ordem correta. "
+label_settings = ExtResource("5_xxu78")
+horizontal_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+color = Color(0.984314, 1, 0.568627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ColorRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -94.5
+offset_right = 225.0
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect3/VBoxContainer"]
+layout_mode = 2
+text = "3. Concretizar"
+label_settings = ExtResource("4_k6qkf")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer2/ColorRect3/VBoxContainer"]
+layout_mode = 2
+text = "O jogador 1 deve 
+controlar os botões
+da esquerda com as
+setas ←↑↓→ e o 
+jogador 2, os botões da
+direita com o rato."
+label_settings = ExtResource("5_xxu78")
+horizontal_alignment = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+text = "Estão prontos para o desafio?"
+label_settings = ExtResource("4_k6qkf")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer4" type="BoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 

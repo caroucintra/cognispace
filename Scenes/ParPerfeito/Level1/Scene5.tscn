@@ -85,11 +85,12 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Onde está o hambúrger?"
+text = "Onde está o hambúrguer?"
 label_settings = ExtResource("7_5orl8")
 horizontal_alignment = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 
 [node name="A1Button" type="Button" parent="VBoxContainer/BoxContainer"]
@@ -98,8 +99,8 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A3Button")
 focus_neighbor_right = NodePath("../A2Button")
 theme = ExtResource("8_de8r7")
-text = "O hambúrger 
-está no centro
+text = "Está 
+no centro
 da mesa"
 
 [node name="A2Button" type="Button" parent="VBoxContainer/BoxContainer"]
@@ -108,9 +109,9 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A1Button")
 focus_neighbor_right = NodePath("../A3Button")
 theme = ExtResource("8_de8r7")
-text = "O hambúrger 
-está a direita
-do prato vazio"
+text = "Está à
+direita do
+prato vazio"
 
 [node name="A3Button" type="Button" parent="VBoxContainer/BoxContainer"]
 layout_mode = 2
@@ -118,9 +119,9 @@ size_flags_horizontal = 6
 focus_neighbor_left = NodePath("../A2Button")
 focus_neighbor_right = NodePath("../A1Button")
 theme = ExtResource("8_de8r7")
-text = "O hambúrger 
-está a esquerda
-do prato vazio"
+text = "Está à
+esquerda do
+prato vazio"
 
 [node name="VoltarButton" type="Button" parent="."]
 offset_left = 29.0

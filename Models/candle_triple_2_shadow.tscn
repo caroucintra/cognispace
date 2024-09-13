@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3pf64gjvndt"]
+
+[ext_resource type="PackedScene" uid="uid://da6cxllx1s6uu" path="res://Assets/dungeon_gltf/candle_triple.gltf" id="1_lrsve"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvdox"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="candle_triple2_shadow" instance=ExtResource("1_lrsve")]
+
+[node name="candle_triple" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pvdox")
